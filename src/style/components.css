@@ -1,0 +1,556 @@
+.tech-section {
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #f8fafc, #eef2f7);
+  position: relative;
+}
+
+.tech-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tech-heading {
+  margin-bottom: 24px;
+}
+
+.tech-subtitle {
+  color: var(--primary-color2);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.tech-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.tech-highlight {
+  color: var(--secondary-color);
+}
+
+
+.tech-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.tech-tab {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 10px 0;
+  transition: 0.3s;
+}
+
+.tech-tab.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.tab-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+
+.tech-grid{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px 38px;
+    justify-items: center;
+    /* max-width: 626px; */
+    margin: 0 auto;
+    padding: 0px 270px;
+}
+
+/* 🔥 NEW hover animation */
+.tech-card:hover {
+  transform: translateY(-12px) rotate(3deg) scale(1.05);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.20);
+}
+
+.tech-card:hover .hexagon {
+  transform: scale(1.08) rotate(2deg);
+  transition: 0.4s ease;
+}
+
+.tech-rect-box {
+  width: 95px;
+    padding: 20px 9px;
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.tech-rect-box:hover {
+  transform: translateY(-10px) rotate(3deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+
+.hexagon {
+  width: 74px;
+  height: 78px;
+  background: linear-gradient(135deg, #dbeafe, #ffffff);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+}
+
+.tech-logo {
+  font-size: 1.5rem;
+  margin-bottom: 0px;
+}
+
+.tech-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tech-card {
+    width: 120px;
+    height: 120px;
+  }
+
+}
+
+/* footer */
+.footer {
+  background: linear-gradient(135deg, #1b263b 0%, #415a77 100%);
+  color: #e2e8f0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Top Section - Contact Info */
+.footer-top {
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: left;
+    justify-items: start;
+  }
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 360px;
+}
+
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+.contact-icon {
+  background: var(--secondary-color);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-label {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  margin: 0 0 0.25rem 0;
+}
+
+.contact-value {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-value:hover {
+  color: var(--secondary-color);
+}
+
+/* Bottom Section */
+.footer-bottom {
+  padding: 1rem 0 2rem;
+}
+
+.footer-bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem;
+  /* margin-bottom: 2.5rem; */
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .social-links {
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+}
+
+.social-icon {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.social-icon:hover {
+  background: var(--secondary-color);
+  color: white;
+  transform: translateY(-4px);
+}
+
+.footer-links h4 {
+  color: #ffffff;
+  font-size: 1.125rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.footer-links h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--secondary-color);
+  border-radius: 2px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.footer-links a:hover {
+  /* color: var(--secondary-color); */
+  color: white;
+  padding-left: 4px;
+}
+
+.footer-copyright {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .footer-top {
+    padding: 3rem 0 2rem;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+
+
+.ready-section {
+  width: 100%;
+  height: 325px;
+  background: url("images/Ready.jpg")
+    center/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ready-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.ready-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  color: var(--white);
+  padding: 0 20px;
+}
+
+.ready-content h2 {
+  font-size: var(--font-size-xl);
+  letter-spacing: 1px;
+  margin-bottom: var(--space-4);
+  color: var(--white);
+}
+
+.ready-content p {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-6);
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.ready-btn {
+  padding: 14px 30px;
+  font-size: var(--font-size-sm);
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  letter-spacing: 1px;
+  border-radius: var(--radius-md);
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition-medium);
+}
+
+.ready-btn:hover {
+  background: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 700px) {
+  .ready-content h2 {
+    font-size: 1.6rem;
+  }
+  .ready-content p {
+    font-size: 1rem;
+  }
+  .ready-btn {
+    padding: 12px 24px;
+  }
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-intro,
+  .about-feature {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature-item {
+    justify-content: center;
+  }
+}
+
+
+
+.tech-section {
+
+  overflow: hidden;
+}
+
+/* LEFT SIDE: Circuit Board Lines */
+.circuit-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 550px;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 50px,
+      rgba(99, 102, 241, 0.08) 50px,
+      rgba(99, 102, 241, 0.08) 52px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 50px,
+      rgba(139, 92, 246, 0.06) 50px,
+      rgba(139, 92, 246, 0.06) 52px
+    );
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* RIGHT SIDE: Matrix + Glowing Nodes */
+.matrix-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 650px;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 80% 20%, rgba(167, 139, 250, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 90% 70%, rgba(99, 102, 241, 0.2) 0%, transparent 50%),
+    repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 40px,
+      rgba(79, 70, 229, 0.05) 40px,
+      rgba(79, 70, 229, 0.05) 41px
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Floating Tech Logos (Animated) */
+.floating-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.floating-icons span {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.18;
+  animation: floatUp 10s infinite linear;
+  filter: blur(0.5px);
+}
+
+/* LEFT SIDE — 5 icons */
+.floating-icons span:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; font-size: 3.8rem; }
+.floating-icons span:nth-child(2) { top: 40%; left: 18%; animation-delay: 4s; }
+.floating-icons span:nth-child(3) { top: 65%; left: 12%; animation-delay: 7s; }
+.floating-icons span:nth-child(4) { top: 25%; left: 30%; animation-delay: 11s; }
+.floating-icons span:nth-child(5) { top: 55%; left: 28%; animation-delay: 15s; }
+
+/* RIGHT SIDE — 4 icons */
+.floating-icons span:nth-child(6) { top: 20%; right: 10%; animation-delay: 18s; }
+.floating-icons span:nth-child(7) { top: 45%; right: 18%; animation-delay: 22s; }
+.floating-icons span:nth-child(8) { top: 70%; right: 12%; animation-delay: 25s; }
+.floating-icons span:nth-child(9) { top: 85%; right: 20%; animation-delay: 28s; }
+
+
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.15; }
+  90% { opacity: 0.15; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* Text glow update – ab futuristic lagega */
+.tech-subtitle { 
+  /* color: #818cf8;  */
+  text-shadow: 0 0 10px rgba(129, 140, 248, 0.4); }
+.tech-title { 
+  /* color: white;  */
+  font-size: 4.5rem;
+  font-weight: 900;
+}
+.tech-highlight { 
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tech-rect-box {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 140, 248, 0.3);
+}
+
+
+@media (max-width:480px){
+  .tech-title{
+    font-size: 2.2rem;
+  }
+  .tech-tabs{
+    gap: 8px;
+    flex-direction: column;
+    flex-wrap: inherit;
+  }
+  .tech-grid{
+    padding: 0;
+  }
+  .footer-bottom-grid{
+    padding-left: 10px;
+  }
+}

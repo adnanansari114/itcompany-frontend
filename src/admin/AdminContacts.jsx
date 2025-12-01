@@ -1,0 +1,55 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import './admin.css';
+
+export default function AdminContacts(setIsAdmin) {
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    fetchMessages();
+  }, []);
+
+  const fetchMessages = async () => {
+    const token = localStorage.getItem("adminToken");
+
+    const res = await axios.get("http://localhost:5000/api/contact/all", {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+
+    setList(res.data);
+  };
+
+  return (
+    <div className="admin-contact-page">
+      <h2>Contact Messages</h2>
+
+      <div className="table">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Company</th>
+              <th>Message</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {list.map((item) => (
+              <tr key={item._id}>
+                <td>{item.name}</td>
+                <td>{item.email}</td>
+                <td>{item.phone || "—"}</td>
+                <td>{item.company || "—"}</td>
+                <td>{item.message}</td>
+                <td>{new Date(item.createdAt).toLocaleString()}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
