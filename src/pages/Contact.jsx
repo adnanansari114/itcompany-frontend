@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../style/contact.css";
+import "../style/Contact.css";
 import ContactSection from "../components/ContactSection";
 import ReadySection from "../components/ReadySection";
 import { motion } from "framer-motion";
