@@ -16,11 +16,14 @@ const Careers = () => {
   const [selectedType, setSelectedType] = useState("All Job Type");
   const [selectedLocation, setSelectedLocation] = useState("All Job Location");
   const [openDropdown, setOpenDropdown] = useState(null);
+  const API_BASE_URL = import.meta.env.VITE_APP_API_URL;
 
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/jobs");
+        // const res = await axios.get("http://localhost:5000/api/jobs");
+
+        const res = await axios.get(`${API_BASE_URL}/api/jobs`);
         console.log("API Response Data:", res.data);
         setAllJobs(res.data);
       } catch (err) {
