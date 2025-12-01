@@ -78,12 +78,12 @@ export default function Service() {
                 <span className="px-3 py-1 bg-pink-500 text-white text-xs font-semibold rounded-full">We Are IT Guidance</span>
               </div>
               
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                 Empowering Businesses<br />
                 Through <span class="text-[#f0851a]">End-to-End</span> IT Solutions
               </h1>
               
-              <p className="text-lg text-gray-100 leading-relaxed">
+              <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
                 At The IT Talent, we bring <strong>14+ years of experience</strong> in delivering high-quality, 
                 result-driven IT services tailored to your business goals. From custom software development 
                 to strategic staff augmentation, we help you innovate, scale, and stay ahead in a fast-changing 
@@ -92,10 +92,10 @@ export default function Service() {
               </p>
 
               <div className="flex flex-wrap gap-4 pt-6">
-                <a href="/contact" className="inline-block px-10 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full transition-all transform hover:scale-105 shadow-xl">
+                <a href="/contact" className="inline-block px-5 py-3 md:px-10 md:py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full transition-all transform hover:scale-105 shadow-xl">
                   TALK TO AN EXPERT →
                 </a>
-                <a href="/webappdevelopment" className="inline-block px-8 py-4 border-2 border-white text-white font-medium rounded-full hover:bg-white hover:text-purple-600 transition-all">
+                <a href="/webappdevelopment" className="inline-block px-6 py-3 md:px-8 md:py-4 border-2 border-white text-white font-medium rounded-full hover:bg-white hover:text-purple-600 transition-all">
                   Explore Services
                 </a>
               </div>
