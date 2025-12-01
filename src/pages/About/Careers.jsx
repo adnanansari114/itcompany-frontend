@@ -21,9 +21,7 @@ const Careers = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        // const res = await axios.get("http://localhost:5000/api/jobs");
-
-        const res = await axios.get(`${API_BASE_URL}/api/jobs`);
+        const res = await axios.get("http://localhost:5000/api/jobs");
         console.log("API Response Data:", res.data);
         setAllJobs(res.data);
       } catch (err) {
