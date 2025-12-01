@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./admin.css";
+const API = import.meta.env.VITE_APP_API_URL;
 
 axios.defaults.baseURL = "http://localhost:5000";
 axios.defaults.headers.common["Content-Type"] = "application/json";
@@ -17,7 +18,7 @@ export default function AdminLogin({ setIsAdmin }) {
     e.preventDefault();
 
     try {
-      const res = await axios.post("/api/admin/login", {
+      const res = await axios.post(`${API}/api/admin/login`, {
         email,
         password,
       });

@@ -382,7 +382,9 @@
   .section-title-pro { font-size: 40px; }
   .team-header { margin-bottom: 60px; }
   .team-grid-pro { gap: 32px; }
-  .member-img { height: 185px; }
+  .member-img { height: 140px; width: 42%; margin: 24px 24px 8px; }
+}
+.member-info{ padding: 8px 32px;
 }
 /* Final CTA */
 .final-cta {
@@ -429,11 +431,15 @@
 @media (max-width: 768px) {
   .timeline::before { left: 30px; }
   .timeline-item { width: 100%; padding-left: 70px; padding-right: 0; }
-  .timeline-item.left { text-align: left; }
-  .timeline-item.right { left: 0; }
+  .timeline-item.left { 
+    padding: 0px 50px;
+    text-align: left; }
+  .timeline-item.right { 
+    padding: 0px 50px;
+    left: 0; }
   .timeline-content::before { left: -10px; }
   .team-grid-pro{
-    margin: 0 12px;
+    margin: 0 16px;
     padding: 0;
     grid-template-columns: repeat(auto-fit, minmax(100%, 0fr));
   }
@@ -454,5 +460,24 @@
   }
   .stat-pro{
     width: 40%;
+  }
+  .value-card-pro{
+    padding: 16px 32px;
+  }
+  .values-grid-pro{
+    padding: 0 1re;
+  }
+  .cta-content h2{
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+  .cta-content p{
+    margin: 0 auto 24px;
+  }
+  .final-cta{
+    padding: 56px 0px;
+  }
+  .cta-btn-pro{
+    padding: 12px 30px;
   }
 }

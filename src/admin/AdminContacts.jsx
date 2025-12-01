@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './admin.css';
+const API = import.meta.env.VITE_APP_API_URL;
 
 export default function AdminContacts(setIsAdmin) {
   const [list, setList] = useState([]);
@@ -12,7 +13,7 @@ export default function AdminContacts(setIsAdmin) {
   const fetchMessages = async () => {
     const token = localStorage.getItem("adminToken");
 
-    const res = await axios.get("http://localhost:5000/api/contact/all", {
+    const res = await axios.get(`${API}/api/contact/all`, {
       headers: { Authorization: `Bearer ${token}` }
     });
 

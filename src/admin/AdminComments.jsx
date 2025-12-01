@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./admin.css";  // ← Ye import kar do
+const API = import.meta.env.VITE_APP_API_URL;
 
 export default function AdminComments() {
   const [comments, setComments] = useState([]);
 
   const loadComments = async () => {
-    const res = await axios.get("http://localhost:5000/api/comments/all");
+    const res = await axios.get( `${API}/api/comments/all`);
     setComments(res.data);
   };
 
   const deleteComment = async (id) => {
     if (window.confirm("Delete this comment?")) {
-      await axios.delete(`http://localhost:5000/api/comments/delete/${id}`);
+      await axios.delete(`${API}/api/comments/delete/${id}`);
       loadComments();
     }
   };

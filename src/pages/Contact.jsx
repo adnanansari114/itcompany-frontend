@@ -8,7 +8,7 @@ import { FaLinkedin, FaInstagram, FaFacebookF, FaMapMarkerAlt, FaPhone } from "r
 export default function Contact() {
 
   const socialStats = [
-      { icon: FaLinkedin, title: "LinkedIn", stat: "5K+", desc: "Professional Connections", link: "#" },
+      { icon: FaLinkedin, title: "LinkedIn", stat: "2K+", desc: "Professional Connections", link: "#" },
       { icon: FaInstagram, title: "Instagram", stat: "12K+", desc: "Creative Updates", link: "#" },
       { icon: FaFacebookF, title: "Facebook", stat: "8K+", desc: "Community Engagement", link: "#" },
     ];

@@ -1267,14 +1267,24 @@
     width: 100%;
     padding: 20px 40px;
   }
+  .hero-careers-content P{
+    text-align: left;
+    font-size: 1rem;
+  }
   .hero-careers-content h1 {
     font-size: 1.5rem;
+    margin-bottom: 0;
+    text-align: left;
   }
   .featured-section{
     padding: 0;
   }
   .feature-content{
     padding: 5px;
+  }
+  .careers-hero{
+    height: 60vh;
+    min-height: 200px;
   }
   .featured-content{
     padding: 5px 10px;

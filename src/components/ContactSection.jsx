@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import "../style/Home.css";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaInstagram, FaFacebookF, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
-
+const API = import.meta.env.VITE_APP_API_URL;
 
 const ContactSection = () => {
   const [form, setForm] = useState({
@@ -86,7 +86,7 @@ const ContactSection = () => {
     
             setSending(true);
             try {
-          const res = await fetch("http://localhost:5000/api/contact", {
+          const res = await fetch(`${API}/api/contact`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
