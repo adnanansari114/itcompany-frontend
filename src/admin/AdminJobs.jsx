@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Admin.css";
+import "./admin.css";
 import { MapPin, Briefcase, Clock, Building2 } from "lucide-react";
 
 export default function AdminJobs() {
