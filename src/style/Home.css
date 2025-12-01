@@ -65,7 +65,7 @@
 
 .slider-card {
   min-width: 340px;
-  margin: 0 16px;
+  margin: 24px 16px;
   background: white;
   border-radius: 20px;
   padding: 24px 32px;
@@ -135,10 +135,16 @@
 }
 
 @media (max-width: 768px) {
-  .services-slider-section h2 { font-size: 36px; }
-  .slider-card { min-width: 280px; margin: 0 12px; padding: 32px 24px; }
+  .services-slider-section h2 { 
+    font-size: 24px;
+    margin-bottom: 0px;
+   }
+  .slider-card { min-width: 320px; margin: 22px 12px; padding: 8px 24px; }
   .services-slider-section{
     padding: 0px 10px;
+  }
+  .services-slider-section p{
+    font-size: 16px;
   }
 }
 
@@ -812,6 +818,8 @@
     padding: 0px 12px;
    }
    .two-col{
+    gap: 8px;
+    margin-bottom: 8px;
     padding: 0px 12px;
    }
    .label{
@@ -844,4 +852,12 @@
    .step span{
     font-size: 15px;
    }
+   .services-slider-section h3{
+    margin-top: 16px;
+   }
+   #gallery-hide-item{
+    display: none;
+   }
 }
+
+

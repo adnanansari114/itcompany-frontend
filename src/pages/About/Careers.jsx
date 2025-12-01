@@ -3,6 +3,7 @@ import '../../style/About.css';
 import axios from "axios";
 import ReadySection from '../../components/ReadySection';
 import { Search, MapPin, Clock, Briefcase, Building2, ChevronDown } from 'lucide-react';
+const API = import.meta.env.VITE_APP_API_URL;
 
 const categories = ["Web Development", "Artificial Intelligence", "Cloud & DevOps", "Data Engineering", "Design"];
 const jobTypes = ["Full-time", "Part-time", "Contract", "Remote"];
@@ -16,7 +17,6 @@ const Careers = () => {
   const [selectedType, setSelectedType] = useState("All Job Type");
   const [selectedLocation, setSelectedLocation] = useState("All Job Location");
   const [openDropdown, setOpenDropdown] = useState(null);
-  const API = import.meta.env.VITE_APP_API_URL;
 
   useEffect(() => {
     const fetchJobs = async () => {

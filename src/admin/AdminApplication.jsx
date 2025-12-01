@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./admin.css";
+const API = import.meta.env.VITE_APP_API_URL;
 
 axios.defaults.headers.common["Content-Type"] = "application/json";
 axios.defaults.baseURL = "http://localhost:5000";
@@ -12,7 +13,7 @@ export default function AdminApplications({setAdmin}) {
   useEffect(() => {
     const fetchApps = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/apply/all", {
+        const res = await axios.get(`${API}/api/apply/all`, {
           headers: { Authorization: "Bearer " + localStorage.getItem("adminToken") }
         });
         setApps(res.data);

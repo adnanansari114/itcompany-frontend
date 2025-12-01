@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./admin.css";
 import { MapPin, Briefcase, Clock, Building2 } from "lucide-react";
+const API = import.meta.env.VITE_APP_API_URL;
 
 export default function AdminJobs() {
   const [jobs, setJobs] = useState([]);
@@ -19,7 +20,7 @@ export default function AdminJobs() {
 
   const fetchJobs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/jobs");
+      const res = await axios.get(`${API}/api/jobs`);
       setJobs(res.data);
     } catch (err) {
       console.log("Error fetching jobs:", err);
@@ -42,7 +43,7 @@ export default function AdminJobs() {
   }
 
   try {
-    const response = await axios.delete(`http://localhost:5000/api/jobs/${id}`, {
+    const response = await axios.delete(`${API}/api/jobs/${id}`, {
       headers: { 
         Authorization: `Bearer ${token}` 
       },

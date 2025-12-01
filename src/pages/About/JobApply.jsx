@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "../../style/Contact.css";
+const API = import.meta.env.VITE_APP_API_URL || "https://itbackend-p7sr.onrender.com";
 
-export default function JobApply() {
+export default function JobApply() { 
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -26,7 +27,7 @@ export default function JobApply() {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/jobs/${id}`);
+        const res = await axios.get(`${API}/api/jobs/${id}`);
         setJob(res.data);
       } catch (err) {
         console.error("Fetch job error:", err);
@@ -48,7 +49,7 @@ export default function JobApply() {
     setMessage("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/apply/send-otp", {
+      const res = await axios.post(`${API}/api/apply/send-otp`, {
         name: name.trim(),
         email: email.trim(),
         phone: phone.trim(),
@@ -74,7 +75,7 @@ export default function JobApply() {
     setMessage("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/apply/verify-otp", {
+      const res = await axios.post(`${API}/api/apply/verify-otp`, {
         email: email.trim(),
         code: otp.trim(),
         jobId: id,
@@ -111,7 +112,7 @@ export default function JobApply() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/apply/upload-resume",
+        `${API}/api/apply/upload-resume`,
         formData,{
           headers: {
             "Content-Type": "multipart/form-data",

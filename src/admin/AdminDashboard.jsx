@@ -1,5 +1,6 @@
 import React from "react";
 import "./admin.css";
+const API = import.meta.env.VITE_APP_API_URL;
 
 export default function AdminDashboard() {
   return (

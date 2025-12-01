@@ -13,8 +13,8 @@ import { IoTelescopeOutline } from "react-icons/io5";
 export default function AboutUs() {
   const stats = [
     { number: "14+", label: "Years Building Trust", delay: 0.1 },
-    { number: "900+", label: "Projects Delivered", delay: 0.2 },
-    { number: "120+", label: "Expert Developers", delay: 0.3 },
+    { number: "90+", label: "Projects Delivered", delay: 0.2 },
+    { number: "100+", label: "Expert Developers", delay: 0.3 },
     { number: "100%", label: "Client Happiness", delay: 0.4 },
   ];
 
@@ -236,7 +236,7 @@ export default function AboutUs() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Start Your Project <FaArrowRight />
+              <a href="/contact" >Start Your Project </a><FaArrowRight />
             </motion.button>
           </motion.div>
         </div>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import '../../style/Blog.css';
 import { ArrowRight, CheckCircle, Zap, Brain, Rocket, Target, ArrowDown } from 'lucide-react';
+const API = import.meta.env.VITE_APP_API_URL;
 
 const steps = [
     {
@@ -78,7 +79,7 @@ export default function SubBlogThree() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        await axios.post("http://localhost:5000/api/comments/add", {
+        await axios.post(`${API}/api/comments/add`, {
             blogId: blog._id,
             ...form
         });

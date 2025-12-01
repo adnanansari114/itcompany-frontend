@@ -37,7 +37,7 @@ const GalleryStats = () => {
             </div>
           </div>
 
-          <div className="gallery-item small">
+          <div id="gallery-hide-item" className="gallery-item small">
             <img src="/images/gallery4.jpg" alt="Projects Completed" />
             <div className="overlays">
               <div className="overlay-content">
@@ -47,7 +47,7 @@ const GalleryStats = () => {
             </div>
           </div>
 
-          <div className="gallery-item small">
+          <div id="gallery-hide-item" className="gallery-item small">
             <img src="/images/gallery5.jpg" alt="Innovation" />
             <div className="overlays">
               <div className="overlay-content">

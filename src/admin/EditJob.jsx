@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./admin.css";
 import { useParams, useNavigate } from "react-router-dom";
+const API = import.meta.env.VITE_APP_API_URL;
 
 export default function EditJob() {
   const { id } = useParams();
@@ -21,7 +22,7 @@ export default function EditJob() {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/jobs");
+        const res = await axios.get(`${API}/api/jobs`);
         const job = res.data.find((j) => j._id === id);
         if (job) setForm(job);
       } catch (err) {
@@ -38,7 +39,7 @@ export default function EditJob() {
   const updateJob = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/jobs/${id}`, form, {
+      await axios.put(`${API}/api/jobs/${id}`, form, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
