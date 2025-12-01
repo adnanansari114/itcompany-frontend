@@ -80,14 +80,14 @@ export default function WebAppDevelopment() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2934&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
         
         <div className="relative z-10 max-w-6xl px-6">
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
+          <h1 className="text-4xl md:text-7xl font-bold text-gray-900 mb-3 leading-tight">
             Web & App Development<br />
             <span className="text-indigo-600">With Confidence</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-4xl mx-auto">
+          <p className="text-sm md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
             Access pre-vetted senior developers, architects, and IT experts — ready to contribute from day one.
           </p>
-          <Link to="/contact" className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xl px-14 py-6 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
+          <Link to="/contact" className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xl px-5 py-3 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
             Hire Talent Today
           </Link>
         </div>
