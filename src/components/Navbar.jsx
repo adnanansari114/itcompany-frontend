@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../style/navbar.css";
+import "../style/Navbar.css";
 import { VscThreeBars } from "react-icons/vsc";
 
 
