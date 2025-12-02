@@ -63,8 +63,8 @@ export default function LeadershipTeam() {
                   <p className="member-bio-light">{member.bio}</p>
 
                   <div className="social-links-light">
-                    <a href="#" className="social-btn-light">LinkedIn</a>
-                    <a href="#" className="social-btn-light">Twitter</a>
+                    <a href="https://www.linkedin.com/in/murtazajawadwala?utm_source=share_via&utm_content=profile&utm_medium=member_android" className="social-btn-light">LinkedIn</a>
+                    <a href="https://about.me/murtazajawadwala" className="social-btn-light">about.me</a>
                   </div>
                 </div>
               </div>
