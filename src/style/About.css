@@ -2,7 +2,7 @@
 .about-hero {
   width: 100%;
   height: 350px;
-  background: url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&q=80&w=1600")
+  background: url("images/about.jpg")
     center/cover no-repeat;
   position: relative;
   border-radius: var(--radius-xl);
@@ -1275,6 +1275,7 @@
     font-size: 1.5rem;
     margin-bottom: 0;
     text-align: left;
+    margin-top: 36px;
   }
   .featured-section{
     padding: 0;

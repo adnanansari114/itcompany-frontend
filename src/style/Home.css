@@ -779,6 +779,7 @@
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
+  color: white;
   transition: all 0.3s;
   border: none;
   flex: 1;
