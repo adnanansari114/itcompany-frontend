@@ -10,13 +10,32 @@ const Footer = () => {
         <div className="container">
           <div className="footer-bottom-grid">
             <div className="social-links">
-              <a href="#" aria-label="Facebook" className="social-icon">
+              <a
+                href="https://www.facebook.com/theittalents"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="social-icon"
+              >
                 <Facebook size={20} />
               </a>
-              <a href="#" aria-label="Instagram" className="social-icon">
+
+              <a
+                href="https://www.instagram.com/theittalent?igsh=eWxkYm9xNmVodHZj"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="social-icon"
+              >
                 <Instagram size={20} />
               </a>
-              <a href="#" aria-label="LinkedIn" className="social-icon">
+              <a
+                href="https://linkedin.com/company/theittalents/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="social-icon"
+              >
                 <Linkedin size={20} />
               </a>
             </div>

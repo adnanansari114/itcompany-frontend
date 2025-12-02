@@ -8,14 +8,14 @@ import { FaLinkedin, FaInstagram, FaFacebookF, FaMapMarkerAlt, FaPhone } from "r
 export default function Contact() {
 
   const socialStats = [
-      { icon: FaLinkedin, title: "LinkedIn", stat: "2K+", desc: "Professional Connections", link: "#" },
-      { icon: FaInstagram, title: "Instagram", stat: "12K+", desc: "Creative Updates", link: "#" },
-      { icon: FaFacebookF, title: "Facebook", stat: "8K+", desc: "Community Engagement", link: "#" },
+      { icon: FaLinkedin, title: "LinkedIn", stat: "2K+", desc: "Professional Connections", link: "https://linkedin.com/company/theittalents/" },
+      { icon: FaInstagram, title: "Instagram", stat: "12K+", desc: "Creative Updates", link: "https://www.instagram.com/theittalent?igsh=eWxkYm9xNmVodHZj" },
+      { icon: FaFacebookF, title: "Facebook", stat: "8K+", desc: "Community Engagement", link: "https://www.facebook.com/profile.php?id=61572628922020" },
     ];
   
     const locations = [
       { icon: FaMapMarkerAlt, country: "India (HQ)", address: "Indore M.P.", phone: "+91 91543 64386" },
-      { icon: FaMapMarkerAlt, country: "USA", address: "Chicago", phone: "+1 425 543 7777" },
+      // { icon: FaMapMarkerAlt, country: "USA", address: "Chicago", phone: "+1 425 543 7777" },
       { icon: FaMapMarkerAlt, country: "UAE", address: "Abu Dhabi", phone: "+65 9715 4554" },
     ];
 
