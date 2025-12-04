@@ -172,13 +172,15 @@ export default function AboutUs() {
                 name: "Murtaza Jawadwala",
                 role: "CEO & Founder",
                 img: "https://randomuser.me/api/portraien/11.jpg",
-                color: "from-blue-500 to-cyan-500"
+                color: "from-blue-500 to-cyan-500",
+                link: "https://www.linkedin.com/in/murtazajawadwala?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               },
               {
                 name: "Seema Bairagi",
                 role: "Head of Delivery",
                 img: "./images/seema.jpg",
-                color: "from-purple-500 to-pink-500"
+                color: "from-purple-500 to-pink-500",
+                link: "https://www.linkedin.com/in/seema-bairagi-49b474266/"
               },
               {
                 name: "Palak Gehani",
@@ -190,19 +192,22 @@ export default function AboutUs() {
                 name: "Dhananjay Solanki",
                 role: "Vendor Menager",
                 img: "./images/dhananjay.png",
-                color: "from-orange-500 to-red-500"
+                color: "from-orange-500 to-red-500",
+                link: "https://www.linkedin.com/in/dhananjay-solanki-b50b30252"
               },
               {
                 name: "Md Adnan",
                 role: "Lead Developer",
                 img:"",
-                color: "from-orange-500 to-red-500"
+                color: "from-orange-500 to-red-500",
+                link: "https://www.linkedin.com/in/mdadnanansari"
               },
               {
                 name: "Yatan Sharma",
                 role: "Vendor Manager",
                 img:"images/yatan2.jpg",
-                color: "from-orange-500 to-red-500"
+                color: "from-orange-500 to-red-500",
+                link: "https://www.linkedin.com/in/yatan-s-a212a6389"
               },
               {
                 name: "Yash",
@@ -240,7 +245,7 @@ export default function AboutUs() {
                     <h3>{member.name}</h3>
                     <p className="member-role">{member.role}</p>
                     <div className="social-links-team">
-                      <motion.a whileHover={{ scale: 1.2 }} href={member.link}><FaLinkedin /></motion.a>
+                      <motion.a whileHover={{ scale: 1.2 }} href={member.link} target="_blank" rel="noopener noreferrer" ><FaLinkedin /></motion.a>
                       {/* <motion.a whileHover={{ scale: 1.2 }} href="#"><FaInstagram /></motion.a> */}
                     </div>
                   </div>
