@@ -11,7 +11,12 @@
 }
 
 /* Reset & Base */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
   background: var(--light);
@@ -25,8 +30,14 @@ body {
   padding: 0 2rem;
 }
 
-a { text-decoration: none; }
-img { max-width: 100%; display: block; }
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
 
 /* Buttons */
 /* .btn-primary {
@@ -46,12 +57,9 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 15px 35px rgba(240, 133, 26, 0.4);
 } */
 
-@media (max-width: 480px){
-  .container{
+@media (max-width: 480px) {
+  .container {
     width: 0px 10px;
     max-width: 100px;
   }
 }
-
-
-/* ab ye karo theme wahi or reference ye website ka le: https://samyotech.com/ */

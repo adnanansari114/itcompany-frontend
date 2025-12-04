@@ -3,8 +3,9 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "../../style/Contact.css";
 const API = import.meta.env.VITE_APP_API_URL || "https://itbackend-p7sr.onrender.com";
+import SEO from "../../components/SEO";
 
-export default function JobApply() { 
+export default function JobApply() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -113,11 +114,11 @@ export default function JobApply() {
     try {
       const res = await axios.post(
         `${API}/api/apply/upload-resume`,
-        formData,{
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
+        formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
         // Header mat daalo! Browser khud set karega
       );
 
@@ -137,112 +138,118 @@ export default function JobApply() {
   };
 
   return (
-    <div className="apply-container">
-      <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
-        Apply for Job
-      </h1>
+    <>
+      <SEO
+        title="Apply for IT Jobs & Developer Positions at The IT Talent"
+        description="Ready to join a global team? Submit your job application, resume, and details for open positions in software development, AI, and cloud engineering."
+      />
+      <div className="apply-container">
+        <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
+          Apply for Job
+        </h1>
 
-      {loadingJob ? (
-        <p>Loading job details...</p>
-      ) : job ? (
-        <div className="jobs-info">
-          <h2>{job.title}</h2>
-          <p><strong>Category:</strong> {job.category}</p>
-          <p><strong>Type:</strong> {job.jobType}</p>
-          <p><strong>Location:</strong> {job.location}</p>
-        </div>
-      ) : (
-        <p>Job not found</p>
-      )}
+        {loadingJob ? (
+          <p>Loading job details...</p>
+        ) : job ? (
+          <div className="jobs-info">
+            <h2>{job.title}</h2>
+            <p><strong>Category:</strong> {job.category}</p>
+            <p><strong>Type:</strong> {job.jobType}</p>
+            <p><strong>Location:</strong> {job.location}</p>
+          </div>
+        ) : (
+          <p>Job not found</p>
+        )}
 
-      {/* Step 1 */}
-      {!otpSent && (
-        <div className="apply-step">
-          <h3>Step 1 — Enter Your Details</h3>
-          <input
-            placeholder="Full Name *"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-          <input
-            type="email"
-            placeholder="Email Address *"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            placeholder="Phone Number *"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-          />
-          <textarea
-            rows="4"
-            placeholder="Tell us about yourself (optional)"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <button onClick={handleSendOtp} disabled={sending}>
-            {sending ? "Sending OTP..." : "Send OTP"}
-          </button>
-        </div>
-      )}
+        {/* Step 1 */}
+        {!otpSent && (
+          <div className="apply-step">
+            <h3>Step 1 — Enter Your Details</h3>
+            <input
+              placeholder="Full Name *"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+            <input
+              type="email"
+              placeholder="Email Address *"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+              placeholder="Phone Number *"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              required
+            />
+            <textarea
+              rows="4"
+              placeholder="Tell us about yourself (optional)"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+            <button onClick={handleSendOtp} disabled={sending}>
+              {sending ? "Sending OTP..." : "Send OTP"}
+            </button>
+          </div>
+        )}
 
-      {/* Step 2 */}
-      {otpSent && !verified && (
-        <div className="apply-step">
-          <h3>Step 2 — Enter OTP</h3>
-          <p>We sent a 6-digit code to <strong>{email}</strong></p>
-          <input
-            placeholder="Enter 6-digit OTP"
-            value={otp}
-            onChange={(e) => setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))}
-            maxLength="6"
-          />
-          <button onClick={handleVerifyOtp} disabled={sending}>
-            {sending ? "Verifying..." : "Verify OTP"}
-          </button>
-        </div>
-      )}
+        {/* Step 2 */}
+        {otpSent && !verified && (
+          <div className="apply-step">
+            <h3>Step 2 — Enter OTP</h3>
+            <p>We sent a 6-digit code to <strong>{email}</strong></p>
+            <input
+              placeholder="Enter 6-digit OTP"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))}
+              maxLength="6"
+            />
+            <button onClick={handleVerifyOtp} disabled={sending}>
+              {sending ? "Verifying..." : "Verify OTP"}
+            </button>
+          </div>
+        )}
 
-      {/* Step 3 */}
-      {verified && (
-        <form className="apply-step" onSubmit={handleResumeUpload}>
-          <h3>Step 3 — Upload Resume</h3>
-          <p>Only PDF, DOC, DOCX allowed (Max 5MB)</p>
-          <input
-            type="file"
-            accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-            onChange={(e) => setResume(e.target.files[0] || null)}
-            required
-          />
-          {resume && (
-            <p style={{ fontSize: "14px", color: "green" }}>
-              Selected: {resume.name} ({(resume.size / 1024 / 1024).toFixed(2)} MB)
-            </p>
-          )}
-          <button type="submit" disabled={sending}>
-            {sending ? "Submitting..." : "Submit Application"}
-          </button>
-        </form>
-      )}
+        {/* Step 3 */}
+        {verified && (
+          <form className="apply-step" onSubmit={handleResumeUpload}>
+            <h3>Step 3 — Upload Resume</h3>
+            <p>Only PDF, DOC, DOCX allowed (Max 5MB)</p>
+            <input
+              type="file"
+              accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+              onChange={(e) => setResume(e.target.files[0] || null)}
+              required
+            />
+            {resume && (
+              <p style={{ fontSize: "14px", color: "green" }}>
+                Selected: {resume.name} ({(resume.size / 1024 / 1024).toFixed(2)} MB)
+              </p>
+            )}
+            <button type="submit" disabled={sending}>
+              {sending ? "Submitting..." : "Submit Application"}
+            </button>
+          </form>
+        )}
 
-      {/* Success/Error Message */}
-      {message && (
-        <p
-          className="apply-message"
-          style={{
-            color: message.includes("success") || message.includes("verified")
-              ? "green"
-              : "red",
-            fontWeight: "bold",
-          }}
-        >
-          {message}
-        </p>
-      )}
-    </div>
+        {/* Success/Error Message */}
+        {message && (
+          <p
+            className="apply-message"
+            style={{
+              color: message.includes("success") || message.includes("verified")
+                ? "green"
+                : "red",
+              fontWeight: "bold",
+            }}
+          >
+            {message}
+          </p>
+        )}
+      </div>
+    </>
   );
 }

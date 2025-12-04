@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import '../../style/About.css';
 import ReadySection from '../../components/ReadySection';
+import SEO from '../../components/SEO';
 
 const blogPosts = [
   {
@@ -50,6 +51,11 @@ export default function BlogPage() {
 
   return (
     <>
+      <SEO
+        title="Insights & Trends in IT, Software & Digital Transformation"
+        description="Read the latest articles and expert insights on web development trends, data engineering best practices, cloud technology, and AI innovation."
+        canonicalUrl="https://www.theittalent.com/blogpage"
+      />
       <section className="blog-hero">
         <div className="blog-hero-content">
           <motion.div
@@ -100,11 +106,11 @@ export default function BlogPage() {
                     only
                     <span>{featuredPost.readTime}</span>
                   </div>
-                <div className="read-more-btn">
+                  <div className="read-more-btn">
                     <Link to="/subblog" >
                       Read Article →
-                </Link>
-                </div>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -144,7 +150,7 @@ export default function BlogPage() {
                   <div className="read-more-btns">
                     <Link to={post.link} >
                       Read Article →
-                </Link>
+                    </Link>
                   </div>
                 </div>
               </motion.article>

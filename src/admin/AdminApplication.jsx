@@ -7,7 +7,7 @@ axios.defaults.headers.common["Content-Type"] = "application/json";
 axios.defaults.baseURL = "http://localhost:5000";
 
 
-export default function AdminApplications({setAdmin}) {
+export default function AdminApplications({ setAdmin }) {
   const [apps, setApps] = useState([]);
 
   useEffect(() => {

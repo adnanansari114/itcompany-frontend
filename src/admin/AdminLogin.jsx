@@ -11,7 +11,7 @@ export default function AdminLogin({ setIsAdmin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
 
   const handleLogin = async (e) => {

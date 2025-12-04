@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../style/Home.css";
 import SEO from './SEO';
@@ -7,9 +7,9 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import ReadySection from "./ReadySection";
 import ServicesSlider from "./ServicesSlider";
 import GalleryStats from "./GalleryStats";
- 
+
 const cards = [
-    { id: 1, link:"/artifiacialintelligence", title: "Artificial Intelligence", slug: "artifiacialintelligence", para: "Revolutionize your business with AI and machine learning solutions. Deploy intelligent systems that drive operational efficiency, deliver predictive insights, and automate critical processes.", img: "/images/gallery1.jpg" },
+    { id: 1, link: "/artifiacialintelligence", title: "Artificial Intelligence", slug: "artifiacialintelligence", para: "Revolutionize your business with AI and machine learning solutions. Deploy intelligent systems that drive operational efficiency, deliver predictive insights, and automate critical processes.", img: "/images/gallery1.jpg" },
     { id: 2, link: "/dataengineering", title: "Data Engineering", slug: "dataengineering", para: "Harness the power of your data. Our data engineering experts build scalable, analytics-ready pipelines that support advanced data strategies and business intelligence.", img: "/images/gallery2.jpg" },
     { id: 3, link: "/clouddevops", title: "Cloud Engineering & DevOps", slug: "clouddevops", para: "Accelerate your development lifecycle with our DevOps and cloud expertise. We create efficient CI/CD pipelines, scalable cloud architectures, and automated workflows.", img: "/images/gallery3.jpg" },
     { id: 4, link: "/webappdevelopment", title: "Web & App Development", slug: "webappdevelopment", para: "Build custom web applications and mobile solutions tailored to your business needs. From frontend to backend, we deliver high-quality, performant, and secure software.", img: "/images/gallery4.jpg" },
@@ -37,13 +37,13 @@ export default function Home() {
         script.async = true;
         script.defer = true;
         document.body.appendChild(script);
-    
+
         return () => {
-          if (document.body.contains(script)) {
-            document.body.removeChild(script);
-          }
+            if (document.body.contains(script)) {
+                document.body.removeChild(script);
+            }
         };
-      }, []);
+    }, []);
 
     const validate = () => {
         const errs = {};
@@ -67,13 +67,13 @@ export default function Home() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErrors({});
-    setSuccess("");
+        setSuccess("");
 
-    const recaptchaValue = window.grecaptcha?.getResponse();
-    if (!recaptchaValue) {
-      setErrors({ captcha: "Please verify that you are not a robot." });
-      return;
-    }
+        const recaptchaValue = window.grecaptcha?.getResponse();
+        if (!recaptchaValue) {
+            setErrors({ captcha: "Please verify that you are not a robot." });
+            return;
+        }
 
         const v = validate();
         if (Object.keys(v).length) {
@@ -83,42 +83,43 @@ export default function Home() {
 
         setSending(true);
         try {
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          company: form.company,
-          message: form.message,
-          "g-recaptcha-response": recaptchaValue,
-        }),
-      });
+            const res = await fetch("http://localhost:5000/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: form.name,
+                    email: form.email,
+                    phone: form.phone,
+                    company: form.company,
+                    message: form.message,
+                    "g-recaptcha-response": recaptchaValue,
+                }),
+            });
 
-      const data = await res.json();
+            const data = await res.json();
 
-      if (res.ok) {
-        setSuccess("Message sent. We will contact you shortly.");
-        setForm({ name: "", email: "", phone: "", company: "", message: "" });
-        window.grecaptcha.reset(); 
-      } else {
-        setErrors({ submit: data.message || "Failed to send message." });
-        window.grecaptcha.reset();
-      }
-    } catch (err) {
-      setErrors({ submit: "Failed to send. Try again later." });
-      window.grecaptcha.reset();
-    } finally {
-      setSending(false);
-    }
+            if (res.ok) {
+                setSuccess("Message sent. We will contact you shortly.");
+                setForm({ name: "", email: "", phone: "", company: "", message: "" });
+                window.grecaptcha.reset();
+            } else {
+                setErrors({ submit: data.message || "Failed to send message." });
+                window.grecaptcha.reset();
+            }
+        } catch (err) {
+            setErrors({ submit: "Failed to send. Try again later." });
+            window.grecaptcha.reset();
+        } finally {
+            setSending(false);
+        }
     };
 
     return (
         <div>
             <SEO
-                title="The IT Talent - Top IT Staffing & Development Company"
-                description="14+ years experience in AI, Cloud, Web Development & Staff Augmentation"
+                title="Top IT Talent Solutions & Custom Software Services"
+                description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
+                canonicalUrl="https://www.theittalent.com/"
             />
             <ServicesSlider />
             <GalleryStats />
@@ -126,14 +127,14 @@ export default function Home() {
 
             <div className="container">
                 <section className="contact-grid">
-                    <div className="contact-card contact-info" aria-label="Contact information">
+                    <div id="left-contact" className="contact-card contact-info" aria-label="Contact information">
                         <h3 id="contact-heading">YOU ARE HERE</h3>
                         <h2 id="contact-heading2">Let's Start</h2>
-                        <p>Initiating Your Journey to Success and Growth</p>
+                        <p id="contact-para">Initiating Your Journey to Success and Growth</p>
                         <div className="contact-infos">
                             <div className="info-items">
                                 <div className="icon-circle">
-                                    <Phone size={24} />
+                                    <Phone size={20} />
                                 </div>
                                 <a href="tel:+919154364386" className="info-text">
                                     +91 91543 64386
@@ -142,7 +143,7 @@ export default function Home() {
 
                             <div className="info-items">
                                 <div className="icon-circle">
-                                    <Mail size={24} />
+                                    <Mail size={20} />
                                 </div>
                                 <a href="mailto:contact@theittalent.com" className="info-text">
                                     contact@theittalent.com
@@ -151,31 +152,9 @@ export default function Home() {
 
                             <div className="info-items">
                                 <div className="icon-circle">
-                                    <MapPin size={24} />
+                                    <MapPin size={20} />
                                 </div>
                                 <span className="info-text">Indore, (M.P) India</span>
-                            </div>
-                        </div>
-
-                        <div className="steps-section">
-                            <div className="step">
-                                <div className="step-numbers">01</div>
-                                <span>Share your requirements</span>
-                                <div className="arrow">→</div>
-                            </div>
-                            <div className="step">
-                                <div className="step-numbers">02</div>
-                                <span>Discuss with our experts</span>
-                                <div className="arrow">→</div>
-                            </div>
-                            <div className="step">
-                                <div className="step-numbers">03</div>
-                                <span>Get a free quote</span>
-                                <div className="arrow">→</div>
-                            </div>
-                            <div className="step last">
-                                <div className="step-numbers">04</div>
-                                <span>Start the project</span>
                             </div>
                         </div>
                         <div className="divider" />
@@ -186,7 +165,7 @@ export default function Home() {
 
                         <div className="two-col">
                             <label className="label">
-                                <span className="label-text">Your name</span>
+                                {/* <span className="label-text">Your name</span> */}
                                 <input
                                     name="name"
                                     value={form.name}
@@ -198,7 +177,7 @@ export default function Home() {
                                 {errors.name && <div id="error-name" className="field-error">{errors.name}</div>}
                             </label>
                             <label className="label">
-                                <span className="label-text">Your Email</span>
+                                {/* <span className="label-text">Your Email</span> */}
                                 <input
                                     name="email"
                                     type="email"
@@ -214,7 +193,7 @@ export default function Home() {
 
                         <div className="two-col">
                             <label className="label">
-                                <span className="label-text">Your Phone Number*</span>
+                                {/* <span className="label-text">Your Phone Number*</span> */}
                                 <input
                                     name="phone"
                                     value={form.phone}
@@ -223,7 +202,7 @@ export default function Home() {
                                 />
                             </label>
                             <label className="label">
-                                <span className="label-text">Your Company Name</span>
+                                {/* <span className="label-text">Your Company Name</span> */}
                                 <input
                                     name="company"
                                     value={form.company}
@@ -234,10 +213,10 @@ export default function Home() {
                         </div>
 
                         <label className="label">
-                            <span className="label-text">How can we help you?</span>
+                            {/* <span className="label-text">How can we help you?</span> */}
                             <textarea
                                 name="message"
-                                rows="5"
+                                rows="3"
                                 value={form.message}
                                 onChange={handleChange}
                                 placeholder="Tell us about your project..."
@@ -249,24 +228,24 @@ export default function Home() {
 
                         {errors.submit && <div className="form-error">{errors.submit}</div>}
                         {success && <div className="form-success" role="status">{success}</div>}
-                            <div className="recaptcha-container">
-            <div
-              className="g-recaptcha"
-              data-sitekey="6Le7NBksAAAAALf03wDLfC6VYpCF9_Gj-30cW3MQ"
-              style={{ display: "inline-block" }}
-            ></div>
-            {errors.captcha && <div className="field-error">{errors.captcha}</div>}
-          </div>
+                        <div className="recaptcha-container">
+                            <div
+                                className="g-recaptcha"
+                                data-sitekey="6Le7NBksAAAAALf03wDLfC6VYpCF9_Gj-30cW3MQ"
+                                style={{ display: "inline-block" }}
+                            ></div>
+                            {errors.captcha && <div className="field-error">{errors.captcha}</div>}
+                        </div>
                         <div className="form-actions">
                             <button type="submit" className="btn" disabled={sending} aria-busy={sending}>
                                 {sending ? "Sending..." : "Send Message"}
                             </button>
                             {/* <button type="button" className="btn btn-secondary" onClick={() => setForm({ name: "", email: "", phone: "", message: "" })
                         }> */}
-                        <button type="button" className="btn btn-secondary" onClick={() => {
-              setForm({ name: "", email: "", phone: "", company: "", message: "" });
-              window.grecaptcha?.reset();
-            }}>
+                            <button type="button" className="btn btn-secondary" onClick={() => {
+                                setForm({ name: "", email: "", phone: "", company: "", message: "" });
+                                window.grecaptcha?.reset();
+                            }}>
                                 Reset
                             </button>
                         </div>

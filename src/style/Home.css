@@ -1,6 +1,6 @@
 /* ============= PREMIUM SERVICES SLIDER - SAMYOTECH STYLE ============= */
 .services-slider-section {
-  padding: 36px 0;
+  padding: 60px 0 40px;
   background: linear-gradient(135deg, #f8f9fc 0%, #ffffff 100%);
   position: relative;
   overflow: hidden;
@@ -9,7 +9,10 @@
 .services-slider-section::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="20" cy="20" r="8" fill="%232e6ccf20"/><circle cx="80" cy="80" r="12" fill="%23f0851a20"/></svg>') repeat;
   opacity: 0.1;
   pointer-events: none;
@@ -27,15 +30,18 @@
   color: var(--primary);
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .services-slider-section h2 {
   text-align: center;
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 900;
   color: var(--dark);
-  margin-bottom: 20px;
+  margin-bottom: 2px;
+  margin-top: 0;
+  padding: 0;
+  letter-spacing: 2px;
 }
 
 .services-slider-section h2 span {
@@ -44,10 +50,12 @@
 
 .services-slider-section p {
   text-align: center;
-  font-size: 20px;
+  font-size: 1.1rem;
   color: var(--text-light);
   max-width: 800px;
-  margin: 0 auto 30px;
+  margin: 0 auto 16px;
+  line-height: 1.8;
+
 }
 
 /* Slider Container */
@@ -60,16 +68,17 @@
 .slider-track {
   display: flex;
   animation: scroll 40s linear infinite;
-  width: calc(300px * 14); /* 7 cards × 2 sets */
+  width: calc(300px * 14);
+  /* 7 cards × 2 sets */
 }
 
 .slider-card {
   min-width: 340px;
-  margin: 24px 16px;
+  margin: 22px 16px;
   background: white;
   border-radius: 20px;
-  padding: 24px 32px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  padding: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
   border: 1px solid #e2e8f0;
   text-align: center;
@@ -83,6 +92,7 @@
 
 .slider-card h3 {
   font-size: 24px;
+  line-height: 36px;
   font-weight: 800;
   color: var(--primary);
   margin-bottom: 16px;
@@ -92,7 +102,7 @@
   font-size: 16px;
   color: var(--text-light);
   margin-bottom: 28px;
-  line-height: 1.7;
+  line-height: 24px;
 }
 
 .slider-card button {
@@ -116,8 +126,13 @@
 
 /* Infinite Scroll Animation */
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-300px * 7)); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-300px * 7));
+  }
 }
 
 /* Pause on Hover */
@@ -127,23 +142,38 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .slider-track { width: calc(300px * 20); }
-  .slider-card { min-width: 300px; }
+  .slider-track {
+    width: calc(300px * 20);
+  }
+
+  .slider-card {
+    min-width: 300px;
+  }
+
   @keyframes scroll {
-    100% { transform: translateX(calc(-300px * 10)); }
+    100% {
+      transform: translateX(calc(-300px * 10));
+    }
   }
 }
 
 @media (max-width: 768px) {
-  .services-slider-section h2 { 
+  .services-slider-section h2 {
     font-size: 24px;
     margin-bottom: 0px;
-   }
-  .slider-card { min-width: 320px; margin: 22px 12px; padding: 8px 24px; }
-  .services-slider-section{
+  }
+
+  .slider-card {
+    min-width: 320px;
+    margin: 22px 12px;
+    padding: 8px 24px;
+  }
+
+  .services-slider-section {
     padding: 0px 10px;
   }
-  .services-slider-section p{
+
+  .services-slider-section p {
     font-size: 16px;
   }
 }
@@ -162,9 +192,12 @@
 .gallery-stats-section::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: radial-gradient(circle at 20% 80%, rgba(46, 108, 207, 0.08) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(240, 133, 26, 0.06) 0%, transparent 50%);
+    radial-gradient(circle at 80% 20%, rgba(240, 133, 26, 0.06) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -269,6 +302,7 @@
     grid-template-rows: repeat(3, 240px);
     gap: 20px;
   }
+
   .gallery-item.big {
     grid-column: span 3;
     grid-row: span 1;
@@ -281,24 +315,35 @@
     grid-template-rows: auto;
     gap: 16px;
   }
+
   .gallery-item.big,
   .gallery-item.small {
     grid-column: span 2;
     grid-row: auto;
   }
-  .overlay-content h3 { font-size: 42px; }
-  .gallery-item.big .overlay-content h3 { font-size: 56px; }
+
+  .overlay-content h3 {
+    font-size: 42px;
+  }
+
+  .gallery-item.big .overlay-content h3 {
+    font-size: 56px;
+  }
 }
 
 @media (max-width: 640px) {
   .gallery-wrapper {
     grid-template-columns: 1fr;
   }
+
   .gallery-item.big,
   .gallery-item.small {
     grid-column: 1;
   }
-  .gallery-stats-section { padding: 100px 0 80px; }
+
+  .gallery-stats-section {
+    padding: 100px 0 80px;
+  }
 }
 
 
@@ -307,8 +352,9 @@
 /* contact */
 /* ============= PREMIUM CONTACT SECTION - SAMYOTECH INSPIRED ============= */
 .contact-grid-section {
-  padding: 30px 0;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fc 100%);
+  margin: 10px 0;
+  padding: 10px 0;
+  /* background: linear-gradient(135deg, #ffffff 0%, #f8f9fc 100%); */
   position: relative;
   overflow: hidden;
 }
@@ -316,33 +362,51 @@
 .contact-grid-section::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: radial-gradient(circle at 30% 70%, rgba(46, 108, 207, 0.05) 0%, transparent 50%),
-              radial-gradient(circle at 70% 30%, rgba(240, 133, 26, 0.04) 0%, transparent 50%);
+    radial-gradient(circle at 70% 30%, rgba(240, 133, 26, 0.04) 0%, transparent 50%);
   pointer-events: none;
+}
+
+#left-contact {
+  background-color: var(--primary);
+  clip-path: polygon(0 6%, 100% 0%, 100% 100%, 0 94%);
+  ;
+  /* clip-path: polygon(0% 6%, 100% 0%, 100%, 100% 100%, 0% 94%);  */
+}
+
+#contact-card {
+  margin-top: 15px;
 }
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 0fr 1fr;
-  gap: 35px;
-  max-width: 1370px;
-  margin: 0 auto;
+  grid-template-columns: 0.4fr 1fr;
+  gap: 0px;
+  max-width: 1000px;
+  margin: 0 auto 40px;
 }
 
 .contact-card {
   background: white;
-  border-radius: 24px;
-  padding: 24px;
+  /* border-radius: 24px; */
+  padding: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid #e2e8f0;
 }
 
 .contact-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 30px 80px rgba(46, 108, 207, 0.15);
-  border-color: var(--primary);
+  /* transform: translateY(-8px); */
+  /* box-shadow: 0 30px 80px rgba(46, 108, 207, 0.15); */
+  /* border-color: var(--primary); */
+}
+
+.contact-info {
+  padding: 25px;
 }
 
 /* Left Card - Contact Info */
@@ -352,30 +416,48 @@
   color: var(--primary);
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .contact-info h2 {
   font-size: 40px;
-  font-weight: 900;
+  font-weight: 500;
   color: var(--dark);
   margin-bottom: 16px;
   line-height: 1.1;
+  margin-top: 0;
 }
 
 .contact-info p {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--text-light);
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   line-height: 1.6;
 }
 
 .contact-infos {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 26px;
   margin-bottom: 48px;
 }
+
+#contact-heading {
+  margin: 15px 0;
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#contact-heading2 {
+  color: var(--white);
+  font-size: 32px;
+}
+
+#contact-para {
+  color: white;
+}
+
 /* ============= CONTACT FOOTER – SAMYOTECH TIGHT STYLE ============= */
 .contact-footer-section {
   padding: 60px 0 80px;
@@ -428,7 +510,7 @@
   border-radius: 16px;
   padding: 32px 24px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   border: 1px solid var(--border);
   transition: all 0.3s ease;
 }
@@ -441,6 +523,11 @@
 
 .social-card:hover .social-icon {
   color: var(--accent);
+}
+
+.social-card:hover {
+  color: var(--accent);
+  border: 2px solid var(--accent);
 }
 
 .social-card h3 {
@@ -464,15 +551,20 @@
 }
 
 .card-link {
-  color: var(--primary);
+  color: var(--accent);
   font-weight: 600;
   font-size: 14px;
   text-decoration: none;
   transition: color 0.3s;
+  padding: 10px 25px;
+  border-radius: 20px;
+  background-color: var(--white);
+  border: 2px solid var(--accent);
 }
 
 .card-link:hover {
-  color: var(--accent);
+  color: var(--white);
+  background-color: var(--accent);
 }
 
 /* Location Cards – Simple List */
@@ -507,7 +599,7 @@
 
 .location-card:hover {
   transform: translateX(4px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .location-icon {
@@ -551,6 +643,7 @@
 
 /* Responsive – Tight on Mobile */
 @media (max-width: 768px) {
+
   .social-grid,
   .locations-grid {
     flex-direction: column;
@@ -558,11 +651,20 @@
     gap: 16px;
     padding: 0 1rem;
   }
-  .location-card{
+
+  .location-card {
     width: 100%;
   }
-  .section-title { font-size: 28px; margin-bottom: 30px; }
-  .contact-footer-section, .locations-section { padding: 40px 0; }
+
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .contact-footer-section,
+  .locations-section {
+    padding: 40px 0;
+  }
 }
 
 
@@ -577,20 +679,20 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 5px 20px;
+  padding: 8px 12px;
   background: #f8f9fc;
   border-radius: 16px;
   transition: all 0.3s;
 }
 
 .info-items:hover {
-  background: var(--primary);
+  background: var(--accent);
   transform: translateX(8px);
 }
 
 .info-items:hover .icon-circle {
   background: white;
-  color: var(--primary);
+  color: var(--accent);
 }
 
 .info-items:hover .info-text {
@@ -598,8 +700,8 @@
 }
 
 .icon-circle {
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
   background: var(--primary);
   border-radius: 50%;
   display: flex;
@@ -611,7 +713,7 @@
 }
 
 .info-text {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--text);
   text-decoration: none;
@@ -669,7 +771,9 @@
   font-weight: bold;
 }
 
-.step.last .arrow { display: none; }
+.step.last .arrow {
+  display: none;
+}
 
 .divider {
   height: 1px;
@@ -688,11 +792,12 @@
 }
 
 .contact-form h2 {
-  font-size: 32px;
-  font-weight: 800;
+  font-size: 26px;
+  font-weight: 500;
   color: var(--dark);
   margin-bottom: 16px;
-  line-height: 1.3;
+  line-height: 1.1;
+  font-family: Albert Sans, sans-serif;
 }
 
 .label {
@@ -712,21 +817,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
-  margin-bottom: 0px;
+  margin-bottom: 13px;
 }
 
-.two-col input, textarea {
+.two-col input,
+textarea {
   width: 100%;
-  padding: 5px 14px;
+  padding: 4px 14px;
   border: 2px solid #e2e8f0;
-  border-radius: 12px;
+  border-radius: 8px;
   font-size: 16px;
   font-family: inherit;
   transition: all 0.3s;
   background: white;
 }
 
-.two-col input:focus, .two-col textarea:focus {
+.two-col input:focus,
+.two-col textarea:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 4px rgba(46, 108, 207, 0.1);
@@ -763,7 +870,8 @@
 }
 
 .recaptcha-container {
-  margin: 24px 0;
+  margin: 20px 0;
+  /* padding: 10px 25px; */
   text-align: center;
 }
 
@@ -774,7 +882,7 @@
 }
 
 .form-actions button {
-  padding: 16px 32px;
+  padding: 10px 32px;
   border-radius: 50px;
   font-weight: 700;
   font-size: 16px;
@@ -783,10 +891,11 @@
   transition: all 0.3s;
   border: none;
   flex: 1;
-  background: linear-gradient(90deg, var(--primary) 0%,  var(--primary) 100%);
+  background: linear-gradient(90deg, var(--primary) 0%, var(--primary) 100%);
 }
-.form-actions button:hover{
-  background: linear-gradient(90deg, #255bb8 0%,  #255bb8 100%);
+
+.form-actions button:hover {
+  background: linear-gradient(90deg, #255bb8 0%, #255bb8 100%);
   color: var(--light);
 }
 
@@ -794,8 +903,9 @@
   opacity: 0.7;
   cursor: not-allowed;
 }
+
 #btn-contact-primary {
-  background: linear-gradient(90deg, var(--accent) 0%,  var(--accent) 100%);
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 100%);
   color: white;
 }
 
@@ -814,61 +924,89 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .contact-card { 
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-card {
     padding: 32px 0px;
-    margin: 16px; 
+    margin: 16px;
 
   }
-  .two-col { grid-template-columns: 1fr; }
-  .contact-form h2 { 
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form h2 {
     font-size: 28px;
     padding: 0 12px;
-   }
-   .contact-form h3{
+  }
+
+  .contact-form h3 {
     padding: 0px 12px;
-   }
-   .two-col{
+  }
+
+  .two-col {
     gap: 8px;
     margin-bottom: 8px;
     padding: 0px 12px;
-   }
-   .label{
-    padding: 0px 12px;
-   }
-  .contact-info h2 { font-size: 32px; 
+  }
+
+  .label {
     padding: 0px 12px;
   }
-  .steps-section { gap: 16px; }
-  .step { padding: 16px; flex-wrap: wrap; }
-  .form-actions { 
+
+  .contact-info h2 {
+    font-size: 32px;
+    padding: 0px 12px;
+  }
+
+  .steps-section {
+    gap: 16px;
+  }
+
+  .step {
+    padding: 16px;
+    flex-wrap: wrap;
+  }
+
+  .form-actions {
     flex-direction: column;
     padding: 0px 24px;
-   }
-   .contact-info h3{
+  }
+
+  .contact-info h3 {
     padding: 0 12px;
-   }
-   .contact-info p{
+  }
+
+  .contact-info p {
     padding: 0px 12px;
-   }
-   .info-items{
+  }
+
+  .info-items {
     gap: 6px;
-   }
-   .contact-infos{
+    margin: 0px 8px;
+  }
+
+  .contact-infos {
     width: 95%;
-   }
-   .step{
+  }
+
+  .step {
     width: 95%;
-   }
-   .step span{
+  }
+
+  .step span {
     font-size: 15px;
-   }
-   .services-slider-section h3{
+  }
+
+  .services-slider-section h3 {
     margin-top: 16px;
-   }
-   #gallery-hide-item{
+  }
+
+  #gallery-hide-item {
     display: none;
-   }
+  }
 }
-
-

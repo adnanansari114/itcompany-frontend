@@ -4,6 +4,16 @@
   background: #f8fafc;
 }
 
+.blog-content-area h2,
+.why-section h2,
+.industry-section h2,
+.barriers-section h2,
+.faq-section h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
 
 /* HERO */
 .blog-hero-dark {
@@ -31,7 +41,7 @@
 .hero-title-dark {
   position: relative;
   z-index: 10;
-  font-size:3rem;
+  font-size: 3rem;
   font-weight: 900;
   color: #fff;
   max-width: 1000px;
@@ -39,9 +49,7 @@
   text-shadow: 0 10px 30px rgba(0, 0, 0, .5);
 }
 
-@media(max-width:768px) {
-  
-}
+@media(max-width:768px) {}
 
 /* LAYOUT */
 .blog-post-content {
@@ -144,8 +152,10 @@
   color: var(--secondary-color);
 }
 
-.blog-grid-layout p{
-  font-size: 1.3rem;
+.blog-grid-layout p {
+  font-size: 1rem;
+  line-height: 24px;
+  margin-bottom: 16px;
 }
 
 @media(max-width:992px) {
@@ -173,7 +183,7 @@
 /* HERO 2 */
 .blog-hero {
   background: #f8fafc;
-  padding: 100px 20px 80px;
+  padding: 100px 20px 45px;
   border-bottom: 1px solid #e2e8f0;
 }
 
@@ -215,7 +225,7 @@
   color: var(--secondary-color);
   border: 2px solid var(--secondary-color);
   padding: 14px 28px;
-  border-radius:-gr 50px;
+  border-radius: -gr 50px;
   font-weight: 600;
   text-decoration: none;
   transition: .3s;
@@ -247,32 +257,36 @@
 .blog-cta-section {
   margin-bottom: 30px;
 }
+
 .extra-para {
   margin: 20px 0px;
   font-size: 1.3rem;
   line-height: 1.7;
   color: #475569;
 }
+
 .extra-para-point {
   text-decoration: none;
   list-style: circle;
   margin-left: 20px;
 }
-.intro-text-final{
+
+.intro-text-final {
   margin: 25px 0px;
-  font-size: 1.3rem; 
+  font-size: 1.3rem;
   line-height: 1.7;
   color: #475569;
   font-weight: bold;
 }
-h2 {
+
+/* h2 {
   font-size: 2.2rem;
   line-height: 2.8rem;
   font-weight: 800;
   color: #0f172a;
   margin-top: 20px;
   margin-bottom: 12px;
-}
+} */
 
 /* PROCESS */
 .process-list {
@@ -383,8 +397,8 @@ h2 {
 
 .barrier-card {
   background: #fff;
-  padding: 28px;
-  border-radius: 16px;
+  padding: 25px;
+  border-radius: 5px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, .05);
   border: 1px solid #e2e8f0;
 }
@@ -392,6 +406,11 @@ h2 {
 .barrier-card h4 {
   color: var(--primary-color);
   margin-bottom: 12px;
+}
+
+.barrier-card p {
+  font: 1rem;
+  line-height: 1.3;
 }
 
 /* CTA */
@@ -448,7 +467,7 @@ h2 {
 
 .faq-question {
   width: 100%;
-  padding: 24px;
+  padding: 10px 24px;
   font-size: 1.25rem;
   font-weight: 600;
   display: flex;
@@ -531,7 +550,7 @@ h2 {
 
 
 .ai-process-light {
-  padding: 120px 0;
+  padding: 30px 0;
   background: #ffffff;
   position: relative;
 }
@@ -557,11 +576,11 @@ h2 {
 
 .process-header {
   text-align: center;
-  margin-bottom: 90px;
+  margin-bottom: 30px;
 }
 
 .process-header h2 {
-  font-size: 3.2rem;
+  font-size: 36px;
   font-weight: 800;
   color: #0f172a;
   margin-bottom: 20px;
@@ -572,7 +591,7 @@ h2 {
 }
 
 .process-subtitle {
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: #475569;
   max-width: 800px;
   margin: 0 auto;
@@ -779,8 +798,11 @@ h2 {
 .future-vision::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
     radial-gradient(circle at 15% 30%, rgba(249, 115, 22, 0.06), transparent 40%),
     radial-gradient(circle at 85% 70%, rgba(251, 146, 60, 0.05), transparent 40%);
   pointer-events: none;
@@ -788,8 +810,8 @@ h2 {
 
 .future-vision h2 {
   text-align: center;
-  font-size: 2.5rem;
-  font-weight: 900;
+  font-size: 32px;
+  font-weight: 600;
   margin-bottom: 32px;
   color: #0f172a;
   line-height: 1.2;
@@ -822,9 +844,17 @@ h2 {
   animation: floatIn 0.9s ease-out forwards;
 }
 
-.vision-item:nth-child(1) { animation-delay: 0.2s; }
-.vision-item:nth-child(2) { animation-delay: 0.4s; }
-.vision-item:nth-child(3) { animation-delay: 0.6s; }
+.vision-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.vision-item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.vision-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
 
 @keyframes floatIn {
   to {
@@ -848,13 +878,15 @@ h2 {
 }
 
 @keyframes growLine {
-  to { height: 120px; }
+  to {
+    height: 120px;
+  }
 }
 
 /* Floating Card Effect (without box) */
 .vision-item strong {
   display: block;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 900;
   margin-bottom: 20px;
   color: var(--secondary-color);
@@ -875,7 +907,7 @@ h2 {
 }
 
 .vision-item p {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   line-height: 1.5;
   color: #475569;
   padding-left: 60px;
@@ -905,70 +937,82 @@ h2 {
   .future-vision {
     padding: 30px 0;
   }
-  
+
   .future-vision h2 {
     font-size: 24px;
     margin-bottom: 16px;
   }
-  .faq-section h2{
+
+  .faq-section h2 {
     font-size: 1.6rem;
   }
-  .cta-button{
+
+  .cta-button {
     padding: 12px;
   }
+
   .vision-item {
     padding: 0 20px;
     gap: 60px;
   }
-  
+
   .vision-item strong {
     font-size: 2rem;
   }
-  
+
   .vision-item p {
     font-size: 1.2rem;
   }
-  
+
   .vision-item::before {
     height: 80px !important;
   }
 }
 
 
-@media (max-width:480px){
-  .container{
+@media (max-width:480px) {
+  .container {
     padding: 0;
   }
+
   .hero-title-dark {
     font-size: 1.5rem;
     line-height: 30px;
   }
-  .blog-hero-dark{
+
+  .blog-hero-dark {
     max-height: 0;
     height: 85vh;
   }
+
   .blog-post-content {
     flex-direction: column;
     margin: 10px;
   }
-  .search-box{
+
+  .search-box {
     flex-direction: column;
   }
-  .blog-content-area h2{
+
+  .blog-content-area h2 {
     font-size: 24px;
     line-height: 36px;
   }
-  .blog-grid-layout p{
+
+  .blog-grid-layout p {
     font-size: 1rem;
   }
-  .why-section h2{
+
+  .why-section h2 {
     font-size: 24px;
     line-height: 36px;
   }
-  .industry-section h2{
+
+  .industry-section h2 {
     font-size: 24px;
   }
-  .industry-card h3{
+
+  .industry-card h3 {
     font-size: 1.2rem;
   }
 }
@@ -985,7 +1029,7 @@ h2 {
   border-radius: 16px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--border);
-  max-width: 900px;
+  max-width: 750px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1032,6 +1076,7 @@ h2 {
 .comment-area form textarea {
   width: 100%;
   padding: 8px 18px;
+  margin-bottom: 10px;
   font-size: 13px;
   border: 2px solid #e2e8f0;
   border-radius: 12px;
@@ -1127,13 +1172,16 @@ h2 {
   .comment-area h3 {
     font-size: 22px;
   }
-  .process-subtitle{
+
+  .process-subtitle {
     font-size: 1.1rem;
   }
-  .process-header{
-    margin-bottom: 45px ;
+
+  .process-header {
+    margin-bottom: 45px;
   }
-  .step-header{
+
+  .step-header {
     margin-bottom: 0;
   }
 }

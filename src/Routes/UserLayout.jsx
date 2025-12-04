@@ -9,8 +9,8 @@ const UserLayout = () => {
 
   return (
     <>
-      <Navbar isHome={isHome} />  {/* Tumhara existing logic safe hai */}
-      <Outlet />                  {/* Child pages yahan render honge */}
+      <Navbar isHome={isHome} />  
+      <Outlet />
       <Footer />
     </>
   );

@@ -9,14 +9,14 @@ export default function AdminJobs() {
   const token = localStorage.getItem("adminToken");
 
   useEffect(() => {
-  const token = localStorage.getItem("adminToken");
-  if (!token) {
-    alert("Please login as admin first!");
-    window.location.href = "/admin/login";
-    return;
-  }
-  fetchJobs();
-}, []);
+    const token = localStorage.getItem("adminToken");
+    if (!token) {
+      alert("Please login as admin first!");
+      window.location.href = "/admin/login";
+      return;
+    }
+    fetchJobs();
+  }, []);
 
   const fetchJobs = async () => {
     try {
@@ -32,37 +32,37 @@ export default function AdminJobs() {
   }, []);
 
   const deleteJob = async (id) => {
-  if (!window.confirm("Are you sure you want to delete this job?")) return;
+    if (!window.confirm("Are you sure you want to delete this job?")) return;
 
-  const token = localStorage.getItem("adminToken");
-  
-  if (!token) {
-    alert("Session expired. Login again.");
-    window.location.href = "/admin/login";
-    return;
-  }
+    const token = localStorage.getItem("adminToken");
 
-  try {
-    const response = await axios.delete(`${API}/api/jobs/${id}`, {
-      headers: { 
-        Authorization: `Bearer ${token}` 
-      },
-    });
-
-    console.log("Delete success:", response.data); 
-    setJobs(jobs.filter((job) => job._id !== id));
-    alert("Job deleted successfully!");
-  } catch (err) {
-    console.error("Delete failed:", err.response || err);
-    if (err.response?.status === 401) {
-      alert("Session expired. Logging you out...");
-      localStorage.removeItem("adminToken");
+    if (!token) {
+      alert("Session expired. Login again.");
       window.location.href = "/admin/login";
-    } else {
-      alert(err.response?.data?.message || "Failed to delete job");
+      return;
     }
-  }
-};
+
+    try {
+      const response = await axios.delete(`${API}/api/jobs/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+      });
+
+      console.log("Delete success:", response.data);
+      setJobs(jobs.filter((job) => job._id !== id));
+      alert("Job deleted successfully!");
+    } catch (err) {
+      console.error("Delete failed:", err.response || err);
+      if (err.response?.status === 401) {
+        alert("Session expired. Logging you out...");
+        localStorage.removeItem("adminToken");
+        window.location.href = "/admin/login";
+      } else {
+        alert(err.response?.data?.message || "Failed to delete job");
+      }
+    }
+  };
 
   return (
     <section className="admin-jobs-section">
