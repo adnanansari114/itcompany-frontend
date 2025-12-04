@@ -5,6 +5,7 @@ import axios from 'axios';
 import '../../style/Blog.css';
 import { ArrowRight, CheckCircle, Zap, Brain, Rocket, Target, ArrowDown } from 'lucide-react';
 const API = import.meta.env.VITE_APP_API_URL;
+import SEO from '../../components/SEO';
 
 const steps = [
     {
@@ -90,6 +91,10 @@ export default function SubBlogThree() {
 
     return (
         <>
+            <SEO
+                title="Middle East IT Staffing Boom: Why Your Business Needs to Benefit"
+                description="The Middle East IT staffing market is surging. Understand the reasons behind this growth and explore the immense business benefits of tapping into this talent pool now."
+            />
             <div className='Blogpostdetail'>
                 <section className="blog-hero-dark">
                     <div className="hero-bg-overlay"></div>
@@ -287,36 +292,36 @@ export default function SubBlogThree() {
                                     </ul>
                                 </div>
                             </aside>
-<div className="comment-area">
-                            <h3>Leave a Comment</h3>
-                    <form onSubmit={handleSubmit}>
-                        <input type="text" name="blogname" value={blog.title} readOnly id="" />
-                        <input
-                            placeholder="Your name"
-                            value={form.name}
-                            onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        />
+                            <div className="comment-area">
+                                <h3>Leave a Comment</h3>
+                                <form onSubmit={handleSubmit}>
+                                    <input type="text" name="blogname" value={blog.title} readOnly id="" />
+                                    <input
+                                        placeholder="Your name"
+                                        value={form.name}
+                                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                                    />
 
-                        <input
-                            placeholder="Your email"
-                            value={form.email}
-                            onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        />
-                        <input
-                            placeholder="Your website"
-                            value={form.website}
-                            onChange={(e) => setForm({ ...form, website: e.target.value })}
-                        />
+                                    <input
+                                        placeholder="Your email"
+                                        value={form.email}
+                                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                                    />
+                                    <input
+                                        placeholder="Your website"
+                                        value={form.website}
+                                        onChange={(e) => setForm({ ...form, website: e.target.value })}
+                                    />
 
-                        <textarea
-                            placeholder="Comment…"
-                            value={form.comment}
-                            onChange={(e) => setForm({ ...form, comment: e.target.value })}
-                        ></textarea>
+                                    <textarea
+                                        placeholder="Comment…"
+                                        value={form.comment}
+                                        onChange={(e) => setForm({ ...form, comment: e.target.value })}
+                                    ></textarea>
 
-                        <button type="submit">Submit</button>
-                    </form>
-                    </div>
+                                    <button type="submit">Submit</button>
+                                </form>
+                            </div>
 
 
                         </section>

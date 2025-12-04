@@ -9,11 +9,11 @@ const staffingOptions = [
     title: "Custom Web Development",
     icon: "⚡",
     list: [
-    "Bespoke Website Development",
-    "Mobile-Responsive & SEO-Friendly Design",
-    "CMS Development (WordPress, Joomla, Drupal)",
-    "E-commerce Development (Shopify, WooCommerce, Magento)",
-    "Progressive Web Applications (PWAs)"
+      "Bespoke Website Development",
+      "Mobile-Responsive & SEO-Friendly Design",
+      "CMS Development (WordPress, Joomla, Drupal)",
+      "E-commerce Development (Shopify, WooCommerce, Magento)",
+      "Progressive Web Applications (PWAs)"
 
 
     ]
@@ -22,11 +22,11 @@ const staffingOptions = [
     title: "Mobile App Development",
     icon: "👥",
     list: [
-    "Android App Development",
-    "iOS App Development",
-    "Cross-Platform Development (Flutter, React Native)",
-    "Enterprise App Development",
-    "App UI/UX Design, Wireframing & Prototyping"
+      "Android App Development",
+      "iOS App Development",
+      "Cross-Platform Development (Flutter, React Native)",
+      "Enterprise App Development",
+      "App UI/UX Design, Wireframing & Prototyping"
 
 
     ]
@@ -35,11 +35,11 @@ const staffingOptions = [
     title: "Full-Stack Development",
     icon: "🧬",
     list: [
-    "Frontend: React, Angular, Vue.js",
-    "Backend: Node.js, PHP, Python, .NET",
-    "RESTful APIs & Custom Middleware",
-    "Scalable Database Design (MySQL, MongoDB, PostgreSQL)",
-    "Third-Party Integrations & Cloud Deployments"
+      "Frontend: React, Angular, Vue.js",
+      "Backend: Node.js, PHP, Python, .NET",
+      "RESTful APIs & Custom Middleware",
+      "Scalable Database Design (MySQL, MongoDB, PostgreSQL)",
+      "Third-Party Integrations & Cloud Deployments"
     ]
   }
 ];
@@ -70,21 +70,21 @@ export default function WebAppDevelopment() {
 
   return (
     <>
-      <SEO 
-        title="IT Staff Augmentation Services | Hire Top Developers Fast"
-        description="Scale your team instantly with pre-vetted senior IT professionals."
+      <SEO
+        title="Custom Web Application Development Services"
+        description="Build scalable and secure custom web applications using modern full-stack technologies. Expert services for startups and enterprises."
       />
 
       {/* Hero - Light & Clean */}
-      <section className="hero-content-web relative h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center text-center overflow-hidden">
+      <section className="hero-content-web relative h-[50vh] bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center text-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2934&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
-        
-        <div className="relative z-10 max-w-6xl px-6">
-          <h1 className="text-4xl md:text-7xl font-bold text-gray-900 mb-3 leading-tight">
+
+        <div className="relative z-10 max-w-6xl px-6 mt-2">
+          <h1 className="text-4xl md:text-4xl font-bold mt-2 text-gray-900 mb-3 leading-tight">
             Web & App Development<br />
             <span className="text-indigo-600">With Confidence</span>
           </h1>
-          <p className="text-sm md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
+          <p className="text-sm md:text-lg text-gray-700 mb-5 max-w-4xl mx-auto">
             Access pre-vetted senior developers, architects, and IT experts — ready to contribute from day one.
           </p>
           <Link to="/contact" className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xl px-5 py-3 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
@@ -96,43 +96,43 @@ export default function WebAppDevelopment() {
 
 
       <section className="staff-section container">
-      <motion.div
-        className="staff-content"
-        initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="staff-heading">
-          Build Scalable, Secure & High-Performing Digital Solutions
-        </h2>
+        <motion.div
+          className="staff-content"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="staff-heading">
+            Build Scalable, Secure & High-Performing Digital Solutions
+          </h2>
 
-        <p className="staff-para">
-          Looking for a reliable web and mobile app development company? At The IT Talent, we help startups, enterprises, and growing businesses turn ideas into custom web applications, responsive websites, and high-performance mobile apps—built for scalability, speed, and user engagement.
-        </p>
+          <p className="staff-para">
+            Looking for a reliable web and mobile app development company? At The IT Talent, we help startups, enterprises, and growing businesses turn ideas into custom web applications, responsive websites, and high-performance mobile apps—built for scalability, speed, and user engagement.
+          </p>
 
-        <p className="staff-para">
-          Our expert development team uses the latest technologies and frameworks to craft digital experiences that drive results.
-        </p>
+          <p className="staff-para">
+            Our expert development team uses the latest technologies and frameworks to craft digital experiences that drive results.
+          </p>
 
-        <h3 className="staff-sub-heading">Our Web & App Development Services</h3>
+          <h3 className="staff-sub-heading">Our Web & App Development Services</h3>
 
-        <p className="staff-para">
-          We offer full-cycle development services, from UI/UX design and front-end/backend development to post-launch maintenance and optimization.
-        </p>
-      </motion.div>
-    </section>
-    
+          <p className="staff-para">
+            We offer full-cycle development services, from UI/UX design and front-end/backend development to post-launch maintenance and optimization.
+          </p>
+        </motion.div>
+      </section>
+
       <section className="staffing-section">
-      <div className="staffing-container">
-        
-        <h2 className="staffing-title">Flexible Staffing Options</h2>
-        <p className="staffing-desc">
-          From short-term support to long-term team members — we’ve got you covered.
-        </p>
+        <div className="staffing-container">
 
-        <div className="staffing-grid">
-          {staffingOptions.map((option, i) => (
+          <h2 className="staffing-title">Flexible Staffing Options</h2>
+          <p className="staffing-desc">
+            From short-term support to long-term team members — we’ve got you covered.
+          </p>
+
+          <div className="staffing-grid">
+            {staffingOptions.map((option, i) => (
               <div
                 key={i}
                 className="staffing-card-wrapper"
@@ -154,23 +154,23 @@ export default function WebAppDevelopment() {
                 </div>
               </div>
             ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* Why Choose Us */}
       <section className="py-10 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">
+          <h2 className="text-3xl md:text-3xl font-bold text-center text-gray-900 mb-8">
             Why Choose The IT Talent for Web & Mobile App Development?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 max-w-7xl mx-auto">
             {whyChoose.map((item, i) => (
-              <div key={i} className="text-center">
+              <div key={i} className="text-center px-5">
                 <div className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-lg">
                   {i + 1}
                 </div>
-                <h3 className="text-l font-bold text-gray-800 mb-3">{item.title}</h3>
+                <h3 className="text-l leading-tight font-bold text-gray-800 mb-3">{item.title}</h3>
                 <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>
             ))}
@@ -181,16 +181,16 @@ export default function WebAppDevelopment() {
       {/* Process */}
       <section className="py-10 bg-gray-50">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-10">How We Work</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6">How We Work</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-6xl mx-auto">
             {process.map((step, i) => (
-              <div key={i} className="text-center relative">
+              <div key={i} className="text-center px-5 relative">
                 {/* {i < process.length - 0 && (
                   <div className="hidden md:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-indigo-400 to-transparent"></div>
                 )} */}
-                <div className="text-6xl font-bold text-indigo-600 mb-6">{step.num}</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">{step.title}</h3>
-                <p className="text-gray-600">{step.desc}</p>
+                <div className="text-6xl font-bold text-indigo-600 mb-4">{step.num}</div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">{step.title}</h3>
+                <p className="text-gray-600 leading-tight">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -198,15 +198,15 @@ export default function WebAppDevelopment() {
       </section>
 
       {/* FAQ */}
-      <section className="py-10 bg-white">
+      <section className="py-5 bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-10">Frequently Asked Questions</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6">Frequently Asked Questions</h2>
           <div className="space-y-6">
             {faqs.map((faq, i) => (
               <div key={i} className="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
                 <button
                   onClick={() => setOpenFAQ(openFAQ === i ? null : i)}
-                  className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition"
+                  className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition"
                 >
                   <span className="text-xl font-medium text-gray-800">{faq.q}</span>
                   <span className="text-3xl text-indigo-600 font-light">{openFAQ === i ? "−" : "+"}</span>
@@ -224,42 +224,42 @@ export default function WebAppDevelopment() {
 
 
       <section className="staff-section container">
-      <motion.div
-        className="staff-content"
-        initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="staff-heading">
-          Let’s Build Something Great Together
-        </h2>
+        <motion.div
+          className="staff-content"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="staff-heading">
+            Let’s Build Something Great Together
+          </h2>
 
-        <p className="staff-para">
-          Ready to create a powerful digital product? Partner with The IT Talent for scalable, SEO-friendly, and future-ready web and mobile app development solutions.
-        </p>
+          <p className="staff-para">
+            Ready to create a powerful digital product? Partner with The IT Talent for scalable, SEO-friendly, and future-ready web and mobile app development solutions.
+          </p>
 
-        <p className="staff-para">Contact us today to schedule your free consultation
-        </p>
+          <p className="staff-para">Contact us today to schedule your free consultation
+          </p>
 
-      </motion.div>
-    </section>
+        </motion.div>
+      </section>
 
 
 
       {/* Final CTA */}
-      <section className="py-32 bg-gradient-to-r from-indigo-600 to-purple-700 text-white">
+      <section className="py-16 bg-gradient-to-r from-indigo-600 to-purple-700 text-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-5xl md:text-7xl font-bold mb-8">Ready to Grow Your Team?</h2>
-          <p className="text-2xl mb-12 max-w-4xl mx-auto opacity-90">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Ready to Grow Your Team?</h2>
+          <p className="text-lg mb-6 max-w-4xl mx-auto opacity-90">
             Join hundreds of companies scaling smarter with The IT Talent.
           </p>
-          <Link to="/contact" className="inline-block bg-white text-indigo-600 font-bold text-2xl px-16 py-8 rounded-full hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-2xl">
+          <Link to="/contact" className="inline-block bg-white text-indigo-600 font-bold text-2xl px-8 py-4 rounded-full hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-2xl">
             Get Started Now
           </Link>
         </div>
       </section>
-      
+
     </>
   );
 }

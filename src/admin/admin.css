@@ -162,7 +162,7 @@
   background: #fff;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .job-box h2 {
@@ -380,7 +380,7 @@
   }
 
   .app-table thead {
-    display: none; 
+    display: none;
   }
 
   .app-table tbody tr {
@@ -574,11 +574,11 @@
     display: flex;
     flex-direction: column;
   }
-  
+
   .admin-title {
     font-size: 2rem;
   }
-  
+
   .admin-btn-group {
     flex-direction: column;
   }
@@ -588,7 +588,7 @@
   .job-card-admin {
     padding: 20px;
   }
-  
+
   .job-header h3 {
     font-size: 1.3rem;
   }
@@ -718,7 +718,7 @@
     padding: 30px;
     margin: 0 15px;
   }
-  
+
   .edit-job-container h2 {
     font-size: 2.2rem;
   }
@@ -728,13 +728,13 @@
   .edit-job-form {
     padding: 25px 20px;
   }
-  
+
   .edit-job-form input,
   .edit-job-form textarea {
     padding: 14px 16px;
     font-size: 1rem;
   }
-  
+
   .update-btn {
     padding: 16px;
     font-size: 1.1rem;
@@ -774,7 +774,7 @@
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   margin: 0 auto;
   max-width: 1200px;
 }
@@ -834,15 +834,16 @@
     overflow-x: auto;
     border-radius: 8px;
   }
-  
+
   .comments-table {
     min-width: 800px;
   }
-  
+
   .comments-header h2 {
     font-size: 24px;
   }
-  .admin-nav{
+
+  .admin-nav {
     position: inherit;
   }
 

@@ -7,7 +7,7 @@ export default function AdminComments() {
   const [comments, setComments] = useState([]);
 
   const loadComments = async () => {
-    const res = await axios.get( `${API}/api/comments/all`);
+    const res = await axios.get(`${API}/api/comments/all`);
     setComments(res.data);
   };
 
@@ -44,7 +44,7 @@ export default function AdminComments() {
           <tbody>
             {comments.length === 0 ? (
               <tr>
-                <td colSpan="6" style={{textAlign:"center", padding:"40px", color:"#999"}}>
+                <td colSpan="6" style={{ textAlign: "center", padding: "40px", color: "#999" }}>
                   No comments found
                 </td>
               </tr>

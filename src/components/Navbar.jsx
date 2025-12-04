@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../style/Navbar.css";
 import { VscThreeBars } from "react-icons/vsc";
-
+import SEO from './SEO';
 
 export default function Navbar({ isHome }) {
   const [openService, setOpenService] = useState(false);
@@ -88,6 +88,10 @@ export default function Navbar({ isHome }) {
 
   return (
     <>
+      <SEO
+        title="The IT Talent - Top IT Staffing & Development Company"
+        description=""
+      />
       {isHome ? (
         <header
           className="home-header"

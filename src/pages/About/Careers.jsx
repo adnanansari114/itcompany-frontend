@@ -4,6 +4,7 @@ import axios from "axios";
 import ReadySection from '../../components/ReadySection';
 import { Search, MapPin, Clock, Briefcase, Building2, ChevronDown } from 'lucide-react';
 const API = import.meta.env.VITE_APP_API_URL;
+import SEO from '../../components/SEO';
 
 const categories = ["Web Development", "Artificial Intelligence", "Cloud & DevOps", "Data Engineering", "Design"];
 const jobTypes = ["Full-time", "Part-time", "Contract", "Remote"];
@@ -71,6 +72,11 @@ const Careers = () => {
 
   return (
     <>
+      <SEO
+        title="Career Opportunities at The IT Talent"
+        description="Join The IT Talent team! Discover exciting career opportunities for experienced software developers, data scientists, and cloud engineers. Apply now."
+        canonicalUrl="https://www.theittalent.com/careers"
+      />
       <section className="careers-hero">
         <div className="hero-overlay"></div>
         <div className="hero-careers-content">

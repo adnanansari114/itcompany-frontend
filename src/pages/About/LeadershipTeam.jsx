@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import '../../style/About.css';
 import ReadySection from '../../components/ReadySection';
+import SEO from '../../components/SEO';
 
 const teamMembers = [
   {
@@ -15,6 +16,10 @@ const teamMembers = [
 export default function LeadershipTeam() {
   return (
     <>
+      <SEO
+        title="Meet the Leadership & Expert Team at The IT Talent"
+        description="Get to know the experienced leaders and skilled engineering teams driving innovation and delivering technical excellence at The IT Talent."
+      />
       <section className="leadership-hero-light">
         <div className="hero-content-light">
           <motion.h1

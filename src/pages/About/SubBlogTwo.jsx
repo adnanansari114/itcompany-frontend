@@ -5,6 +5,7 @@ import '../../style/Blog.css';
 import axios from 'axios';
 import { ArrowRight, CheckCircle, Zap, Brain, Rocket, Target, ArrowDown } from 'lucide-react';
 const API = import.meta.env.VITE_APP_API_URL;
+import SEO from '../../components/SEO';
 
 const steps = [
     {
@@ -104,6 +105,10 @@ export default function SubBlogTwo() {
 
     return (
         <>
+            <SEO
+                title="How to Reduce Time-to-Hire for Critical Tech Positions"
+                description="Learn proven strategies and effective tips to drastically reduce the time-to-hire for crucial and hard-to-fill tech roles like data scientists and cloud engineers."
+            />
             <div className='Blogpostdetail'>
                 <section className="blog-hero-dark">
                     <div className="hero-bg-overlay"></div>
@@ -312,36 +317,36 @@ export default function SubBlogTwo() {
                                     </ul>
                                 </div>
                             </aside>
-                                <div className="comment-area">
-                            <h3>Leave a Comment</h3>
-                    <form onSubmit={handleSubmit}>
-                        <input type="text" name="blogname" value={blog.title} readOnly id="" />
-                        <input
-                            placeholder="Your name"
-                            value={form.name}
-                            onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        />
+                            <div className="comment-area">
+                                <h3>Leave a Comment</h3>
+                                <form onSubmit={handleSubmit}>
+                                    <input type="text" name="blogname" value={blog.title} readOnly id="" />
+                                    <input
+                                        placeholder="Your name"
+                                        value={form.name}
+                                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                                    />
 
-                        <input
-                            placeholder="Your email"
-                            value={form.email}
-                            onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        />
-                        <input
-                            placeholder="Your website"
-                            value={form.website}
-                            onChange={(e) => setForm({ ...form, website: e.target.value })}
-                        />
+                                    <input
+                                        placeholder="Your email"
+                                        value={form.email}
+                                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                                    />
+                                    <input
+                                        placeholder="Your website"
+                                        value={form.website}
+                                        onChange={(e) => setForm({ ...form, website: e.target.value })}
+                                    />
 
-                        <textarea
-                            placeholder="Comment…"
-                            value={form.comment}
-                            onChange={(e) => setForm({ ...form, comment: e.target.value })}
-                        ></textarea>
+                                    <textarea
+                                        placeholder="Comment…"
+                                        value={form.comment}
+                                        onChange={(e) => setForm({ ...form, comment: e.target.value })}
+                                    ></textarea>
 
-                        <button type="submit">Submit</button>
-                    </form>
-</div>
+                                    <button type="submit">Submit</button>
+                                </form>
+                            </div>
 
                         </section>
                     </div>

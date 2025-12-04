@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import { FaArrowRight, FaLinkedin, FaInstagram, FaFacebookF } from "react-icons/fa";
 import "./about.css";
 import { FaUserClock } from "react-icons/fa";
@@ -9,6 +9,7 @@ import { TiLeaf } from "react-icons/ti";
 import { FiBox } from "react-icons/fi";
 import { HiDocumentPlus, HiComputerDesktop } from "react-icons/hi2";
 import { IoTelescopeOutline } from "react-icons/io5";
+import SEO from '../../components/SEO';
 
 export default function AboutUs() {
   const stats = [
@@ -31,10 +32,15 @@ export default function AboutUs() {
     { title: "Our Story", desc: "At The IT Talent, our journey began with a simple yet powerful idea: to bridge the gap between exceptional IT talent and businesses in need of innovative solutions. Founded by a team of passionate technology enthusiasts, we started with a vision to transform how companies approach IT staffing and solutions.", icon: <FaUserClock /> },
     { title: "Our Vision", desc: "Our mission is to provide unparalleled IT expertise and consultancy services that drive innovation and growth for our clients. We strive to be the authority in our field, continuously pushing the boundaries of what's possible and setting new standards for excellence.", icon: <GiCyberEye /> },
     { title: "Our Mission", desc: "To continue being the premier IT company that delivers prompt, affordable, and high-quality solutions to clients worldwide. We aim to transcend geographical and linguistic barriers, ensuring that our services are accessible to all, regardless of location or language.", icon: <GiBullseye /> },
-    ];
+  ];
 
   return (
     <>
+      <SEO
+        title="About The IT Talent: Our Vision, Mission & Expertise"
+        description="Learn about The IT Talent’s mission to connect businesses with certified, highly skilled IT professionals and cutting-edge software solutions worldwide."
+        canonicalUrl="https://www.theittalent.com/aboutus"
+      />
       <section className="about-hero-pro">
         <div className="hero-bg"></div>
         <motion.div className="container hero-content-pro">
@@ -163,23 +169,47 @@ export default function AboutUs() {
           <div className="team-grid-pro">
             {[
               {
-                name: "XYZ xyz",
+                name: "Murtaza Jawadwala",
                 role: "CEO & Founder",
                 img: "https://randomuser.me/api/portraien/11.jpg",
                 color: "from-blue-500 to-cyan-500"
               },
               {
-                name: "XYZ xyz",
+                name: "Seema Bairagi",
                 role: "Head of Delivery",
-                img: "https://randomuser.me/api/portraits/wom2.jpg",
+                img: "./images/seema.jpg",
                 color: "from-purple-500 to-pink-500"
               },
               {
-                name: "XYZ xyz",
+                name: "Palak Gehani",
                 role: "Tech Lead",
                 img: "https://randomuser.me/api/ports/men/32.jpg",
                 color: "from-orange-500 to-red-500"
               },
+              {
+                name: "Dhananjay Solanki",
+                role: "Vendor Menager",
+                img: "./images/dhananjay.png",
+                color: "from-orange-500 to-red-500"
+              },
+              {
+                name: "Md Adnan",
+                role: "Lead Developer",
+                img:"",
+                color: "from-orange-500 to-red-500"
+              },
+              {
+                name: "Yatan Sharma",
+                role: "Vendor Manager",
+                img:"images/yatan2.jpg",
+                color: "from-orange-500 to-red-500"
+              },
+              {
+                name: "Yash",
+                role: "CFO",
+                img: "",
+                color: "from-orange-500 to-red-500"
+              }
             ].map((member, i) => (
               <motion.div
                 key={i}
@@ -210,8 +240,8 @@ export default function AboutUs() {
                     <h3>{member.name}</h3>
                     <p className="member-role">{member.role}</p>
                     <div className="social-links-team">
-                      <motion.a whileHover={{ scale: 1.2 }} href="#"><FaLinkedin /></motion.a>
-                      <motion.a whileHover={{ scale: 1.2 }} href="#"><FaInstagram /></motion.a>
+                      <motion.a whileHover={{ scale: 1.2 }} href={member.link}><FaLinkedin /></motion.a>
+                      {/* <motion.a whileHover={{ scale: 1.2 }} href="#"><FaInstagram /></motion.a> */}
                     </div>
                   </div>
                 </div>

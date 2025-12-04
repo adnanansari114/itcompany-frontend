@@ -5,6 +5,7 @@ import '../../style/Blog.css';
 import axios from 'axios';
 import { ArrowRight, CheckCircle, Zap, Brain, Rocket, Target, ArrowDown } from 'lucide-react';
 const API = import.meta.env.VITE_APP_API_URL;
+import SEO from '../../components/SEO';
 
 const steps = [
     {
@@ -105,6 +106,10 @@ export default function SubBlog() {
 
     return (
         <>
+            <SEO
+                title="Custom AI Software: Transforming Industries in 2025 and Beyond"
+                description="Discover how custom AI software solutions are reshaping finance, healthcare, and manufacturing. Learn the key trends and strategies for implementing AI in your business."
+            />
             <div className='Blogpostdetail'>
                 <section className="blog-hero-dark">
                     <div className="hero-bg-overlay"></div>
@@ -135,7 +140,7 @@ export default function SubBlog() {
                                     <div className="blog-grid-layout">
 
                                         <div className="blog-content-area">
-                                            <h2>How Custom AI Software Is Transforming Industries in 2025</h2>
+                                            <h2 className='blogheading'>How Custom AI Software Is Transforming Industries in 2025</h2>
                                             <p className="intro-text">
                                                 Imagine reducing operational costs by 20%, improving customer satisfaction, and staying ahead of the competition—all through one smart investment. In 2025, custom AI software has moved from optional to essential. Unlike one-size-fits-all tools, custom AI is built specifically for your industry, solving the challenges that off-the-shelf solutions can’t.
                                             </p>
@@ -317,33 +322,33 @@ export default function SubBlog() {
 
                     <div className="comment-area">
                         <h3>Leave a Comment</h3>
-                    <form onSubmit={handleSubmit}>
-                        <input type="text" name="blogname" value={blog.title} readOnly id="" />
-                        <input
-                            placeholder="Your name"
-                            value={form.name}
-                            onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        />
+                        <form onSubmit={handleSubmit}>
+                            <input type="text" name="blogname" value={blog.title} readOnly id="" />
+                            <input
+                                placeholder="Your name"
+                                value={form.name}
+                                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                            />
 
-                        <input
-                            placeholder="Your email"
-                            value={form.email}
-                            onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        />
-                        <input
-                            placeholder="Your website"
-                            value={form.website}
-                            onChange={(e) => setForm({ ...form, website: e.target.value })}
-                        />
+                            <input
+                                placeholder="Your email"
+                                value={form.email}
+                                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                            />
+                            <input
+                                placeholder="Your website"
+                                value={form.website}
+                                onChange={(e) => setForm({ ...form, website: e.target.value })}
+                            />
 
-                        <textarea
-                            placeholder="Comment…"
-                            value={form.comment}
-                            onChange={(e) => setForm({ ...form, comment: e.target.value })}
-                        ></textarea>
+                            <textarea
+                                placeholder="Comment…"
+                                value={form.comment}
+                                onChange={(e) => setForm({ ...form, comment: e.target.value })}
+                            ></textarea>
 
-                        <button type="submit">Submit</button>
-                    </form>
+                            <button type="submit">Submit</button>
+                        </form>
                     </div>
 
 

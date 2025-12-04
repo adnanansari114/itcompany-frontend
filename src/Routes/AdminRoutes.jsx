@@ -11,49 +11,49 @@ const AdminRoutes = () => {
   return (
     <Routes>
       <Route element={< AdminLayout />}>
-        <Route 
+        <Route
           path="/admin/login" mon
           element={
             <PublicOnlyRoute>
               <AdminLogin />
             </PublicOnlyRoute>
-          } 
+          }
         />
-        
-        <Route 
-          path="/admin/dashboard" 
+
+        <Route
+          path="/admin/dashboard"
           element={
             <ProtectedAdminRoute>
               <AdminDashboard />
             </ProtectedAdminRoute>
-          } 
+          }
         />
-        
-        <Route 
-          path="/admin/addjob" 
+
+        <Route
+          path="/admin/addjob"
           element={
             <ProtectedAdminRoute>
               <AddJob />
             </ProtectedAdminRoute>
-          } 
+          }
         />
-        
-        <Route 
-          path="/admin/applications" 
+
+        <Route
+          path="/admin/applications"
           element={
             <ProtectedAdminRoute>
               <AdminApplications />
             </ProtectedAdminRoute>
-          } 
+          }
         />
-        
-        <Route 
-          path="/admin/contacts" 
+
+        <Route
+          path="/admin/contacts"
           element={
             <ProtectedAdminRoute>
               <AdminContacts />
             </ProtectedAdminRoute>
-          } 
+          }
         />
       </Route>
 
