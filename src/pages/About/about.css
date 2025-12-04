@@ -416,9 +416,14 @@
   .team-header {
     margin-bottom: 60px;
   }
+  
+  .team-member{
+    width: 90%;
+  }
 
   .team-grid-pro {
     gap: 32px;
+    flex-direction: column;
   }
 
   .member-img {
@@ -503,6 +508,7 @@
   .team-grid-pro {
     margin: 0 16px;
     padding: 0;
+    flex-direction: column;
     grid-template-columns: repeat(auto-fit, minmax(100%, 0fr));
   }
 
