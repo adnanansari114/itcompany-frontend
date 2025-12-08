@@ -6,6 +6,8 @@ import { Search, MapPin, Clock, Briefcase, Building2, ChevronDown } from 'lucide
 const API = import.meta.env.VITE_APP_API_URL;
 import SEO from '../../components/SEO';
 
+import { useNavigate } from "react-router-dom";
+
 const categories = ["Web Development", "Artificial Intelligence", "Cloud & DevOps", "Data Engineering", "Design"];
 const jobTypes = ["Full-time", "Part-time", "Contract", "Remote"];
 const locations = ["Indore", "Bangalore", "Pune", "Remote", "Hyderabad", "Mumbai"];
@@ -18,23 +20,51 @@ const Careers = () => {
   const [selectedType, setSelectedType] = useState("All Job Type");
   const [selectedLocation, setSelectedLocation] = useState("All Job Location");
   const [openDropdown, setOpenDropdown] = useState(null);
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   const fetchJobs = async () => {
+  //     try {
+  //       const res = await axios.get(`${API}/api/jobs`);
+  //       // const res = await axios.get("http://localhost:5000/api/jobs");
+  //       console.log("API Response Data:", res.data);
+  //       setAllJobs(res.data);
+  //     } catch (err) {
+  //       console.log("Error fetching jobs:", err);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchJobs();
+  // }, []);
 
   useEffect(() => {
-    const fetchJobs = async () => {
-      try {
-        const res = await axios.get(`${API}/api/jobs`);
-        // const res = await axios.get("http://localhost:5000/api/jobs");
-        console.log("API Response Data:", res.data);
-        setAllJobs(res.data);
-      } catch (err) {
-        console.log("Error fetching jobs:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const fetchJob = async () => {
+    try {
+      const res = await axios.get(`${API}/api/jobs`);
 
-    fetchJobs();
-  }, []);
+      const singleJob = res.data.find((j) => j._id === id);
+
+      if (!singleJob) {
+        setMessage("Job not found");
+      }
+
+      setJob(singleJob);
+    } catch (err) {
+      console.error("Fetch job error:", err);
+      setMessage("Failed to load job details");
+    } finally {
+      setLoadingJob(false);
+    }
+  };
+
+  if (id) fetchJob();
+}, [id]);
+
+
+
+
 
   const toggleDropdown = (type) => {
     setOpenDropdown(openDropdown === type ? null : type);
@@ -198,12 +228,19 @@ const Careers = () => {
                     <span className="detail"><Clock size={16} /> Posted: {new Date(job.createdAt).toDateString()}</span>
                   </div>
 
-                  <button
+                  {/* <button
                     className="apply-btn"
                     onClick={() => window.location.href = `/jobapply/${job._id}`}
                   >
                     Apply Now
+                  </button> */}
+                  <button
+                    className="apply-btn"
+                    onClick={() => navigate(`/jobapply/${job._id}`)}
+                  >
+                    Apply Now
                   </button>
+
                 </div>
               ))
             ) : (
