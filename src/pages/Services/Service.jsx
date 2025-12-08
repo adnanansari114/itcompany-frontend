@@ -11,7 +11,7 @@ import {
   Wrench
 } from 'lucide-react';
 import ReadySection from "../../components/ReadySection";
-
+import SEO from '../../components/SEO';
 
 export default function Service() {
   const services = [
