@@ -39,28 +39,22 @@ const Careers = () => {
   //   fetchJobs();
   // }, []);
 
-  useEffect(() => {
-  const fetchJob = async () => {
+useEffect(() => {
+  const fetchJobs = async () => {
     try {
       const res = await axios.get(`${API}/api/jobs`);
-
-      const singleJob = res.data.find((j) => j._id === id);
-
-      if (!singleJob) {
-        setMessage("Job not found");
-      }
-
-      setJob(singleJob);
+      console.log("API Response Data:", res.data);
+      setAllJobs(res.data);
     } catch (err) {
-      console.error("Fetch job error:", err);
-      setMessage("Failed to load job details");
+      console.log("Error fetching jobs:", err);
     } finally {
-      setLoadingJob(false);
+      setLoading(false);
     }
   };
 
-  if (id) fetchJob();
-}, [id]);
+  fetchJobs();
+}, []);
+
 
 
 
