@@ -29,7 +29,7 @@ export default function JobApply() {
     const fetchJob = async () => {
       try {
         const res = await axios.get(`${API}/api/jobs/${id}`);
-        setJob(res.data);
+        setJob(res.data.job);
       } catch (err) {
         console.error("Fetch job error:", err);
         setMessage("Failed to load job details");

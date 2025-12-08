@@ -492,17 +492,20 @@
   }
 
   .timeline-item.left {
-    padding: 0px 50px;
+    padding: 0px 15px;
     text-align: left;
+  }
+  .timeline-content{
+    padding: 5px 10px;
   }
 
   .timeline-item.right {
-    padding: 0px 50px;
+    padding: 0px 15px;
     left: 0;
   }
 
   .timeline-content::before {
-    left: -10px;
+    background: transparent;
   }
 
   .team-grid-pro {
