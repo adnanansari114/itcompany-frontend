@@ -14,7 +14,7 @@ const locations = ["Indore", "Bangalore", "Pune", "Remote", "Hyderabad", "Mumbai
 
 const Careers = () => {
   const [allJobs, setAllJobs] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Job Category");
   const [selectedType, setSelectedType] = useState("All Job Type");

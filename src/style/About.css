@@ -411,10 +411,10 @@
 /* Replace the old .filters-section with this new one */
 /* ====================== HERO SECTION ====================== */
 .careers-hero {
-  height: 50vh;
+  height: 65vh;
   min-height: 230px;
   background: linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.58)),
-    url('./images/career.jpg') center/cover no-repeat;
+    url('./images/job.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;

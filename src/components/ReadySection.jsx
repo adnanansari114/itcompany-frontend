@@ -25,9 +25,9 @@ export default function ReadySection() {
             way, from initial consultation to implementation.
           </p>
 
-          <button className="ready-btn">
+          <a href="/contact" className="ready-btn" > 
             CONTACT US TODAY <FaArrowRight />
-          </button>
+          </a>
         </div>
       </section>
     </>

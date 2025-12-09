@@ -66,12 +66,12 @@ const Footer = () => {
                 <div className="footer-links">
                   <h4>Our Services</h4>
                   <ul>
-                    <li><a href="#">Artificial Intelligence</a></li>
-                    <li><a href="#">Data Engineering</a></li>
-                    <li><a href="#">Cloud Engineering & DevOps</a></li>
-                    <li><a href="#">Web & App Development</a></li>
-                    <li><a href="#">Staff Augmentation</a></li>
-                    <li><a href="#">Maintenance & Support</a></li>
+                    <li><a href="/artificialintelligence">Artificial Intelligence</a></li>
+                    <li><a href="/dataengineering">Data Engineering</a></li>
+                    <li><a href="/clouddevops">Cloud Engineering & DevOps</a></li>
+                    <li><a href="/webappdevelopment">Web & App Development</a></li>
+                    <li><a href="/staff-augmentation">Staff Augmentation</a></li>
+                    <li><a href="/maintenanceSupport">Maintenance & Support</a></li>
                   </ul>
                 </div>
               </div>

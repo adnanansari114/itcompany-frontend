@@ -117,11 +117,11 @@ export default function Navbar({ isHome }) {
                   <div className="dropdown-menu stay-open">
                     <a href="/aboutus">About Us</a>
                     <a href="/leadershipteam">Leadership & Team</a>
-                    <a href="/blog">Blog</a>
-                    <a href="/careers">Career</a>
                   </div>
                 )}
               </div>
+              <a href="/careers">Opportunities</a>
+            <a href="/contact">Contact Us</a>
               <a href="/contact">Contact Us</a>
             </div>
 
@@ -178,11 +178,11 @@ export default function Navbar({ isHome }) {
                 <div className="dropdown-menu stay-open">
                   <a href="/aboutus">About Us</a>
                   <a href="/leadershipteam">Leadership & Team</a>
-                  <a href="/blog">Blog</a>
-                  <a href="/careers">Career</a>
                 </div>
               )}
             </div>
+            <a href="/blog">Blog</a>
+            <a href="/careers">Opportunities</a>
             <a href="/contact">Contact Us</a>
           </div>
 
