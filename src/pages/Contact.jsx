@@ -32,15 +32,19 @@ export default function Contact() {
       <div className="contact-page" aria-labelledby="contact-heading">
         <div className="contact-container">
           <section className="contact-banner">
-            <div className="contact-overlay"></div>
-            <div className="contact-content">
-              <h2>GET IN TOUCH</h2>
-              <p>
-                Questions about our services or want to get a quote? Fill the form or
-                reach us via phone / email.
-              </p>
-            </div>
-          </section>
+      <video autoPlay muted loop className="contact-video">
+        <source src="./images/contact.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="contact-overlay"></div>
+      <div className="contact-content fade-contact">
+        <h2>GET IN TOUCH</h2>
+        <p>
+          Questions about our services or want to get a quote? Fill the form or
+          reach us via phone / email.
+        </p>
+      </div>
+    </section>
 
           <SocialSection />
 

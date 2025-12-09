@@ -8,28 +8,13 @@ export default function Navbar({ isHome }) {
   const [openAbout, setOpenAbout] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [bgIndex, setBgIndex] = useState(0);
 
-  const images = [
-    "./images/Banner1.jpg",
-    "./images/Banner2.jpg",
-    "./images/Banner3.png"
-  ];
-
-  const heroContents = [
-    { title: "Best IT Solutions", desc: "With Over 14 Years of Expertise in", btn: "IT Services", link: "/contact" },
-    { title: "Unleashing The Power of Artificial Intelligence", desc: "Smartr Solutions | Real-time Insights | Future-Ready Technology", btn: "Explore Now", link: "/contact" },
-    { title: "Empowering Businesses With Smart IT Solutions", desc: "With 14+ years of expertise in IT services, The IT Talent delivers reliable, scalable, and future-ready digital solutions.", btn: "Get a Free Consultations", link: "/contact" }
-  ];
-
-  useEffect(() => {
-    if (isHome) {
-      const interval = setInterval(() => {
-        setBgIndex((prev) => (prev + 1) % images.length);
-      }, 4000);
-      return () => clearInterval(interval);
-    }
-  }, [isHome]);
+  const heroContent = {
+    title: "Empowering Businesses With Smart IT Solutions",
+    desc: "With 14+ years of expertise in IT services, The IT Talent delivers reliable, scalable, and future-ready digital solutions.",
+    btn: "Get a Free Consultations",
+    link: "/contact"
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,13 +78,11 @@ export default function Navbar({ isHome }) {
         description=""
       />
       {isHome ? (
-        <header
-          className="home-header"
-          style={{
-            backgroundImage: `url(${images[bgIndex]})`,
-            transition: "background-image 1s ease-in-out"
-          }}
-        >
+        <header className="home-header">
+          <video autoPlay muted loop className="hero-video">
+            <source src="./images/Banner2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div className="overlay"></div>
 
           <nav className={`navbar flex transparent ${scrolled ? "scrolled" : ""}`}>
@@ -150,15 +133,15 @@ export default function Navbar({ isHome }) {
             >
               <span></span>
               <span></span>
-              <span>< VscThreeBars /></span>
+              <span><VscThreeBars /></span>
             </button>
           </nav>
 
           <div className="container">
             <div className="hero-content fade-hero">
-              <h1>{heroContents[bgIndex].title}</h1>
-              <p>{heroContents[bgIndex].desc}</p>
-              <a href={heroContents[bgIndex].link} className="hero-btn">{heroContents[bgIndex].btn}</a>
+              <h1>{heroContent.title}</h1>
+              <p>{heroContent.desc}</p>
+              <a href={heroContent.link} className="hero-btn">{heroContent.btn}</a>
             </div>
           </div>
         </header>
@@ -211,7 +194,7 @@ export default function Navbar({ isHome }) {
           >
             <span></span>
             <span></span>
-            <span>< VscThreeBars /></span>
+            <span><VscThreeBars /></span>
           </button>
         </nav>
       )}

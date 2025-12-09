@@ -354,11 +354,21 @@
 .ready-section {
   width: 100%;
   height: 325px;
-  background: url("images/Ready.jpg") center/cover no-repeat;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+}
+
+.ready-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .ready-overlay {

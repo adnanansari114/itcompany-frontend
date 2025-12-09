@@ -317,7 +317,7 @@
 }
 
 /* ============= CTA SECTION ============= */
-.ready-section {
+/* .ready-section {
   width: 100%;
   height: 280px;
   background: url("./images/Ready.jpg") center/cover no-repeat;
@@ -390,7 +390,7 @@
   .ready-btn {
     padding: 12px 24px;
   }
-}
+} */
 
 
 /* RESPONSIVE */
