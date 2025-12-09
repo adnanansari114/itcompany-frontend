@@ -158,7 +158,8 @@ export default function LeadershipTeam() {
                 name: "Sunny Chouhan",
                 role: "Support Team",
                 img: "",
-                color: "from-orange-500 to-red-500"
+                color: "from-orange-500 to-red-500",
+                img:"./images/sunny.png"
               }
             ].map((member, i) => (
               <motion.div
