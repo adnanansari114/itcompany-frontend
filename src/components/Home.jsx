@@ -117,7 +117,7 @@ export default function Home() {
     return (
         <div>
             <SEO
-                title="Top IT Talent Solutions & Custom Software Services"
+                title="IT Talent"
                 description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
                 canonicalUrl="https://www.theittalent.com/"
             />

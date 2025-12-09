@@ -80,7 +80,7 @@ export default function Navbar({ isHome }) {
       {isHome ? (
         <header className="home-header">
           <video autoPlay muted loop className="hero-video">
-            <source src="./images/Banner2.mp4" type="video/mp4" />
+            <source src="./images/Banner3.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="overlay"></div>
