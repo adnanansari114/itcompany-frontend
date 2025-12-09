@@ -81,14 +81,14 @@ export default function CloudDevops() {
 
       {/* Hero - Light & Clean */}
       <section className="hero-content-web relative h-[50vh] bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center text-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2934&auto=format&fit=crop')] bg-cover bg-center opacity-2"></div>
+        <div className="absolute inset-0 bg-[url('./images/career.jpg')] bg-cover bg-center opacity-3"></div>
 
         <div className="relative z-10 max-w-6xl px-6 mt-2">
           <h1 className="text-4xl md:text-4xl mt-2 font-bold text-gray-900 mb-3 leading-tight">
             Cloud Engineering & DevOps<br />
             <span className="text-indigo-600">With Confidence</span>
           </h1>
-          <p className="text-sm md:text-lg text-gray-700 mb-5 max-w-4xl mx-auto">
+          <p className="text-sm md:text-lg text-white mb-5 max-w-4xl mx-auto">
             Access pre-vetted senior developers, architects, and IT experts — ready to contribute from day one.
           </p>
           <Link to="/contact" className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xl px-5 py-3 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
