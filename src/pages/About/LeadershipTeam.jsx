@@ -9,7 +9,7 @@ const teamMembers = [
   {
     name: "Murtaza",
     role: "Founder & CEO",
-    image: "/images/mjsir2.jpg",
+    image: "/images/mjsir3.jpg",
     bio: "Murtaza is a seasoned innovator and advocate in global digital and data transformation, with a strong focus on FinTech, InsurTech, and digital transformation. With over 17 years of business experience across the USA, UK, Middle East, Germany, Hong Kong, and India, I’ve driven enterprise expansion and organizational transformations."
   }
 ];

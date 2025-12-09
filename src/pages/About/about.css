@@ -134,7 +134,7 @@
 .timeline-content {
   /* background: var(--light); */
   background: #c9d5ff69;
-  padding: 12px 42px;
+  padding: 12px 32px;
   border-radius: 20px;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
   position: relative;
