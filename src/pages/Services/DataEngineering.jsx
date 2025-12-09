@@ -76,10 +76,10 @@ export default function DataEngineering() {
 
       {/* Hero - Light & Clean */}
       <section className="hero-content-web relative h-[50vh] bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center text-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('./images/career.jpg')] bg-cover bg-center opacity-3"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2934&auto=format&fit=crop')] bg-cover bg-center opacity-3"></div>
 
         <div className="relative z-10 max-w-6xl px-6 mt-2">
-          <h1 className="text-4xl md:text-4xl mt-2 font-bold text-gray-900 mb-3 leading-tight">
+          <h1 className="text-4xl md:text-4xl mt-2 font-bold text-white mb-3 leading-tight">
             Data Engineering<br />
             <span className="text-indigo-600">With Confidence</span>
           </h1>
