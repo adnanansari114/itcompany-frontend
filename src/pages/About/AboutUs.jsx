@@ -169,13 +169,6 @@ export default function AboutUs() {
           <div className="team-grid-pro">
             {[
               {
-                name: "Murtaza Jawadwala",
-                role: "CEO & Founder",
-                img: "https://randomuser.me/api/portraien/11.jpg",
-                color: "from-blue-500 to-cyan-500",
-                link: "https://www.linkedin.com/in/murtazajawadwala?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-              },
-              {
                 name: "Seema Bairagi",
                 role: "Head of Delivery",
                 img: "./images/seema.jpg",
@@ -185,7 +178,7 @@ export default function AboutUs() {
               {
                 name: "Palak Gehani",
                 role: "Tech Lead",
-                img: "https://randomuser.me/api/ports/men/32.jpg",
+                img: "images/palak1.jpg",
                 color: "from-orange-500 to-red-500"
               },
               {
@@ -198,7 +191,7 @@ export default function AboutUs() {
               {
                 name: "Md Adnan",
                 role: "Lead Developer",
-                img:"",
+                img:"/images/adnan.jpg",
                 color: "from-orange-500 to-red-500",
                 link: "https://www.linkedin.com/in/mdadnanansari"
               },
@@ -208,6 +201,13 @@ export default function AboutUs() {
                 img:"images/yatan2.jpg",
                 color: "from-orange-500 to-red-500",
                 link: "https://www.linkedin.com/in/yatan-s-a212a6389"
+              },
+              {
+                name: "Sushil Keer",
+                role: "Lead Developer",
+                img:"/images/sushil.png",
+                color: "from-orange-500 to-red-500",
+                link: "https://www.linkedin.com/in/mdadnanansari"
               },
               {
                 name: "Yash",
