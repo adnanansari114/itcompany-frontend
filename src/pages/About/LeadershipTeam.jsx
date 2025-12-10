@@ -11,6 +11,13 @@ const teamMembers = [
     role: "Founder & CEO",
     image: "/images/mjsir3.jpg",
     bio: "Murtaza is a seasoned innovator and advocate in global digital and data transformation, with a strong focus on FinTech, InsurTech, and digital transformation. With over 17 years of business experience across the USA, UK, Middle East, Germany, Hong Kong, and India, I’ve driven enterprise expansion and organizational transformations."
+  },
+  {
+    name: "Touhid Rahman",
+    role: "Leadership Team",
+    image:"/images/TouhidPic.jpg",
+    bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim molestiae, provident dolores iste perferendis commodi repellat a tenetur eum facilis, animi voluptatum alias quidem exercitationem similique totam at magnam repudiandae rerum in necessitatibus consequatur magni."
+
   }
 ];
 
@@ -39,6 +46,43 @@ export default function LeadershipTeam() {
           >
             Experienced professionals committed to your success
           </motion.p>
+        </div>
+      </section>
+
+      <section className="leadership-section-light">
+        <div className="leadership-container-light">
+          {teamMembers.map((member, index) => (
+            <motion.div
+              key={index}
+              className={`leadership-card-light ${index % 2 === 1 ? 'reverse' : ''}`}
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="image-side-light">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="member-image-light"
+                />
+              </div>
+
+              <div className="content-side-light">
+                <div className="content-inner-light">
+                  <h2 className="member-name-light">{member.name}</h2>
+                  <h3 className="member-role-light">{member.role}</h3>
+                  <div className="role-line-light"></div>
+                  <p className="member-bio-light">{member.bio}</p>
+
+                  <div className="social-links-light">
+                    <a href="https://www.linkedin.com/in/murtazajawadwala?utm_source=share_via&utm_content=profile&utm_medium=member_android" className="social-btn-light">LinkedIn</a>
+                    <a href="https://about.me/murtazajawadwala" className="social-btn-light">about.me</a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
@@ -113,6 +157,20 @@ export default function LeadershipTeam() {
                 link: "https://www.linkedin.com/in/mdadnanansari"
               },
               {
+                name: "Seema Bairagi",
+                role: "Sales Team",
+                img: "./images/seema.jpg",
+                color: "from-purple-500 to-pink-500",
+                link: "https://www.linkedin.com/in/seema-bairagi-49b474266/"
+              },
+              {
+                name: "Palak Gehani",
+                role: "Sales Team",
+                img: "images/palak1.jpg",
+                color: "from-orange-500 to-red-500",
+                link: "https://teams.live.com/l/message/19:uni01_bjwmm4ad7tu64pv5ip2eoavwm2zs42rmgszcwf2te65briwn3dwa@thread.v2/1765281942694?context=%7B%22contextType%22%3A%22chat%22%7D"
+              },
+              {
                 name: "Dhananjay Solanki",
                 role: "Vendor Team",
                 img: "./images/dhananjay.png",
@@ -132,20 +190,6 @@ export default function LeadershipTeam() {
                 img:"/images/adnan.jpg",
                 color: "from-orange-500 to-red-500",
                 link: "https://www.linkedin.com/in/mdadnanansari"
-              },
-              {
-                name: "Seema Bairagi",
-                role: "Sales Team",
-                img: "./images/seema.jpg",
-                color: "from-purple-500 to-pink-500",
-                link: "https://www.linkedin.com/in/seema-bairagi-49b474266/"
-              },
-              {
-                name: "Palak Gehani",
-                role: "Sales Team",
-                img: "images/palak1.jpg",
-                color: "from-orange-500 to-red-500",
-                link: "https://teams.live.com/l/message/19:uni01_bjwmm4ad7tu64pv5ip2eoavwm2zs42rmgszcwf2te65briwn3dwa@thread.v2/1765281942694?context=%7B%22contextType%22%3A%22chat%22%7D"
               },
               {
                 name: "Sushil Keer",

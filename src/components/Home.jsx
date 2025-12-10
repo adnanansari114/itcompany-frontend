@@ -22,6 +22,8 @@ export default function Home() {
         name: "",
         email: "",
         phone: "",
+        messageuserLocation: "",
+        companyLocation: "",
         company: "",
         message: "",
     });
@@ -91,6 +93,8 @@ export default function Home() {
                     email: form.email,
                     phone: form.phone,
                     company: form.company,
+                    messageuserLocation: form.messageuserLocation,
+                    companyLocation: form.companyLocation,
                     message: form.message,
                     "g-recaptcha-response": recaptchaValue,
                 }),
@@ -208,6 +212,27 @@ export default function Home() {
                                     value={form.company}
                                     onChange={handleChange}
                                     placeholder="Your company name"
+                                />
+                            </label>
+                        </div>
+
+                        <div className="two-col">
+                            <label className="label">
+                                {/* <span className="label-text">Your Phone Number*</span> */}
+                                <input
+                                    name="messageuserLocation"
+                                    value={form.messageuserLocation}
+                                    onChange={handleChange}
+                                    placeholder="Your Current Location"
+                                />
+                            </label>
+                            <label className="label">
+                                {/* <span className="label-text">Your Company Name</span> */}
+                                <input
+                                    name="companyLocation"
+                                    value={form.companyLocation}
+                                    onChange={handleChange}
+                                    placeholder="Company Location"
                                 />
                             </label>
                         </div>

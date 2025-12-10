@@ -848,3 +848,190 @@
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+.admin-navbar-unique {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 1rem 2rem;
+  color: black;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.admin-navbar-logo-unique h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.admin-navbar-links-unique {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2.5rem;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.admin-navbar-links-unique li {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-navbar-links-unique a,
+.admin-navbar-dropdown-toggle-unique {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0rem 0;
+  transition: color 0.3s ease;
+}
+
+.admin-navbar-links-unique a:hover,
+.admin-navbar-dropdown-toggle-unique:hover {
+  color: var(--primary);
+}
+
+.admin-active-unique {
+  color: var(--primary) !important;
+  font-weight: 600;
+  border-bottom: 2px solid var(--primary);
+}
+
+/* Dropdown Styles */
+.admin-navbar-dropdown-unique {
+  position: relative;
+}
+
+.admin-navbar-dropdown-toggle-unique {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.admin-navbar-dropdown-menu-unique {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000;
+  margin-top: 0.5rem;
+  padding: 0rem 0;
+  list-style: none;
+  border: 1px solid #e0e0e0;
+}
+
+.admin-navbar-dropdown-unique:hover .admin-navbar-dropdown-menu-unique {
+  display: block;
+}
+
+.admin-navbar-dropdown-menu-unique li a {
+  display: block;
+  padding: 0.75rem 1.2rem;
+  white-space: nowrap;
+  color: #333;
+}
+
+.admin-navbar-dropdown-menu-unique li a:hover {
+  background-color: #f5f5f5;
+  color: var(--primary);
+}
+
+.admin-navbar-dropdown-menu-unique li a.admin-active-unique {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Logout Button */
+.admin-navbar-logout-unique {
+  margin-left: auto;
+}
+
+.admin-navbar-logout-btn-unique {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.admin-navbar-logout-btn-unique:hover {
+  background-color: var(--primary);
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-navbar-unique {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .admin-navbar-links-unique {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .admin-navbar-logout-unique {
+    margin-left: 0;
+  }
+}
+
+
+/* Iske bajaye yeh use karo - ab pura dropdown li pe hover se menu dikhega */
+.admin-navbar-dropdown-unique:hover > .admin-navbar-dropdown-menu-unique {
+  display: block;
+}
+
+/* Ek important addition - toggle aur menu ke beech gap na bane */
+.admin-navbar-dropdown-unique {
+  position: relative;
+  display: inline-block; /* yeh add karna zaroori hai smooth hover ke liye */
+}
+
+.admin-navbar-dropdown-toggle-unique {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0rem 0; /* thoda padding do taaki hover area badhe */
+}
+
+/* Optional: agar ab bhi gap feel ho toh pseudo-element se invisible bridge bana sakte ho */
+.admin-navbar-dropdown-unique::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 10px; /* toggle aur dropdown ke beech ka gap cover karega */
+  background: transparent;
+  z-index: 1001;
+}
