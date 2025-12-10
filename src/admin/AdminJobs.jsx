@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./admin.css";
 import { MapPin, Briefcase, Clock, Building2 } from "lucide-react";
+import SEO from '../components/SEO';
 const API = import.meta.env.VITE_APP_API_URL;
 
 export default function AdminJobs() {
@@ -65,6 +66,12 @@ export default function AdminJobs() {
   };
 
   return (
+    <>
+    <SEO
+                title="Admin Jobs"
+                description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
+                canonicalUrl="https://www.theittalent.com/admin/jobs"
+            />
     <section className="admin-jobs-section">
       <div className="container">
         <h2 className="admin-title">Manage All Jobs</h2>
@@ -112,5 +119,6 @@ export default function AdminJobs() {
         </div>
       </div>
     </section>
+    </>
   );
 }

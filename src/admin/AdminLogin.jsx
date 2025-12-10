@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./admin.css";
+import SEO from '../components/SEO';
 const API = import.meta.env.VITE_APP_API_URL;
 
 axios.defaults.baseURL = "http://localhost:5000";
@@ -38,6 +39,12 @@ export default function AdminLogin({ setIsAdmin }) {
   };
 
   return (
+    <>
+    <SEO
+                title="Admin Login"
+                description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
+                canonicalUrl="https://www.theittalent.com/admin/login"
+            />
     <div className="admin-login">
       <div className="login-box">
         <h2>Admin Login</h2>
@@ -71,5 +78,6 @@ export default function AdminLogin({ setIsAdmin }) {
         </form>
       </div>
     </div>
+    </>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./admin.css";  // ← Ye import kar do
+import SEO from '../components/SEO';
 const API = import.meta.env.VITE_APP_API_URL;
 
 export default function AdminComments() {
@@ -23,6 +24,12 @@ export default function AdminComments() {
   }, []);
 
   return (
+    <>
+    <SEO
+                title="Comments"
+                description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
+                canonicalUrl="https://www.theittalent.com/"
+            />
     <div className="admin-comments-wrapper">
       <div className="comments-header">
         <h2>All Blog Comments</h2>
@@ -68,5 +75,6 @@ export default function AdminComments() {
         </table>
       </div>
     </div>
+    </>
   );
 }

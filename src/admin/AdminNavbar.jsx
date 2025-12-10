@@ -27,6 +27,7 @@
 
 import { useNavigate, useLocation } from "react-router-dom";
 import './admin.css';
+import SEO from '../components/SEO';
 
 export default function AdminNavbar() {
   const navigate = useNavigate();
@@ -42,6 +43,12 @@ export default function AdminNavbar() {
   const isActive = (path) => location.pathname === path ? "admin-active-unique" : "";
 
   return (
+    <>
+    <SEO
+                title="Navbar"
+                description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
+                canonicalUrl="https://www.theittalent.com/"
+            />
     <nav className="admin-navbar-unique">
       <div className="admin-navbar-logo-unique">
         <h3>Admin Panel</h3>
@@ -70,5 +77,6 @@ export default function AdminNavbar() {
         <button onClick={handleLogout} className="admin-navbar-logout-btn-unique">Logout</button>
       </div>
     </nav>
+    </>
   );
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./admin.css";
 const API = import.meta.env.VITE_APP_API_URL;
+import SEO from '../components/SEO';
 
 axios.defaults.headers.common["Content-Type"] = "application/json";
 // axios.defaults.baseURL = "http://localhost:5000";
@@ -25,6 +26,12 @@ export default function AdminApplications({ setAdmin }) {
   }, []);
 
   return (
+    <>
+    <SEO
+                title="Applications"
+                description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
+                canonicalUrl="https://www.theittalent.com/admin/comments"
+            />
     <div className="admin-applications-page">
       <h2>Job Applications</h2>
 
@@ -63,5 +70,6 @@ export default function AdminApplications({ setAdmin }) {
         </table>
       </div>
     </div>
+    </>
   );
 }

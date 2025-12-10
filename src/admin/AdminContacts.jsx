@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './admin.css';
+import SEO from '../components/SEO';
 const API = import.meta.env.VITE_APP_API_URL;
 
 export default function AdminContacts(setIsAdmin) {
@@ -21,6 +22,12 @@ export default function AdminContacts(setIsAdmin) {
   };
 
   return (
+    <>
+    <SEO
+                title="Contacts"
+                description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
+                canonicalUrl="https://www.theittalent.com/admin/admincontact"
+            />
     <div className="admin-contact-page">
       <h2>Contact Messages</h2>
 
@@ -56,5 +63,6 @@ export default function AdminContacts(setIsAdmin) {
         </table>
       </div>
     </div>
+    </>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./admin.css";
 const API = import.meta.env.VITE_APP_API_URL;
+import SEO from '../components/SEO';
 
 axios.defaults.headers.common["Content-Type"] = "application/json";
 axios.defaults.baseURL = "http://localhost:5000";
@@ -59,6 +60,12 @@ export default function AddJob({ setIsAdmin }) {
   };
 
   return (
+    <>
+    <SEO
+                title="Add Jobs"
+                description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
+                canonicalUrl="https://www.theittalent.com/"
+            />
     <div className="admin-job-container">
       <div className="job-box">
         <h2>Add New Job</h2>
@@ -111,5 +118,6 @@ export default function AddJob({ setIsAdmin }) {
         </form>
       </div>
     </div>
+    </>
   );
 }

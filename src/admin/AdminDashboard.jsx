@@ -90,6 +90,7 @@
 // adminDashboard.jsx
 import React, { useState, useEffect } from "react";
 import "./admin.css";
+import SEO from '../components/SEO';
 
 const API = import.meta.env.VITE_APP_API_URL;
 
@@ -141,6 +142,12 @@ export default function AdminDashboard() {
   if (loading) return <p className="text-center text-gray-500">Loading dashboard stats...</p>;
 
   return (
+    <>
+    <SEO
+                title="Dashboard"
+                description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
+                canonicalUrl="https://www.theittalent.com/admin/dashboard"
+            />
     <div className="admin-dashboard p-6">
       <h2 className="text-2xl font-bold mb-2">Welcome Admin!</h2>
       <p className="text-gray-600 mb-8">Here are your website statistics</p>
@@ -162,5 +169,6 @@ export default function AdminDashboard() {
         </div>
       </div>
     </div>
+    </>
   );
 }

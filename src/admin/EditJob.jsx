@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./admin.css";
+import SEO from '../components/SEO';
 import { useParams, useNavigate } from "react-router-dom";
 const API = import.meta.env.VITE_APP_API_URL;
 
@@ -52,6 +53,12 @@ export default function EditJob() {
   };
 
   return (
+    <>
+    <SEO
+                title="Edit Jobs"
+                description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
+                canonicalUrl="https://www.theittalent.com/admin/editjob"
+            />
     <div className="edit-job-container">
       <h2>Edit Job</h2>
 
@@ -73,5 +80,6 @@ export default function EditJob() {
         <button type="submit" className="update-btn">Update Job</button>
       </form>
     </div>
+    </>
   );
 }
