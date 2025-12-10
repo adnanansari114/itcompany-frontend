@@ -14,7 +14,7 @@ const locations = ["Indore", "Bangalore", "Pune", "Remote", "Hyderabad", "Mumbai
 
 const Careers = () => {
   const [allJobs, setAllJobs] = useState([]);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Job Category");
   const [selectedType, setSelectedType] = useState("All Job Type");
@@ -39,21 +39,21 @@ const Careers = () => {
   //   fetchJobs();
   // }, []);
 
-useEffect(() => {
-  const fetchJobs = async () => {
-    try {
-      const res = await axios.get(`${API}/api/jobs`);
-      console.log("API Response Data:", res.data);
-      setAllJobs(res.data);
-    } catch (err) {
-      console.log("Error fetching jobs:", err);
-    } finally {
-      setLoading(false);
-    }
-  };
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const res = await axios.get(`${API}/api/jobs`);
+        console.log("API Response Data:", res.data);
+        setAllJobs(res.data);
+      } catch (err) {
+        console.log("Error fetching jobs:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  fetchJobs();
-}, []);
+    fetchJobs();
+  }, []);
 
 
 

@@ -23,46 +23,46 @@ export default function AdminContacts(setIsAdmin) {
 
   return (
     <>
-    <SEO
-                title="Contacts"
-                description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
-                canonicalUrl="https://www.theittalent.com/admin/admincontact"
-            />
-    <div className="admin-contact-page">
-      <h2>Contact Messages</h2>
+      <SEO
+        title="Contacts"
+        description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
+        canonicalUrl="https://www.theittalent.com/admin/admincontact"
+      />
+      <div className="admin-contact-page">
+        <h2>Contact Messages</h2>
 
-      <div className="table">
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Company</th>
-              <th>Location</th>
-              <th>Company Location</th>
-              <th>Message</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {list.map((item) => (
-              <tr key={item._id}>
-                <td>{item.name}</td>
-                <td>{item.email}</td>
-                <td>{item.phone || "—"}</td>
-                <td>{item.company || "—"}</td>
-                <td>{item.userLocation}</td>
-                <td>{item.companyLocation}</td>
-                <td>{item.message}</td>
-                <td>{new Date(item.createdAt).toLocaleString()}</td>
+        <div className="table">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Company</th>
+                <th>Location</th>
+                <th>Company Location</th>
+                <th>Message</th>
+                <th>Date</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody>
+              {list.map((item) => (
+                <tr key={item._id}>
+                  <td>{item.name}</td>
+                  <td>{item.email}</td>
+                  <td>{item.phone || "—"}</td>
+                  <td>{item.company || "—"}</td>
+                  <td>{item.userLocation}</td>
+                  <td>{item.companyLocation}</td>
+                  <td>{item.message}</td>
+                  <td>{new Date(item.createdAt).toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
     </>
   );
 }

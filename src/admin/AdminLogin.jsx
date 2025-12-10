@@ -40,44 +40,44 @@ export default function AdminLogin({ setIsAdmin }) {
 
   return (
     <>
-    <SEO
-                title="Admin Login"
-                description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
-                canonicalUrl="https://www.theittalent.com/admin/login"
-            />
-    <div className="admin-login">
-      <div className="login-box">
-        <h2>Admin Login</h2>
+      <SEO
+        title="Admin Login"
+        description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
+        canonicalUrl="https://www.theittalent.com/admin/login"
+      />
+      <div className="admin-login">
+        <div className="login-box">
+          <h2>Admin Login</h2>
 
-        {message && <p className="error-msg">{message}</p>}
+          {message && <p className="error-msg">{message}</p>}
 
-        <form onSubmit={handleLogin}>
-          <div className="inputGroup">
-            <label>Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder="Enter admin email"
-            />
-          </div>
+          <form onSubmit={handleLogin}>
+            <div className="inputGroup">
+              <label>Email</label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder="Enter admin email"
+              />
+            </div>
 
-          <div className="inputGroup">
-            <label>Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="Enter password"
-            />
-          </div>
+            <div className="inputGroup">
+              <label>Password</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder="Enter password"
+              />
+            </div>
 
-          <button className="btn">Login</button>
-        </form>
+            <button className="btn">Login</button>
+          </form>
+        </div>
       </div>
-    </div>
     </>
   );
 }

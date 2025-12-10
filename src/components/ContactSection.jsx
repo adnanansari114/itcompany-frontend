@@ -13,7 +13,7 @@ const ContactSection = () => {
     email: "",
     phone: "",
     userLocation: "",
-        companyLocation: "",
+    companyLocation: "",
     company: "",
     message: "",
   });
@@ -98,7 +98,7 @@ const ContactSection = () => {
           phone: form.phone,
           company: form.company,
           userLocation: form.userLocation,
-                    companyLocation: form.companyLocation,
+          companyLocation: form.companyLocation,
           message: form.message,
           "g-recaptcha-response": recaptchaValue,
         }),
@@ -164,28 +164,6 @@ const ContactSection = () => {
                   <span className="info-text">Indore, (M.P) India</span>
                 </div>
               </div>
-
-              {/* <div className="steps-section">
-              <div className="step">
-                <div className="step-numbers">01</div>
-                <span>Share your requirements</span>
-                <div className="arrow">→</div>
-              </div>
-              <div className="step">
-                <div className="step-numbers">02</div>
-                <span>Discuss with our experts</span>
-                <div className="arrow">→</div>
-              </div>
-              <div className="step">
-                <div className="step-numbers">03</div>
-                <span>Get a free quote</span>
-                <div className="arrow">→</div>
-              </div>
-              <div className="step last">
-                <div className="step-numbers">04</div>
-                <span>Start the project</span>
-              </div>
-            </div> */}
               <div className="divider" />
             </div>
 
@@ -195,7 +173,6 @@ const ContactSection = () => {
 
               <div className="two-col">
                 <label className="label">
-                  {/* <span className="label-text">Your name</span> */}
                   <input
                     name="name"
                     value={form.name}
@@ -223,7 +200,6 @@ const ContactSection = () => {
 
               <div className="two-col">
                 <label className="label">
-                  {/* <span className="label-text">Your Phone Number*</span> */}
                   <input
                     name="phone"
                     value={form.phone}
@@ -232,7 +208,6 @@ const ContactSection = () => {
                   />
                 </label>
                 <label className="label">
-                  {/* <span className="label-text">Your Company Name</span> */}
                   <input
                     name="company"
                     value={form.company}
@@ -243,25 +218,25 @@ const ContactSection = () => {
               </div>
 
               <div className="two-col">
-                            <label className="label">
-                                {/* <span className="label-text">Your Phone Number*</span> */}
-                                <input
-                                    name="userLocation"
-                                    value={form.userLocation}
-                                    onChange={handleChange}
-                                    placeholder="Your Current Location"
-                                />
-                            </label>
-                            <label className="label">
-                                {/* <span className="label-text">Your Company Name</span> */}
-                                <input
-                                    name="companyLocation"
-                                    value={form.companyLocation}
-                                    onChange={handleChange}
-                                    placeholder="Company Location"
-                                />
-                            </label>
-                        </div>
+                <label className="label">
+                  {/* <span className="label-text">Your Phone Number*</span> */}
+                  <input
+                    name="userLocation"
+                    value={form.userLocation}
+                    onChange={handleChange}
+                    placeholder="Your Current Location"
+                  />
+                </label>
+                <label className="label">
+                  {/* <span className="label-text">Your Company Name</span> */}
+                  <input
+                    name="companyLocation"
+                    value={form.companyLocation}
+                    onChange={handleChange}
+                    placeholder="Company Location"
+                  />
+                </label>
+              </div>
 
               <label className="label">
                 {/* <span className="label-text">How can we help you?</span> */}

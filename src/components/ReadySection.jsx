@@ -11,7 +11,7 @@ export default function ReadySection() {
         description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
         canonicalUrl="https://www.theittalent.com/"
       />
-            <section className="ready-section">
+      <section className="ready-section">
         <video autoPlay muted loop className="ready-video">
           <source src="./images/GetReady.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -25,7 +25,7 @@ export default function ReadySection() {
             way, from initial consultation to implementation.
           </p>
 
-          <a href="/contact" className="ready-btn" > 
+          <a href="/contact" className="ready-btn" >
             CONTACT US TODAY <FaArrowRight />
           </a>
         </div>

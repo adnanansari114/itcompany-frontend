@@ -67,58 +67,58 @@ export default function AdminJobs() {
 
   return (
     <>
-    <SEO
-                title="Admin Jobs"
-                description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
-                canonicalUrl="https://www.theittalent.com/admin/jobs"
-            />
-    <section className="admin-jobs-section">
-      <div className="container">
-        <h2 className="admin-title">Manage All Jobs</h2>
+      <SEO
+        title="Admin Jobs"
+        description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
+        canonicalUrl="https://www.theittalent.com/admin/jobs"
+      />
+      <section className="admin-jobs-section">
+        <div className="container">
+          <h2 className="admin-title">Manage All Jobs</h2>
 
-        <div className="jobs-grid">
-          {jobs.length > 0 ? (
-            jobs.map((job) => (
-              <div key={job._id} className="job-card-admin">
-                <div className="job-header">
-                  <h3>{job.title}</h3>
-                  <span className="company">
-                    <Building2 size={16} /> The IT Talent
-                  </span>
+          <div className="jobs-grid">
+            {jobs.length > 0 ? (
+              jobs.map((job) => (
+                <div key={job._id} className="job-card-admin">
+                  <div className="job-header">
+                    <h3>{job.title}</h3>
+                    <span className="company">
+                      <Building2 size={16} /> The IT Talent
+                    </span>
+                  </div>
+
+                  <div className="job-details">
+                    <span className="detail">
+                      <Briefcase size={16} /> {job.jobType}
+                    </span>
+                    <span className="detail">
+                      <MapPin size={16} /> {job.location}
+                    </span>
+                    <span className="detail">
+                      <Clock size={16} /> {new Date(job.createdAt).toDateString()}
+                    </span>
+                  </div>
+
+                  <div className="admin-btn-group">
+                    <button
+                      className="edit-btn"
+                      onClick={() => (window.location.href = `/admin/editjob/${job._id}`)}
+                    >
+                      Edit
+                    </button>
+
+                    <button className="delete-btn" onClick={() => deleteJob(job._id)}>
+                      Delete
+                    </button>
+                  </div>
                 </div>
-
-                <div className="job-details">
-                  <span className="detail">
-                    <Briefcase size={16} /> {job.jobType}
-                  </span>
-                  <span className="detail">
-                    <MapPin size={16} /> {job.location}
-                  </span>
-                  <span className="detail">
-                    <Clock size={16} /> {new Date(job.createdAt).toDateString()}
-                  </span>
-                </div>
-
-                <div className="admin-btn-group">
-                  <button
-                    className="edit-btn"
-                    onClick={() => (window.location.href = `/admin/editjob/${job._id}`)}
-                  >
-                    Edit
-                  </button>
-
-                  <button className="delete-btn" onClick={() => deleteJob(job._id)}>
-                    Delete
-                  </button>
-                </div>
-              </div>
-            ))
-          ) : (
-            <h3>No jobs available</h3>
-          )}
+              ))
+            ) : (
+              <h3>No jobs available</h3>
+            )}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 }

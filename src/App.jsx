@@ -33,6 +33,8 @@ import AdminNavbar from './admin/AdminNavbar.jsx';
 import AdminJobs from './admin/AdminJobs.jsx';
 import EditJob from './admin/EditJob.jsx';
 import AdminComments from './admin/AdminComments.jsx';
+import AddBlog from './admin/AddBlog.jsx';
+import EditBlog from './admin/EditBlog.jsx';
 
 // Protected Route Component
 const ProtectedAdminRoute = ({ children }) => {
@@ -58,6 +60,8 @@ const AdminLayout = () => {
         <Route path="jobs" element={<AdminJobs />} />
         <Route path="/editjob/:id" element={<EditJob />} />
         <Route path="/comments" element={<AdminComments />} />
+        <Route path="/addblog" element={<AddBlog />} />
+        <Route path="/editblog" element={<EditBlog />} />
       </Routes>
     </>
   );

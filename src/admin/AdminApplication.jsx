@@ -20,56 +20,56 @@ export default function AdminApplications({ setAdmin }) {
         setApps(res.data);
       } catch (err) {
         console.error(err);
-      } 
+      }
     };
     fetchApps();
   }, []);
 
   return (
     <>
-    <SEO
-                title="Applications"
-                description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
-                canonicalUrl="https://www.theittalent.com/admin/comments"
-            />
-    <div className="admin-applications-page">
-      <h2>Job Applications</h2>
+      <SEO
+        title="Applications"
+        description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
+        canonicalUrl="https://www.theittalent.com/admin/comments"
+      />
+      <div className="admin-applications-page">
+        <h2>Job Applications</h2>
 
-      <div className="app-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th><th>Email</th><th>Phone</th><th>Job</th><th>Resume</th><th>Date</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {apps.map(a => (
-              <tr key={a._id}>
-                <td data-label="Name">{a.name}</td>
-                <td data-label="Email">{a.email}</td>
-                <td data-label="Phone">{a.phone}</td>
-                <td data-label="Job">{a.jobId?.title || "—"}</td>
-                <td data-label="Resume">
-                  {a.resume ? (
-                    <a
-                      href={`http://localhost:5000/${a.resume}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      download
-                    >
-                      Download
-                    </a>
-                  ) : "—"}
-                </td>
-                <td data-label="Date">{new Date(a.createdAt).toLocaleString()}</td>
+        <div className="app-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th><th>Email</th><th>Phone</th><th>Job</th><th>Resume</th><th>Date</th>
               </tr>
-            ))}
-          </tbody>
+            </thead>
 
-        </table>
+            <tbody>
+              {apps.map(a => (
+                <tr key={a._id}>
+                  <td data-label="Name">{a.name}</td>
+                  <td data-label="Email">{a.email}</td>
+                  <td data-label="Phone">{a.phone}</td>
+                  <td data-label="Job">{a.jobId?.title || "—"}</td>
+                  <td data-label="Resume">
+                    {a.resume ? (
+                      <a
+                        href={`http://localhost:5000/${a.resume}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        download
+                      >
+                        Download
+                      </a>
+                    ) : "—"}
+                  </td>
+                  <td data-label="Date">{new Date(a.createdAt).toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+
+          </table>
+        </div>
       </div>
-    </div>
     </>
   );
 }

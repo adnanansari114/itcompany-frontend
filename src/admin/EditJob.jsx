@@ -54,32 +54,32 @@ export default function EditJob() {
 
   return (
     <>
-    <SEO
-                title="Edit Jobs"
-                description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
-                canonicalUrl="https://www.theittalent.com/admin/editjob"
-            />
-    <div className="edit-job-container">
-      <h2>Edit Job</h2>
+      <SEO
+        title="Edit Jobs"
+        description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
+        canonicalUrl="https://www.theittalent.com/admin/editjob"
+      />
+      <div className="edit-job-container">
+        <h2>Edit Job</h2>
 
-      <form className="edit-job-form" onSubmit={updateJob}>
-        <input type="text" name="title" value={form.title} onChange={handleChange} placeholder="Job Title" required />
+        <form className="edit-job-form" onSubmit={updateJob}>
+          <input type="text" name="title" value={form.title} onChange={handleChange} placeholder="Job Title" required />
 
-        <input type="text" name="company" value={form.company} onChange={handleChange} placeholder="Company" required />
+          <input type="text" name="company" value={form.company} onChange={handleChange} placeholder="Company" required />
 
-        <input type="text" name="location" value={form.location} onChange={handleChange} placeholder="Location" required />
+          <input type="text" name="location" value={form.location} onChange={handleChange} placeholder="Location" required />
 
-        <input type="text" name="jobType" value={form.jobType} onChange={handleChange} placeholder="Job Type" required />
+          <input type="text" name="jobType" value={form.jobType} onChange={handleChange} placeholder="Job Type" required />
 
-        <input type="text" name="category" value={form.category} onChange={handleChange} placeholder="Category" required />
+          <input type="text" name="category" value={form.category} onChange={handleChange} placeholder="Category" required />
 
-        <input type="text" name="salary" value={form.salary} onChange={handleChange} placeholder="Salary" />
+          <input type="text" name="salary" value={form.salary} onChange={handleChange} placeholder="Salary" />
 
-        <textarea name="description" value={form.description} onChange={handleChange} placeholder="Job Description" required />
+          <textarea name="description" value={form.description} onChange={handleChange} placeholder="Job Description" required />
 
-        <button type="submit" className="update-btn">Update Job</button>
-      </form>
-    </div>
+          <button type="submit" className="update-btn">Update Job</button>
+        </form>
+      </div>
     </>
   );
 }
