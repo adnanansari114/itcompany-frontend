@@ -45,7 +45,7 @@ export default function AdminNavbar() {
   return (
     <>
     <SEO
-                title="Navbar"
+                title="Admin Dashboard"
                 description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
                 canonicalUrl="https://www.theittalent.com/"
             />
