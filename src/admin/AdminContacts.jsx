@@ -32,6 +32,8 @@ export default function AdminContacts(setIsAdmin) {
               <th>Email</th>
               <th>Phone</th>
               <th>Company</th>
+              <th>Location</th>
+              <th>Company Location</th>
               <th>Message</th>
               <th>Date</th>
             </tr>
@@ -44,6 +46,8 @@ export default function AdminContacts(setIsAdmin) {
                 <td>{item.email}</td>
                 <td>{item.phone || "—"}</td>
                 <td>{item.company || "—"}</td>
+                <td>{item.userLocation}</td>
+                <td>{item.companyLocation}</td>
                 <td>{item.message}</td>
                 <td>{new Date(item.createdAt).toLocaleString()}</td>
               </tr>

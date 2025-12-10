@@ -4,7 +4,7 @@ import "./admin.css";
 const API = import.meta.env.VITE_APP_API_URL;
 
 axios.defaults.headers.common["Content-Type"] = "application/json";
-axios.defaults.baseURL = "http://localhost:5000";
+// axios.defaults.baseURL = "http://localhost:5000";
 
 
 export default function AdminApplications({ setAdmin }) {
