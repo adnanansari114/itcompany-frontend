@@ -965,3 +965,302 @@
   background: transparent;
   z-index: 1001;
 }
+
+
+
+
+
+
+
+
+
+
+/* Admin Blog Management - Clean & Modern */
+
+.admin-blog-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.admin-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.add-btn {
+  background: var(--primary, #3b82f6);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.add-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+/* Messages */
+.msg {
+  padding: 14px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 500;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.success {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+/* Table */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.blog-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.blog-table th {
+  background: var(--primary, #3b82f6);
+  color: white;
+  padding: 18px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.blog-table td {
+  padding: 18px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.blog-table tr:hover {
+  background: #f8fafc;
+}
+
+.blog-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Action Buttons */
+.actions {
+  white-space: nowrap;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.edit-btn {
+  background: #10b981;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #059669;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #64748b;
+}
+
+.empty-state p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .admin-blog-container {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .blog-table,
+  .blog-table thead,
+  .blog-table tbody,
+  .blog-table th,
+  .blog-table td,
+  .blog-table tr {
+    display: block;
+  }
+
+  .blog-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .blog-table tr {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    padding: 15px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+
+  .blog-table td {
+    border: none;
+    padding: 10px 0;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+  }
+
+  .blog-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    font-weight: 600;
+    color: #1e293b;
+    text-align: left;
+  }
+
+  .actions {
+    padding-left: 15px !important;
+    text-align: left !important;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+  }
+}
+
+
+
+
+
+/* Logo from public folder */
+.admin-company-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.admin-logo-link:hover .admin-company-logo {
+  transform: scale(1.1);
+}
+
+.admin-navbar-logo-unique {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-navbar-logo-unique h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Footer */
+.admin-footer-unique {
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 24px 40px;
+  margin-top: auto;
+  border-top: 1px solid #1e293b;
+  font-size: 14px;
+}
+
+.admin-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.admin-footer-left p,
+.admin-footer-right p {
+  margin: 0;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .admin-footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .admin-company-logo {
+    height: 40px;
+  }
+
+  .admin-navbar-logo-unique h3 {
+    font-size: 18px;
+  }
+}

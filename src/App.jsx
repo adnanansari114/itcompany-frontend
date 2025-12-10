@@ -22,6 +22,7 @@ import BlogPage from './pages/About/BlogPage.jsx';
 import SubBlog from './pages/About/SubBlog.jsx';
 import SubBlogTwo from './pages/About/SubBlogTwo.jsx';
 import SubBlogThree from './pages/About/SubBlogThree.jsx';
+import BlogDetailPage from "./pages/About/BlogDetailPage";
 
 // Admin Components
 import AdminLogin from './admin/AdminLogin.jsx';
@@ -35,6 +36,7 @@ import EditJob from './admin/EditJob.jsx';
 import AdminComments from './admin/AdminComments.jsx';
 import AddBlog from './admin/AddBlog.jsx';
 import EditBlog from './admin/EditBlog.jsx';
+import BlogList from './admin/BlogList.jsx';
 
 // Protected Route Component
 const ProtectedAdminRoute = ({ children }) => {
@@ -60,8 +62,9 @@ const AdminLayout = () => {
         <Route path="jobs" element={<AdminJobs />} />
         <Route path="/editjob/:id" element={<EditJob />} />
         <Route path="/comments" element={<AdminComments />} />
-        <Route path="/addblog" element={<AddBlog />} />
-        <Route path="/editblog" element={<EditBlog />} />
+        <Route path="/add-blog" element={<AddBlog />} />
+        <Route path="/edit-blog/:id" element={<EditBlog />} />
+        <Route path="blogs" element={< BlogList />} />
       </Routes>
     </>
   );
@@ -93,6 +96,7 @@ const PublicLayout = () => {
         <Route path="/subblog" element={<SubBlog />} />
         <Route path="/subblogtwo" element={<SubBlogTwo />} />
         <Route path="/subblogthree" element={<SubBlogThree />} />
+        <Route path="/blog/:id" element={<BlogDetailPage />} />
       </Routes>
       {!location.pathname.startsWith('/admin') && <Footer />}
     </>

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "./admin.css";
 import SEO from '../components/SEO';
+import AdminFooter from "./AdminFooter";
 
 const API = import.meta.env.VITE_APP_API_URL;
 
@@ -79,6 +80,7 @@ export default function AdminDashboard() {
           </div>
         </div>
       </div>
+      <AdminFooter/>
     </>
   );
 }
