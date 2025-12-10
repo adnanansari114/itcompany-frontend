@@ -120,8 +120,8 @@ export default function Navbar({ isHome }) {
                   </div>
                 )}
               </div>
+              <a href="/blog">Blog</a>
               <a href="/careers">Opportunities</a>
-            <a href="/contact">Contact Us</a>
               <a href="/contact">Contact Us</a>
             </div>
 

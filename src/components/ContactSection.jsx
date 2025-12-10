@@ -12,6 +12,8 @@ const ContactSection = () => {
     name: "",
     email: "",
     phone: "",
+    userLocation: "",
+        companyLocation: "",
     company: "",
     message: "",
   });
@@ -95,6 +97,8 @@ const ContactSection = () => {
           email: form.email,
           phone: form.phone,
           company: form.company,
+          userLocation: form.userLocation,
+                    companyLocation: form.companyLocation,
           message: form.message,
           "g-recaptcha-response": recaptchaValue,
         }),
@@ -237,6 +241,27 @@ const ContactSection = () => {
                   />
                 </label>
               </div>
+
+              <div className="two-col">
+                            <label className="label">
+                                {/* <span className="label-text">Your Phone Number*</span> */}
+                                <input
+                                    name="userLocation"
+                                    value={form.userLocation}
+                                    onChange={handleChange}
+                                    placeholder="Your Current Location"
+                                />
+                            </label>
+                            <label className="label">
+                                {/* <span className="label-text">Your Company Name</span> */}
+                                <input
+                                    name="companyLocation"
+                                    value={form.companyLocation}
+                                    onChange={handleChange}
+                                    placeholder="Company Location"
+                                />
+                            </label>
+                        </div>
 
               <label className="label">
                 {/* <span className="label-text">How can we help you?</span> */}

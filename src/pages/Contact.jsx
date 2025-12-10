@@ -19,7 +19,7 @@ export default function Contact() {
   const locations = [
     { icon: FaMapMarkerAlt, country: "India (HQ)", address: "Indore M.P.", phone: "+91 91543 64386" },
     // { icon: FaMapMarkerAlt, country: "USA", address: "Chicago", phone: "+1 425 543 7777" },
-    { icon: FaMapMarkerAlt, country: "UAE", address: "Abu Dhabi", phone: "+65 9715 4554" },
+    { icon: FaMapMarkerAlt, country: "UAE", address: "Al Khaleej St - Al Corniche - Deira - Dubai", phone: "+971 54 750 9138" },
   ];
 
   return (

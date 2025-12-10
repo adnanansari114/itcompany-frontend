@@ -22,7 +22,7 @@ export default function Home() {
         name: "",
         email: "",
         phone: "",
-        messageuserLocation: "",
+        userLocation: "",
         companyLocation: "",
         company: "",
         message: "",
@@ -93,7 +93,7 @@ export default function Home() {
                     email: form.email,
                     phone: form.phone,
                     company: form.company,
-                    messageuserLocation: form.messageuserLocation,
+                    userLocation: form.userLocation,
                     companyLocation: form.companyLocation,
                     message: form.message,
                     "g-recaptcha-response": recaptchaValue,
@@ -220,8 +220,8 @@ export default function Home() {
                             <label className="label">
                                 {/* <span className="label-text">Your Phone Number*</span> */}
                                 <input
-                                    name="messageuserLocation"
-                                    value={form.messageuserLocation}
+                                    name="userLocation"
+                                    value={form.userLocation}
                                     onChange={handleChange}
                                     placeholder="Your Current Location"
                                 />

@@ -32,8 +32,8 @@ export default function LocationSection() {
       id: 4,
       country: "UAE",
       name: "Dubai Office",
-      address: "Business Bay, Dubai, UAE",
-      phone: "+91 91791 00280",
+      address: "Al Khaleej St - Al Corniche - Deira - Dubai",
+      phone: "+971 54 750 9138",
       flag: "🇦🇪",
     },
   ];

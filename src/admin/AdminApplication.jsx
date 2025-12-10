@@ -19,7 +19,7 @@ export default function AdminApplications({ setAdmin }) {
         setApps(res.data);
       } catch (err) {
         console.error(err);
-      }
+      } 
     };
     fetchApps();
   }, []);

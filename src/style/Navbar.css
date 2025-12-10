@@ -61,7 +61,7 @@
 }
 
 .nav-links {
-  gap: 5px;
+  gap: 0px;
 }
 
 .nav-links a {
@@ -69,7 +69,7 @@
   font-size: 17px;
   /* color: var(--dark-color); */
   transition: var(--transition-medium);
-  padding: 4px 16px;
+  padding: 4px 12px;
   border-radius: 5px;
   font-weight: 600;
 }
