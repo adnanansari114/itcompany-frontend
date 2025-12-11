@@ -491,7 +491,8 @@
 
 .sidebar-card {
   background: white;
-  padding: 28px;
+  width: 330px;
+  padding: 25px;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
   border: 1px solid #e2e8f0;

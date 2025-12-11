@@ -12,22 +12,6 @@ export default function LocationSection() {
       phone: "+91 97543 64386",
       flag: "India",
     },
-    // {
-    //   id: 2,
-    //   country: "USA",
-    //   name: "US Branch — New York",
-    //   address: "5th Avenue, Manhattan, New York 10001",
-    //   phone: "+1 555 234 7788",
-    //   flag: "Us",
-    // },
-    // {
-    //   id: 3,
-    //   country: "UK",
-    //   name: "UK Office — London",
-    //   address: "221B Baker Street, London NW1 6XE",
-    //   phone: "+44 20 7946 0999",
-    //   flag: "🇬🇧",
-    // },
     {
       id: 4,
       country: "UAE",
