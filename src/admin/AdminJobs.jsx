@@ -28,9 +28,9 @@ export default function AdminJobs() {
     }
   };
 
-  useEffect(() => {
-    fetchJobs();
-  }, []);
+  // useEffect(() => {
+  //   fetchJobs();
+  // }, []);
 
   const deleteJob = async (id) => {
     if (!window.confirm("Are you sure you want to delete this job?")) return;
@@ -81,7 +81,7 @@ export default function AdminJobs() {
               jobs.map((job) => (
                 <div key={job._id} className="job-card-admin">
                   <div className="job-header">
-                    <h3>{job.title}</h3>
+                    <h3>{job.techstack}</h3>
                     <span className="company">
                       <Building2 size={16} /> The IT Talent
                     </span>
@@ -89,7 +89,7 @@ export default function AdminJobs() {
 
                   <div className="job-details">
                     <span className="detail">
-                      <Briefcase size={16} /> {job.jobType}
+                      <Briefcase size={16} /> {job.engagementtype}
                     </span>
                     <span className="detail">
                       <MapPin size={16} /> {job.location}
