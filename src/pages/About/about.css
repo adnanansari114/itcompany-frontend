@@ -202,7 +202,7 @@
 }
 
 .value-card-pro:hover {
-  border: 2px solid var(--primary);
+  border: 1px solid var(--primary);
 }
 
 .value-icon-pro {
