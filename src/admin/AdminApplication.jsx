@@ -49,7 +49,7 @@ export default function AdminApplications({ setAdmin }) {
                   <td data-label="Name">{a.name}</td>
                   <td data-label="Email">{a.email}</td>
                   <td data-label="Phone">{a.phone}</td>
-                  <td data-label="Job">{a.jobId?.title || "—"}</td>
+                  <td data-label="Job">{a.jobId?.techstack || "—"}</td>
                   <td data-label="Resume">
                     {a.resume ? (
                       <a

@@ -110,15 +110,6 @@ export default function EditBlog() {
     }
 
     // Validation
-    if (whyChoosePoints.filter(p => p.trim()).length !== 4) {
-      setMsg("Please enter exactly 4 points for Why Choose section");
-      return;
-    }
-    if (additionalPoints.filter(p => p.trim()).length !== 5) {
-      setMsg("Please enter exactly 5 points for additional section");
-      return;
-    }
-
     try {
       await axios.put(
         `${API}/api/blogs/${id}`,
@@ -162,12 +153,12 @@ export default function EditBlog() {
 
             {/* Heading 1 + Paragraphs */}
             <div className="inputGroup">
-              <label>Heading 1 *</label>
+              <label>Heading *</label>
               <input value={heading1} onChange={(e) => setHeading1(e.target.value)} required />
             </div>
 
             <div className="inputGroup">
-              <label>Paragraphs for Heading 1</label>
+              <label>Paragraphs for Heading </label>
               {paragraphs1.map((para, index) => (
                 <div key={index} style={{ display: "flex", gap: "8px", marginBottom: "10px" }}>
                   <textarea
