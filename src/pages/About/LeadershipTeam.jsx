@@ -162,11 +162,11 @@ export default function LeadershipTeam() {
                 link: "https://www.linkedin.com/in/sushil-keer-7ba198204/" // This seems incorrect (points to Adnan); replace with Sushil's actual URL
               },
               {
-                name: "Sunny Chouhan",
+                name: "Sunny Chauhan",
                 role: "Support Team",
                 img: "./images/sunny.png",
                 color: "from-orange-500 to-red-500",
-                link: "https://www.linkedin.com/in/sunny-chouhan" // Replace with actual Sunny's LinkedIn URL
+                link: "https://www.linkedin.com/in/sunny-chauhan-3867551b5/" // Replace with actual Sunny's LinkedIn URL
               },
               {
                 name: "Shivani Keer",

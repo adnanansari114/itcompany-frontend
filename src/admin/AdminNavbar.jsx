@@ -37,7 +37,7 @@ export default function AdminNavbar() {
               className="admin-company-logo" 
             />
           </Link>
-          <h3>Admin Panel</h3>
+          <h3>Administration Console</h3>
         </div>
 
         <ul className="admin-navbar-links-unique">

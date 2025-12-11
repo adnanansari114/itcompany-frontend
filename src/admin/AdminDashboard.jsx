@@ -61,7 +61,7 @@ export default function AdminDashboard() {
         canonicalUrl="https://www.theittalent.com/admin/dashboard"
       />
       <div className="admin-dashboard p-6">
-        <h2 className="text-2xl font-bold mb-2">Welcome Admin!</h2>
+        <h2 className="text-2xl font-bold mb-2">Admin Access Granted</h2>
         <p className="text-gray-600 mb-8">Here are your website statistics</p>
 
         <div className="task-grid grid grid-cols-1 md:grid-cols-3 gap-6">

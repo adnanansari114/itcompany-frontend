@@ -117,19 +117,19 @@ export default function AddBlog() {
             {/* Existing Fields (Title, Heading1, etc.) */}
             <div className="inputGroup">
               <label>Title *</label>
-              <input value={title} onChange={(e) => setTitle(e.target.value)} required />
+              <input placeholder="Blog Title" value={title} onChange={(e) => setTitle(e.target.value)} required />
             </div>
 
             <div className="inputGroup">
               <label>Heading *</label>
-              <input value={heading1} onChange={(e) => setHeading1(e.target.value)} required />
+              <input placeholder="Blog Heading" value={heading1} onChange={(e) => setHeading1(e.target.value)} required />
             </div>
 
             <div className="inputGroup">
               <label>Paragraphs for Heading</label>
               {paragraphs1.map((para, index) => (
                 <div key={index} style={{ display: "flex", marginBottom: "10px", gap: "8px" }}>
-                  <textarea
+                  <textarea placeholder="Blog Paragraph"
                     value={para}
                     onChange={(e) => handleParaChange(setParagraphs1, index, e.target.value, paragraphs1)}
                     rows="3"
@@ -137,9 +137,9 @@ export default function AddBlog() {
                     style={{ flex: 1 }}
                   />
                   <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-                    <button type="button" onClick={() => addPara(setParagraphs1, paragraphs1)} style={{ width: "40px" }}>+</button>
+                    <button type="button" onClick={() => addPara(setParagraphs1, paragraphs1)} style={{ width: "40px", border: "2px solid transparent", background:"var(--primary)", "border-radius":"10px", color: "white" }}>+</button>
                     {paragraphs1.length > 1 && (
-                      <button type="button" onClick={() => removePara(setParagraphs1, index, paragraphs1)} style={{ width: "40px" }}>-</button>
+                      <button type="button" onClick={() => removePara(setParagraphs1, index, paragraphs1)} style={{ width: "40px", border: "2px solid transparent", background:"var(--primary)", "border-radius":"10px", color: "white" }}>-</button>
                     )}
                   </div>
                 </div>

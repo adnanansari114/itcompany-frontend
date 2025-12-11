@@ -18,8 +18,8 @@
 /* HERO */
 .blog-hero-dark {
   position: relative;
-  height: 70vh;
-  min-height: 500px;
+  height: 80vh;
+  /* min-height: 500px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,6 +47,7 @@
   max-width: 1000px;
   line-height: 1.1;
   text-shadow: 0 10px 30px rgba(0, 0, 0, .5);
+  margin-top: 24px;
 }
 
 @media(max-width:768px) {}
@@ -1186,3 +1187,7 @@
     margin-bottom: 0;
   }
 }
+
+
+
+

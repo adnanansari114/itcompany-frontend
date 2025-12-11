@@ -1287,3 +1287,52 @@
     font-size: 18px;
   }
 }
+
+
+.admin-img img{
+  border: 2px;
+  border-radius: 20px;
+}
+
+
+.admin-footer-unique {
+  position: relative;
+  width: 100%;
+  min-height: 360px;                  /* image ke hisaab se adjust kar lena */
+  background-image: url('/images/adminfooter.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px 40px;                 /* side se space */
+  box-sizing: border-box;
+  color: white;
+}
+
+/* Yeh sabse important — content ko bottom pe le jayega */
+.admin-footer-content {
+  position: absolute;
+  bottom: 20px;               /* bottom se kitna upar chahiye */
+  left: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;      /* yehi line text ko bottom align karti hai */
+  z-index: 2;
+}
+
+.admin-footer-left p,
+.admin-footer-right p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);   /* text clear dikhne ke liye */
+}
+
+/* Optional: Dark overlay taaki text saaf dikhe */
+.admin-footer-unique::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.35);   /* thoda dark effect */
+  z-index: 1;
+}
