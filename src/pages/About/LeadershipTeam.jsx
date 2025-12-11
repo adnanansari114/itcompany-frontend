@@ -20,7 +20,7 @@ const teamMembers = [
     name: "Touhid Rahman",
     role: "Leadership Team",
     image: "/images/TouhidPic.jpg",
-    bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim molestiae, provident dolores iste perferendis commodi repellat a tenetur eum facilis, animi voluptatum alias quidem exercitationem similique totam at magnam repudiandae rerum in necessitatibus consequatur magni.",
+    bio: "Touhid Rahman is an accomplished Chief Executive Officer with a proven track record across multiple industries, including Communications, Financial Services, and Leadership Development. He is highly skilled in creating momentum for organizations and has extensive experience in establishing and scaling newly-initiated campaigns into major global operations4. He has successfully launched multiple companies into multi-million-dollar ventures and has led teams of over 30+ individuals. His initiatives have generated over $50 million in worldwide revenue.",
     socials: [
       { name: "LinkedIn", url: "https://www.linkedin.com/in/touhid-rahman" } // Replace with actual Touhid's LinkedIn URL
     ]

@@ -99,8 +99,11 @@ export default function AboutUs() {
                 whileHover={{ y: -10 }}
                 viewport={{ once: true }}
               >
+                <div className="vision-about">
                 <div className="value-icon-pro">{value.icon}</div>
                 <h3>{value.title}</h3>
+                <div></div>
+                </div>
                 <p>{value.desc}</p>
               </motion.div>
             ))}

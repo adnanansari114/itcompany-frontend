@@ -188,9 +188,12 @@
   margin: 30px auto 0;
   padding: 0 2rem;
 }
-
+.vision-about{
+  display: flex;
+  justify-content: space-evenly;
+}
 .value-card-pro {
-  background: white;
+  background: white; 
   padding: 25px 32px;
   border-radius: 28px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
