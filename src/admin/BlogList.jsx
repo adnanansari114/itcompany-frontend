@@ -199,7 +199,7 @@ export default function BlogList() {
                         year: "numeric",
                       })}
                     </td>
-                    <td data-label="Actions" className="actions">
+                    <td data-label="Actions" className="actions bloglist-btn">
                       <button
                         onClick={() => navigate(`/admin/edit-blog/${blog._id}`)}
                         className="edit-btn"

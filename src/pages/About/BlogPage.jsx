@@ -373,7 +373,7 @@ export default function BlogPage() {
         description="Latest tech articles"
         canonicalUrl="https://www.theittalent.com/blog"
       />
-
+    <div className="container">
       <section className="blog-header">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -424,7 +424,7 @@ export default function BlogPage() {
 
         </div>
       </section>
-
+      </div>
       <ReadySection />
     </>
   );

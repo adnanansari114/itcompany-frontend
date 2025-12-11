@@ -142,25 +142,32 @@
 }
 
 .apply-container {
-  max-width: 350px;
+  max-width: 50%;
   margin: 100px auto 20px;
   background: var(--white);
   padding: var(--space-6);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
 }
+.apply-container h1{
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
 
-.jobs-info {
+.jobs-infos {
   margin-bottom: var(--space-6);
   padding: var(--space-4);
   background: var(--gray-100);
   border-radius: var(--radius-md);
   border: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
 }
 
-.jobs-info h2 {
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--space-2);
+.jobs-infos h2 {
+  font-size: 32px;
+  color: var(--primary);
 }
 
 .jobs-info p {

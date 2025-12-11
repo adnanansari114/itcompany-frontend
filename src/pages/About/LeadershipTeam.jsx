@@ -413,7 +413,7 @@ export default function LeadershipTeam() {
                 role: "Support Team",
                 img: "/images/sushil.png",
                 color: "from-orange-500 to-red-500",
-                link: "https://www.linkedin.com/in/mdadnanansari" // This seems incorrect (points to Adnan); replace with Sushil's actual URL
+                link: "https://www.linkedin.com/in/sushil-keer-7ba198204/" // This seems incorrect (points to Adnan); replace with Sushil's actual URL
               },
               {
                 name: "Sunny Chouhan",
@@ -421,6 +421,13 @@ export default function LeadershipTeam() {
                 img: "./images/sunny.png",
                 color: "from-orange-500 to-red-500",
                 link: "https://www.linkedin.com/in/sunny-chouhan" // Replace with actual Sunny's LinkedIn URL
+              },
+              {
+                name: "Shivani Keer",
+                role: "Support Team",
+                img: "./images/shivani.jpg",
+                color: "from-orange-500 to-red-500",
+                link: "https://www.linkedin.com/in/shivani-keer-408390393/" // Replace with actual Sunny's LinkedIn URL
               }
             ].map((member, i) => (
               <motion.div

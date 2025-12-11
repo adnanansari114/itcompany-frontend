@@ -145,6 +145,7 @@ import '../../style/Blog.css'; // Assuming you have the CSS for SubBlog here
 import SEO from '../../components/SEO';
 import ReadySection from '../../components/ReadySection';
 import { ArrowRight } from 'lucide-react';
+const API = import.meta.env.VITE_APP_API_URL;
 
 const faqs = [
   { q: "What's the difference between custom AI and off-the-shelf tools?", a: "Custom AI is built for your processes. Off-the-shelf tools are built for mass use and may not align with your needs." },
@@ -158,7 +159,22 @@ export default function BlogDetailPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [openFaq, setOpenFaq] = useState(null);
+  const [recentPosts, setRecentPosts] = useState([]);
 
+  useEffect(() => {
+    const getBlogs = async () => {
+      try {
+        const res = await axios.get(`${API}/api/blogs`);
+        const sorted = res.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        setRecentPosts(sorted);
+      } catch (err) {
+        setError("Unable to load blogs.");
+      } finally {
+        setLoading(false);
+      }
+    };
+    getBlogs();
+  }, []);
   // Comment form state
   const [form, setForm] = useState({
     name: "",
@@ -170,7 +186,7 @@ export default function BlogDetailPage() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`/api/blogs/${id}`);
+        const res = await axios.get(`${API}/api/blogs/${id}`);
         setBlog(res.data);
         setError("");
       } catch (err) {
@@ -190,7 +206,7 @@ export default function BlogDetailPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`/api/comments/add`, {
+      await axios.post(`${API}/api/comments/add`, {
         blogId: id,
         ...form
       });
@@ -308,22 +324,27 @@ export default function BlogDetailPage() {
               <section className="faq-section">
                 <h2>Frequently Asked Questions (FAQ)</h2>
                 <div className="faq-list">
-                  {faqs.map((faq, i) => (
-                    <motion.div
-                      key={i}
-                      className={`faq-item ${openFaq === i ? 'open' : ''}`}
-                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.1 }}
-                    >
-                      <h4 className="faq-question">
-                        {faq.q}
-                        <span className="faq-icon">{openFaq === i ? '−' : '+'}</span>
-                      </h4>
-                      {openFaq === i && <p className="faq-answer">{faq.a}</p>}
-                    </motion.div>
-                  ))}
+                  {blog.faqs && blog.faqs.length > 0 ? (
+                    blog.faqs.map((faq, i) => (
+                      <motion.div
+                        key={i}
+                        className={`faq-item ${openFaq === i ? 'open' : ''}`}
+                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        <h4 className="faq-question">
+                          {faq.question}
+                          <span className="faq-icon">{openFaq === i ? '−' : '+'}</span>
+                        </h4>
+                        {openFaq === i && <p className="faq-answer">{faq.answer}</p>}
+                      </motion.div>
+                    ))
+                  ) : (
+                    <p>No FAQs added for this blog yet.</p>
+                  )}
                 </div>
               </section>
             </section>
@@ -338,6 +359,18 @@ export default function BlogDetailPage() {
                     <button>Search</button>
                   </div>
                 </div>
+
+                <div className="sidebar-card">
+                  <h3>Recent Blog</h3>
+
+                  {recentPosts.slice(0, 5).map((post, i) => (
+                    <ul key={i}>
+                      <li ><Link to={`/blog/${post._id}`}>{post.title}</Link></li>
+                    </ul>
+                  ))}
+
+                </div>
+
               </aside>
             </section>
           </div>
@@ -377,7 +410,7 @@ export default function BlogDetailPage() {
           </div>
 
           {/* CTA Section */}
-          <section className="blog-cta-section">
+          {/* <section className="blog-cta-section">
             <div className="cta-card">
               <h3>Let’s Talk Strategy</h3>
               <p>Wondering if AI is the right move for your business? A quick strategy session can help you find the answer. Whether you’re exploring new ideas or have a specific challenge in mind, The IT Talent is here to support you with insights, expertise, and tailored solutions.</p>
@@ -385,7 +418,7 @@ export default function BlogDetailPage() {
                 Schedule a Free Strategy Session <ArrowRight className="arrow-icon" />
               </Link>
             </div>
-          </section>
+          </section> */}
         </div>
       </div>
 

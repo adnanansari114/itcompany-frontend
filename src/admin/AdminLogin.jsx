@@ -74,7 +74,9 @@ export default function AdminLogin({ setIsAdmin }) {
               />
             </div>
 
-            <button className="btn">Login</button>
+              <div className="btn-log">
+            <button className="admin-btn">Login</button>
+            </div>
           </form>
         </div>
       </div>

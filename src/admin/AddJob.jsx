@@ -279,10 +279,11 @@ export default function AddJob({ setIsAdmin }) {
                 required
               />
             </div>
-
-            <button type="submit" className="btn">
+<div className="btn-log">
+            <button type="submit" className="admin-btn">
               Add Job
             </button>
+            </div>
           </form>
         </div>
       </div>

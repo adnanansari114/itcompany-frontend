@@ -411,10 +411,10 @@ export default function JobApply() {
         {loadingJob ? (
           <p style={{ textAlign: "center", padding: "20px" }}>Loading job details...</p>
         ) : job ? (
-          <div className="jobs-info">
+          <div className="jobs-infos">
             <h2>{job.techstack || "Software Engineer Position"}</h2>
 
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "15px", margin: "15px 0", fontSize: "15px" }}>
+            <div style={{ margin: "0px 0", fontSize: "15px" }}>
               <p><strong>Engagement Type:</strong> {job.engagementtype || "Full-time"}</p>
               <p><strong>Location:</strong> {job.location || "Remote"}</p>
               {job.budget && <p><strong>Budget:</strong> {job.budget}</p>}
@@ -425,11 +425,11 @@ export default function JobApply() {
 
             {job.description && (
               <div className="job-description-preview">
-                <h4>Job Description:</h4>
-                <p style={{ lineHeight: "1.6", color: "#555" }}>
-                  {job.description.length > 400
+                <h4><strong> Job Description:</strong> {job.description.length > 400
                     ? job.description.substring(0, 400) + "..."
-                    : job.description}
+                    : job.description}</h4>
+                <p style={{ lineHeight: "1.6", color: "#555" }}>
+                  
                 </p>
               </div>
             )}

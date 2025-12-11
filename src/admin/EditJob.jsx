@@ -294,27 +294,26 @@ export default function EditJob() {
             </div>
 
             <div className="button-group" style={{ marginTop: "20px", display: "flex", gap: "10px" }}>
-              <button type="submit" className="btn">
+              <button type="submit" className="admin-btn">
                 Update Job
               </button>
 
               <button
                 type="button"
                 onClick={deleteJob}
-                className="btn"
-                style={{ background: "#e74c3c", color: "white" }}
+                className="admin-cancel-btn"
               >
                 Delete Job
               </button>
 
-              <button
+              {/* <button
                 type="button"
                 onClick={() => navigate("/admin/jobs")}
                 className="btn"
                 style={{ background: "#95a5a6" }}
               >
                 Cancel
-              </button>
+              </button> */}
             </div>
           </form>
         </div>
