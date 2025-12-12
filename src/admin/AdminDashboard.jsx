@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Add this import for navigation
+import { useNavigate } from "react-router-dom";
 import "./admin.css";
 import SEO from '../components/SEO';
 import AdminFooter from "./AdminFooter";
@@ -13,7 +13,7 @@ export default function AdminDashboard() {
     comments: 0,
   });
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -65,26 +65,23 @@ export default function AdminDashboard() {
         <p className="text-gray-600 mb-8">Here are your website statistics</p>
 
         <div className="task-grid grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div 
+          <div
             className="task-card bg-blue-50 border border-blue-200 rounded-lg p-6 text-center shadow hover:shadow-lg transition cursor-pointer" // Added cursor-pointer for click indication
-            onClick={() => navigate("/admin/admincontact")} // Navigate to contacts page on click (adjust path as needed)
-          >
+            onClick={() => navigate("/admin/admincontact")} >
             <h3 className="text-4xl font-bold text-blue-600">{stats.contacts}</h3>
             <p className="text-gray-700 mt-2">Total Contact Messages</p>
           </div>
 
-          <div 
+          <div
             className="task-card bg-green-50 border border-green-200 rounded-lg p-6 text-center shadow hover:shadow-lg transition cursor-pointer"
-            onClick={() => navigate("/admin/adminapplication")} // Navigate to applications page (adjust path as needed)
-          >
+            onClick={() => navigate("/admin/adminapplication")} >
             <h3 className="text-4xl font-bold text-green-600">{stats.jobs}</h3>
             <p className="text-gray-700 mt-2">Total Jobs Posted</p>
           </div>
 
-          <div 
+          <div
             className="task-card bg-purple-50 border border-purple-200 rounded-lg p-6 text-center shadow hover:shadow-lg transition cursor-pointer"
-            onClick={() => navigate("/admin/comments")} // Navigate to comments page (adjust path as needed)
-          >
+            onClick={() => navigate("/admin/comments")} >
             <h3 className="text-4xl font-bold text-purple-600">{stats.comments}</h3>
             <p className="text-gray-700 mt-2">Total Blog Comments</p>
           </div>

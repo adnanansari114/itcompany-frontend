@@ -35,57 +35,57 @@ export default function BlogPage() {
         description="Latest tech articles"
         canonicalUrl="https://www.theittalent.com/blog"
       />
-    <div className="container">
-      <section className="blog-header">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <h1 className="blog-main-title">Our Latest <span>Blogs</span></h1>
-          <p className="blog-main-subtitle">Insights, ideas, and tech trends.</p>
-        </motion.div>
-      </section>
+      <div className="container">
+        <section className="blog-header">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <h1 className="blog-main-title">Our Latest <span>Blogs</span></h1>
+            <p className="blog-main-subtitle">Insights, ideas, and tech trends.</p>
+          </motion.div>
+        </section>
 
-      <section className="blog-grid-section">
-        <div className="blog-grid-container">
+        <section className="blog-grid-section">
+          <div className="blog-grid-container">
 
-          {loading && <p className="blog-loading">Loading blogs...</p>}
-          {error && <p className="blog-error">{error}</p>}
+            {loading && <p className="blog-loading">Loading blogs...</p>}
+            {error && <p className="blog-error">{error}</p>}
 
-          <div className="blog-grid">
-            {blogs.map((post, index) => (
-              <motion.div
-                className="blog-card"
-                key={post._id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="blog-thumb">
-                  <div className="blog-thumb-placeholder">
-                    {post.title.charAt(0)}
-                  </div>
-                </div>
-
-                <div className="blog-card-body">
-                  <h3 className="blog-title">{post.title}</h3>
-                  <p className="blog-excerpt">{post.heading1 || "Click to read more..."}</p>
-
-                  <div className="blog-meta">
-                    {new Date(post.createdAt).toLocaleDateString()}
+            <div className="blog-grid">
+              {blogs.map((post, index) => (
+                <motion.div
+                  className="blog-card"
+                  key={post._id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="blog-thumb">
+                    <div className="blog-thumb-placeholder">
+                      {post.title.charAt(0)}
+                    </div>
                   </div>
 
-                  <Link to={`/blog/${post._id}`} className="blog-read-btn">
-                    Read More →
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+                  <div className="blog-card-body">
+                    <h3 className="blog-title">{post.title}</h3>
+                    <p className="blog-excerpt">{post.heading1 || "Click to read more..."}</p>
+
+                    <div className="blog-meta">
+                      {new Date(post.createdAt).toLocaleDateString()}
+                    </div>
+
+                    <Link to={`/blog/${post._id}`} className="blog-read-btn">
+                      Read More →
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
           </div>
-
-        </div>
-      </section>
+        </section>
       </div>
       <ReadySection />
     </>

@@ -28,10 +28,6 @@ export default function AdminJobs() {
     }
   };
 
-  // useEffect(() => {
-  //   fetchJobs();
-  // }, []);
-
   const deleteJob = async (id) => {
     if (!window.confirm("Are you sure you want to delete this job?")) return;
 

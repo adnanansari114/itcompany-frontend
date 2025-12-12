@@ -23,7 +23,6 @@ export default function EditJob() {
     description: "",
   });
 
-  // Fetch single job by ID
   useEffect(() => {
     const fetchJob = async () => {
       if (!token) {
@@ -70,8 +69,8 @@ export default function EditJob() {
         `${API}/api/jobs/${id}`,
         {
           ...form,
-          company: "The IT Talent", // fixed
-          budget: form.budget.trim() || undefined, // optional
+          company: "The IT Talent", 
+          budget: form.budget.trim() || undefined, 
         },
         {
           headers: {
@@ -129,7 +128,6 @@ export default function EditJob() {
           )}
 
           <form onSubmit={updateJob}>
-            {/* Tech Stack */}
             <div className="inputGroup">
               <label>Tech Stack / Role *</label>
               <input
@@ -142,7 +140,6 @@ export default function EditJob() {
               />
             </div>
 
-            {/* Engagement Type */}
             <div className="inputGroup">
               <label>Engagement Type *</label>
               <select
@@ -159,7 +156,6 @@ export default function EditJob() {
               </select>
             </div>
 
-            {/* Status */}
             <div className="inputGroup">
               <label>Status *</label>
               <select name="status" value={form.status} onChange={handleChange} required>
@@ -169,7 +165,6 @@ export default function EditJob() {
               </select>
             </div>
 
-            {/* Location */}
             <div className="inputGroup">
               <label>Location *</label>
               <input
@@ -182,7 +177,6 @@ export default function EditJob() {
               />
             </div>
 
-            {/* Budget (Optional) */}
             <div className="inputGroup">
               <label>Budget (Optional)</label>
               <input
@@ -194,7 +188,6 @@ export default function EditJob() {
               />
             </div>
 
-            {/* Description */}
             <div className="inputGroup">
               <label>Description *</label>
               <textarea

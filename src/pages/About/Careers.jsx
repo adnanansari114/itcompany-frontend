@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 
 const API = import.meta.env.VITE_APP_API_URL;
 
-// Filter Options
 const categories = [
   "All Categories", "React.js", "Node.js", "Python", "Java", "Angular", "Vue.js",
   "DevOps", "AWS", "Data Science", "Full Stack", "Mobile (React Native / Flutter)"
@@ -55,7 +54,6 @@ const Careers = () => {
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
-  // FULLY SAFE FILTERING – NO CRASH EVER
   const filteredJobs = allJobs.filter(job => {
     if (job.isActive === false) return false;
 
@@ -214,15 +212,7 @@ const Careers = () => {
                       <Clock size={16} /> Posted {new Date(job.createdAt).toLocaleDateString()}
                     </span>
                   </div>
-
-                  {/* <p className="job-snippet">
-                    {job.description
-                      ? job.description.length > 150
-                        ? job.description.substring(0, 150) + "..."
-                        : job.description
-                      : "Join our dynamic team and work on cutting-edge projects."}
-                  </p> */}
-
+                  
                   {job.budget && (
                     <div className="budget-tag">Budget: {job.budget}</div>
                   )}

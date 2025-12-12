@@ -57,6 +57,7 @@ export default function JobApply() {
         phone: phone.trim(),
         description: description.trim(),
         jobId: id,
+        jobName: job?.techstack || "Software Engineer Position",
       });
       setOtpSent(true);
       setMessage(res.data.message || "OTP sent to your email!");
@@ -98,7 +99,6 @@ export default function JobApply() {
       return;
     }
 
-    // File size check (optional - 5MB max)
     if (resume.size > 5 * 1024 * 1024) {
       setMessage("Resume size should be less than 5MB");
       return;
@@ -120,12 +120,10 @@ export default function JobApply() {
           "Content-Type": "multipart/form-data",
         },
       }
-        // Header mat daalo! Browser khud set karega
       );
 
       setMessage(res.data.message || "Application submitted successfully!");
 
-      // Safe navigation
       setTimeout(() => {
         navigate("/careers");
       }, 2000);
@@ -167,10 +165,10 @@ export default function JobApply() {
             {job.description && (
               <div className="job-description-preview">
                 <h4><strong> Job Description:</strong> {job.description.length > 400
-                    ? job.description.substring(0, 400) + "..."
-                    : job.description}</h4>
+                  ? job.description.substring(0, 400) + "..."
+                  : job.description}</h4>
                 <p style={{ lineHeight: "1.6", color: "#555" }}>
-                  
+
                 </p>
               </div>
             )}
@@ -179,7 +177,6 @@ export default function JobApply() {
           <p style={{ textAlign: "center", color: "red" }}>Job not found or has been removed.</p>
         )}
 
-        {/* Step 1 */}
         {!otpSent && (
           <div className="apply-step">
             <h3>Step 1 — Enter Your Details</h3>
@@ -214,7 +211,6 @@ export default function JobApply() {
           </div>
         )}
 
-        {/* Step 2 */}
         {otpSent && !verified && (
           <div className="apply-step">
             <h3>Step 2 — Enter OTP</h3>
@@ -253,7 +249,6 @@ export default function JobApply() {
           </form>
         )}
 
-        {/* Success/Error Message */}
         {message && (
           <p
             className="apply-message"

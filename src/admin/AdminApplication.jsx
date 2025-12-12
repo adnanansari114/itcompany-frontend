@@ -5,7 +5,6 @@ const API = import.meta.env.VITE_APP_API_URL;
 import SEO from '../components/SEO';
 
 axios.defaults.headers.common["Content-Type"] = "application/json";
-// axios.defaults.baseURL = "http://localhost:5000";
 
 
 export default function AdminApplications({ setAdmin }) {
@@ -30,7 +29,7 @@ export default function AdminApplications({ setAdmin }) {
       <SEO
         title="Applications"
         description="Empower your business with top-tier remote IT talent, custom software development, and expert cloud and AI engineering. Start your transformation today."
-        canonicalUrl="https://www.theittalent.com/admin/comments"
+        canonicalUrl="https://www.theittalent.com/admin/applications"
       />
       <div className="admin-applications-page">
         <h2>Job Applications</h2>
@@ -49,11 +48,11 @@ export default function AdminApplications({ setAdmin }) {
                   <td data-label="Name">{a.name}</td>
                   <td data-label="Email">{a.email}</td>
                   <td data-label="Phone">{a.phone}</td>
-                  <td data-label="Job">{a.jobId?.techstack || "—"}</td>
+                  <td data-label="Job">{a.jobName || a.jobId?.techstack || "—"}</td>
                   <td data-label="Resume">
                     {a.resume ? (
                       <a
-                        href={`http://localhost:5000/${a.resume}`}
+                        href={`${API?.replace(/\/$/, '') || 'http://localhost:5000'}/${a.resume}`}
                         target="_blank"
                         rel="noreferrer"
                         download

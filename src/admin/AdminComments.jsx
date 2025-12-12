@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./admin.css";  // ← Ye import kar do
+import "./admin.css";  
 import SEO from '../components/SEO';
 const API = import.meta.env.VITE_APP_API_URL;
 
@@ -40,7 +40,7 @@ export default function AdminComments() {
           <table className="comments-table">
             <thead>
               <tr>
-                <th>Blog ID</th>
+                {/* <th>Blog ID</th> */}
                 <th>Title</th>
                 <th>Name</th>
                 <th>Comment</th>
@@ -58,8 +58,8 @@ export default function AdminComments() {
               ) : (
                 comments.map(c => (
                   <tr key={c._id}>
-                    <td>{c.blogId?._id || "—"}</td>
-                    <td>{c.blogtitle || "Untitled"}</td>
+                    {/* <td>{c.blogId?._id || "—"}</td> */}
+                    <td>{c.blogId.title || "Untitled"}</td>
                     <td><strong>{c.name}</strong></td>
                     <td>{c.comment}</td>
                     <td>{new Date(c.createdAt).toLocaleDateString()}</td>

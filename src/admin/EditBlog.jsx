@@ -19,8 +19,11 @@ export default function EditBlog() {
   const [additionalHeading, setAdditionalHeading] = useState("");
   const [additionalPoints, setAdditionalPoints] = useState(["", "", "", "", ""]);
 
-  // FAQ State
   const [faqs, setFaqs] = useState([{ question: "", answer: "" }]);
+
+  const [currentImage, setCurrentImage] = useState(""); 
+  const [imageFile, setImageFile] = useState(null);    
+  const [imagePreview, setImagePreview] = useState("");
 
   const [msg, setMsg] = useState("");
   const [loading, setLoading] = useState(true);
@@ -48,9 +51,13 @@ export default function EditBlog() {
         setWhyChoosePoints(blog.whyChoosePoints?.length === 4 ? blog.whyChoosePoints : ["", "", "", ""]);
         setAdditionalHeading(blog.additionalHeading || "");
         setAdditionalPoints(blog.additionalPoints?.length === 5 ? blog.additionalPoints : ["", "", "", "", ""]);
-
-        // Load FAQs (safe check)
         setFaqs(blog.faqs?.length > 0 ? blog.faqs : [{ question: "", answer: "" }]);
+
+        // Set current image if exists
+        if (blog.image) {
+          setCurrentImage(blog.image);
+          setImagePreview(blog.image); // Initial preview
+        }
 
         setLoading(false);
       } catch (err) {
@@ -61,44 +68,56 @@ export default function EditBlog() {
     fetchBlog();
   }, [id]);
 
-  // Reusable Handlers
-  const handleParaChange = (setter, index, value, paras) => {
-    const newParas = [...paras];
-    newParas[index] = value;
-    setter(newParas);
-  };
-
-  const addPara = (setter, paras) => setter([...paras, ""]);
-
-  const removePara = (setter, index, paras) => {
-    if (paras.length > 1) {
-      setter(paras.filter((_, i) => i !== index));
+  // Image change handler
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImageFile(file);
+      setImagePreview(URL.createObjectURL(file));
     }
   };
 
-  const handlePointChange = (setter, index, value, points) => {
-    const newPoints = [...points];
-    newPoints[index] = value;
-    setter(newPoints);
+  // Reusable Handlers
+  const handleParaChange = (setter, index, value) => {
+    setter(prev => {
+      const updated = [...prev];
+      updated[index] = value;
+      return updated;
+    });
+  };
+
+  const addPara = (setter) => setter(prev => [...prev, ""]);
+
+  const removePara = (setter, index) => {
+    setter(prev => prev.length > 1 ? prev.filter((_, i) => i !== index) : prev);
+  };
+
+  const handlePointChange = (setter, index, value) => {
+    setter(prev => {
+      const updated = [...prev];
+      updated[index] = value;
+      return updated;
+    });
   };
 
   // FAQ Handlers
-  const addFaq = () => {
-    setFaqs([...faqs, { question: "", answer: "" }]);
-  };
+  const addFaq = () => setFaqs(prev => [...prev, { question: "", answer: "" }]);
 
   const removeFaq = (index) => {
     if (faqs.length > 1) {
-      setFaqs(faqs.filter((_, i) => i !== index));
+      setFaqs(prev => prev.filter((_, i) => i !== index));
     }
   };
 
   const handleFaqChange = (index, field, value) => {
-    const updated = [...faqs];
-    updated[index][field] = value;
-    setFaqs(updated);
+    setFaqs(prev => {
+      const updated = [...prev];
+      updated[index][field] = value;
+      return updated;
+    });
   };
 
+  // Update Blog with FormData
   const updateBlog = async (e) => {
     e.preventDefault();
     setMsg("");
@@ -109,28 +128,34 @@ export default function EditBlog() {
       return;
     }
 
-    // Validation
+    const formData = new FormData();
+    formData.append("title", title.trim());
+    formData.append("heading1", heading1.trim());
+    formData.append("paragraphs1", JSON.stringify(paragraphs1.filter(p => p.trim())));
+    if (heading2.trim()) formData.append("heading2", heading2.trim());
+    formData.append("paragraphs2", JSON.stringify(paragraphs2.filter(p => p.trim())));
+    formData.append("whyChoosePoints", JSON.stringify(whyChoosePoints.filter(p => p.trim())));
+    if (additionalHeading.trim()) formData.append("additionalHeading", additionalHeading.trim());
+    formData.append("additionalPoints", JSON.stringify(additionalPoints.filter(p => p.trim())));
+    formData.append("faqs", JSON.stringify(faqs.filter(f => f.question.trim() && f.answer.trim())));
+
+    // Only append new image if user selected one
+    if (imageFile) {
+      formData.append("image", imageFile);
+    }
+
     try {
-      await axios.put(
-        `${API}/api/blogs/${id}`,
-        {
-          title,
-          heading1,
-          paragraphs1: paragraphs1.filter(p => p.trim()),
-          heading2,
-          paragraphs2: paragraphs2.filter(p => p.trim()),
-          whyChoosePoints: whyChoosePoints.filter(p => p.trim()),
-          additionalHeading,
-          additionalPoints: additionalPoints.filter(p => p.trim()),
-          faqs: faqs.filter(f => f.question.trim() && f.answer.trim()) // Only valid FAQs
+      await axios.put(`${API}/api/blogs/${id}`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
+      });
 
       setMsg("Blog updated successfully!");
       setTimeout(() => navigate("/admin/blogs"), 1500);
     } catch (err) {
       setMsg(err.response?.data?.message || "Error updating blog");
+      console.error(err);
     }
   };
 
@@ -145,38 +170,73 @@ export default function EditBlog() {
           {msg && <p className={msg.includes("success") ? "success" : "error"}>{msg}</p>}
 
           <form onSubmit={updateBlog}>
-            {/* Title */}
             <div className="inputGroup">
               <label>Title *</label>
               <input value={title} onChange={(e) => setTitle(e.target.value)} required />
             </div>
 
-            {/* Heading 1 + Paragraphs */}
             <div className="inputGroup">
-              <label>Heading *</label>
+              <label>Featured Image</label>
+              <input type="file" accept="image/*" onChange={handleImageChange} />
+              
+              {imagePreview && (
+                <div className="image-preview-container" style={{ marginTop: "15px" }}>
+                  <p style={{ fontWeight: "600", marginBottom: "8px" }}>
+                    {imageFile ? "New Image Preview:" : "Current Image:"}
+                  </p>
+                  <div style={{
+                    border: "2px dashed #ccc",
+                    borderRadius: "12px",
+                    overflow: "hidden",
+                    maxWidth: "600px"
+                  }}>
+                    <img
+                      src={imagePreview}
+                      alt="Blog preview"
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        maxHeight: "400px",
+                        objectFit: "cover",
+                        display: "block"
+                      }}
+                    />
+                  </div>
+                  {imageFile && <p style={{ marginTop: "8px", color: "#e67e22", fontSize: "14px" }}>
+                    This will replace the current image on save.
+                  </p>}
+                </div>
+              )}
+            </div>
+
+            {/* Main Heading */}
+            <div className="inputGroup">
+              <label>Main Heading *</label>
               <input value={heading1} onChange={(e) => setHeading1(e.target.value)} required />
             </div>
 
+            {/* Paragraphs */}
             <div className="inputGroup">
-              <label>Paragraphs for Heading </label>
+              <label>Paragraphs for Main Heading</label>
               {paragraphs1.map((para, index) => (
-                <div key={index} style={{ display: "flex", gap: "8px", marginBottom: "10px" }}>
+                <div key={index} style={{ display: "flex", gap: "10px", marginBottom: "12px" }}>
                   <textarea
                     value={para}
-                    onChange={(e) => handleParaChange(setParagraphs1, index, e.target.value, paragraphs1)}
-                    rows="3"
+                    onChange={(e) => handleParaChange(setParagraphs1, index, e.target.value)}
+                    rows="4"
                     required={index === 0}
                     style={{ flex: 1 }}
                   />
-                  <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-                    <button type="button" onClick={() => addPara(setParagraphs1, paragraphs1)}>+</button>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+                    <button type="button" onClick={() => addPara(setParagraphs1)} className="small-btn">+</button>
                     {paragraphs1.length > 1 && (
-                      <button type="button" onClick={() => removePara(setParagraphs1, index, paragraphs1)}>-</button>
+                      <button type="button" onClick={() => removePara(setParagraphs1, index)} className="small-btn">−</button>
                     )}
                   </div>
                 </div>
               ))}
             </div>
+
             <div className="btn-log">
               <button type="submit" className="admin-btn">Update Blog</button>
             </div>

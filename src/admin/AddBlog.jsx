@@ -1,5 +1,4 @@
 
-
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -10,136 +9,196 @@ const API = import.meta.env.VITE_APP_API_URL;
 
 export default function AddBlog() {
   const navigate = useNavigate();
+
   const [title, setTitle] = useState("");
   const [heading1, setHeading1] = useState("");
   const [paragraphs1, setParagraphs1] = useState([""]);
-  const [heading2, setHeading2] = useState("");
-  const [paragraphs2, setParagraphs2] = useState([""]);
-  const [whyChoosePoints, setWhyChoosePoints] = useState(["", "", "", ""]);
-  const [additionalHeading, setAdditionalHeading] = useState("");
-  const [additionalPoints, setAdditionalPoints] = useState(["", "", "", "", ""]);
 
-  // New State for FAQs
-  const [faqs, setFaqs] = useState([
-    { question: "", answer: "" }
-  ]);
+  const [imageFile, setImageFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
 
   const [msg, setMsg] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  // Helper Functions
-  const handleParaChange = (setter, index, value, paras) => {
-    const newParas = [...paras];
-    newParas[index] = value;
-    setter(newParas);
-  };
-
-  const addPara = (setter, paras) => setter([...paras, ""]);
-
-  const removePara = (setter, index, paras) => {
-    if (paras.length > 1) {
-      const newParas = paras.filter((_, i) => i !== index);
-      setter(newParas);
+  const addPara = () => setParagraphs1([...paragraphs1, ""]);
+  const removePara = (index) => {
+    if (paragraphs1.length > 1) {
+      setParagraphs1(paragraphs1.filter((_, i) => i !== index));
     }
   };
 
-  const handlePointChange = (setter, index, value, points) => {
-    const newPoints = [...points];
-    newPoints[index] = value;
-    setter(newPoints);
+  const updatePara = (index, value) => {
+    const updated = [...paragraphs1];
+    updated[index] = value;
+    setParagraphs1(updated);
   };
 
-  // FAQ Handlers
-  const addFaq = () => {
-    setFaqs([...faqs, { question: "", answer: "" }]);
-  };
-
-  const removeFaq = (index) => {
-    if (faqs.length > 1) {
-      setFaqs(faqs.filter((_, i) => i !== index));
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImageFile(file);
+      setImagePreview(URL.createObjectURL(file));
     }
   };
 
-  const handleFaqChange = (index, field, value) => {
-    const updatedFaqs = [...faqs];
-    updatedFaqs[index][field] = value;
-    setFaqs(updatedFaqs);
+  const removeImage = () => {
+    setImageFile(null);
+    setImagePreview(null);
   };
 
   const submitBlog = async (e) => {
     e.preventDefault();
     setMsg("");
+    setLoading(true);
 
     const token = localStorage.getItem("adminToken");
     if (!token) {
-      setMsg("Please login as admin first");
+      setMsg("Error: Please login as admin first");
+      setLoading(false);
       return;
     }
 
-    // Optional: Agar chahte ho ki kam se kam 1 FAQ ho
-    // if (faqs.length === 0 || faqs.some(f => !f.question.trim() || !f.answer.trim())) {
-    //   setMsg("Please fill all FAQ fields or remove empty ones");
-    //   return;
-    // }
+    if (!title.trim()) return setMsg("Title is required!");
+    if (!heading1.trim()) return setMsg("Heading is required!");
+    const cleanParas = paragraphs1.map(p => p.trim()).filter(p => p.length > 0);
+    if (cleanParas.length === 0) return setMsg("At least one paragraph required!");
+
+    const formData = new FormData();
+
+    formData.append("title", title.trim());
+    formData.append("heading1", heading1.trim());
+
+    formData.append("paragraphs1", JSON.stringify(cleanParas));
+
+    if (imageFile) {
+      formData.append("image", imageFile);
+    }
 
     try {
-      await axios.post(
-        `${API}/api/blogs`,
-        {
-          title,
-          heading1,
-          paragraphs1: paragraphs1.filter(p => p.trim()),
-          heading2,
-          paragraphs2: paragraphs2.filter(p => p.trim()),
-          whyChoosePoints: whyChoosePoints.filter(p => p.trim()),
-          additionalHeading,
-          additionalPoints: additionalPoints.filter(p => p.trim()),
-          faqs: faqs.filter(f => f.question.trim() && f.answer.trim()) // Only valid FAQs
+      await axios.post(`${API}/api/blogs`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
+        timeout: 30000,
+      });
 
       setMsg("Blog added successfully!");
       setTimeout(() => navigate("/admin/blogs"), 1500);
     } catch (err) {
-      setMsg(err.response?.data?.message || "Error adding blog");
+      console.error(err);
+      setMsg("Error: " + (err.response?.data?.message || "Failed to add blog"));
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <>
-      <SEO title="Add Blog" description="Add new blog" canonicalUrl="/admin/add-blog" />
+      <SEO title="Add Blog" description="Create a new blog post" canonicalUrl="/admin/add-blog" />
+
       <div className="admin-job-container">
         <div className="job-box">
           <h2>Add New Blog</h2>
-          {msg && <p className={msg.includes("success") ? "success" : "error"}>{msg}</p>}
+
+          {msg && (
+            <p className={msg.includes("success") || msg.includes("added") ? "success" : "error"}>
+              {msg}
+            </p>
+          )}
 
           <form onSubmit={submitBlog}>
-            {/* Existing Fields (Title, Heading1, etc.) */}
             <div className="inputGroup">
-              <label>Title *</label>
-              <input placeholder="Blog Title" value={title} onChange={(e) => setTitle(e.target.value)} required />
+              <label>Title <span style={{ color: "red" }}>*</span></label>
+              <input
+                type="text"
+                placeholder="Enter blog title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                required
+              />
             </div>
 
             <div className="inputGroup">
-              <label>Heading *</label>
-              <input placeholder="Blog Heading" value={heading1} onChange={(e) => setHeading1(e.target.value)} required />
+              <label>Main Heading <span style={{ color: "red" }}>*</span></label>
+              <input
+                type="text"
+                placeholder="Enter main heading"
+                value={heading1}
+                onChange={(e => setHeading1(e.target.value))}
+                required
+              />
             </div>
 
             <div className="inputGroup">
-              <label>Paragraphs for Heading</label>
-              {paragraphs1.map((para, index) => (
-                <div key={index} style={{ display: "flex", marginBottom: "10px", gap: "8px" }}>
-                  <textarea placeholder="Blog Paragraph"
-                    value={para}
-                    onChange={(e) => handleParaChange(setParagraphs1, index, e.target.value, paragraphs1)}
-                    rows="3"
-                    required={index === 0}
-                    style={{ flex: 1 }}
+              <label>Featured Image (Optional)</label>
+              <input
+                type="file"
+                accept="image/jpeg,image/png,image/jpg,image/webp"
+                onChange={handleImageChange}
+              />
+
+              {imagePreview && (
+                <div style={{ marginTop: "15px", textAlign: "center" }}>
+                  <img
+                    src={imagePreview}
+                    alt="Blog preview"
+                    style={{
+                      maxWidth: "100%",
+                      maxHeight: "300px",
+                      borderRadius: "10px",
+                      boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+                    }}
                   />
-                  <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-                    <button type="button" onClick={() => addPara(setParagraphs1, paragraphs1)} style={{ width: "40px", border: "2px solid transparent", background:"var(--primary)", "border-radius":"10px", color: "white" }}>+</button>
+                  <br />
+                  <button
+                    type="button"
+                    onClick={removeImage}
+                    style={{
+                      padding: "6px 12px",
+                      background: "#dc3545",
+                      color: "white",
+                      border: "none",
+                      borderRadius: "5px",
+                      marginTop: "10px",
+                      cursor: "pointer"
+                    }}
+                  >
+                    Remove Image
+                  </button>
+                </div>
+              )}
+            </div>
+
+            <div className="inputGroup">
+              <label>Paragraphs <span style={{ color: "red" }}>*</span> (At least one)</label>
+              {paragraphs1.map((para, index) => (
+                <div key={index} style={{ display: "flex", gap: "10px", marginBottom: "12px" }}>
+                  <textarea
+                    placeholder="Write paragraph..."
+                    value={para}
+                    onChange={(e) => updatePara(index, e.target.value)}
+                    rows={4}
+                    style={{ flex: 1, padding: "10px", borderRadius: "6px", border: "1px solid #ccc" }}
+                    required={index === 0}
+                  />
+                  <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+                    <button
+                      type="button"
+                      onClick={addPara}
+                      className="small-btn"
+                      style={{ background: "#28a745", height: "40px" }}
+                    >
+                      +
+                    </button>
                     {paragraphs1.length > 1 && (
-                      <button type="button" onClick={() => removePara(setParagraphs1, index, paragraphs1)} style={{ width: "40px", border: "2px solid transparent", background:"var(--primary)", "border-radius":"10px", color: "white" }}>-</button>
+                      <button
+                        type="button"
+                        onClick={() => removePara(index)}
+                        className="small-btn"
+                        style={{ background: "#dc3545" }}
+                      >
+                        −
+                      </button>
                     )}
                   </div>
                 </div>
@@ -147,7 +206,17 @@ export default function AddBlog() {
             </div>
 
             <div className="btn-log">
-              <button type="submit" className="admin-btn">Add Blog</button>
+              <button
+                type="submit"
+                className="admin-btn"
+                disabled={loading}
+                style={{
+                  opacity: loading ? 0.7 : 1,
+                  cursor: loading ? "not-allowed" : "pointer"
+                }}
+              >
+                {loading ? "Adding Blog..." : "Add Blog"}
+              </button>
             </div>
           </form>
         </div>

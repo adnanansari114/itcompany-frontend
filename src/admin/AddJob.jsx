@@ -5,16 +5,14 @@ import SEO from '../components/SEO';
 
 const API = import.meta.env.VITE_APP_API_URL;
 
-// Axios default config
 axios.defaults.headers.common["Content-Type"] = "application/json";
- // ya production me change kar dena
 
 export default function AddJob({ setIsAdmin }) {
   const [techstack, setTechstack] = useState("");
   const [engagementtype, setEngagementtype] = useState("");
-  const [status, setStatus] = useState("Open"); // default Open
+  const [status, setStatus] = useState("Open");
   const [location, setLocation] = useState("");
-  const [budget, setBudget] = useState(""); // optional
+  const [budget, setBudget] = useState("");
   const [description, setDescription] = useState("");
   const [msg, setMsg] = useState("");
 
@@ -37,7 +35,7 @@ export default function AddJob({ setIsAdmin }) {
           engagementtype,
           status,
           location,
-          budget: budget.trim() || undefined, // optional - agar khali hai to undefined bhej denge
+          budget: budget.trim() || undefined,
           description,
           isActive: true,
         },
@@ -50,7 +48,6 @@ export default function AddJob({ setIsAdmin }) {
       );
 
       setMsg("Job added successfully!");
-      // Reset form
       setTechstack("");
       setEngagementtype("");
       setStatus("Open");
@@ -82,7 +79,6 @@ export default function AddJob({ setIsAdmin }) {
           )}
 
           <form onSubmit={submitJob}>
-            {/* Tech Stack (Required) */}
             <div className="inputGroup">
               <label>Tech Stack / Role * </label>
               <input
@@ -94,7 +90,6 @@ export default function AddJob({ setIsAdmin }) {
               />
             </div>
 
-            {/* Engagement Type */}
             <div className="inputGroup">
               <label>Engagement Type *</label>
               <select
@@ -110,7 +105,6 @@ export default function AddJob({ setIsAdmin }) {
               </select>
             </div>
 
-            {/* Status */}
             <div className="inputGroup">
               <label>Status *</label>
               <select value={status} onChange={(e) => setStatus(e.target.value)} required>
@@ -120,7 +114,6 @@ export default function AddJob({ setIsAdmin }) {
               </select>
             </div>
 
-            {/* Location */}
             <div className="inputGroup">
               <label>Location *</label>
               <input
@@ -132,7 +125,6 @@ export default function AddJob({ setIsAdmin }) {
               />
             </div>
 
-            {/* Budget (Optional) */}
             <div className="inputGroup">
               <label>Budget (Optional)</label>
               <input
@@ -143,7 +135,6 @@ export default function AddJob({ setIsAdmin }) {
               />
             </div>
 
-            {/* Description */}
             <div className="inputGroup">
               <label>Job Description *</label>
               <textarea
@@ -154,10 +145,10 @@ export default function AddJob({ setIsAdmin }) {
                 required
               />
             </div>
-<div className="btn-log">
-            <button type="submit" className="admin-btn">
-              Add Job
-            </button>
+            <div className="btn-log">
+              <button type="submit" className="admin-btn">
+                Add Job
+              </button>
             </div>
           </form>
         </div>

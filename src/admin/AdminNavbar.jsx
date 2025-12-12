@@ -26,15 +26,15 @@ export default function AdminNavbar() {
         description="Admin panel for managing jobs, blogs, applications, and contacts."
       />
 
-      {/* Admin Navbar */}
+      
       <nav className="admin-navbar-unique">
         <div className="admin-navbar-logo-unique">
-          {/* Logo from public/images folder */}
+          
           <Link to="/admin/dashboard" className="admin-logo-link">
-            <img 
-              src="/images/logo.jpeg" 
-              alt="The IT Talent Logo" 
-              className="admin-company-logo" 
+            <img
+              src="/images/logo.jpeg"
+              alt="The IT Talent Logo"
+              className="admin-company-logo"
             />
           </Link>
           <h3>Administration Console</h3>
@@ -47,7 +47,7 @@ export default function AdminNavbar() {
             </Link>
           </li>
 
-          {/* Jobs Dropdown */}
+        
           <li className="admin-navbar-dropdown-unique">
             <span className={`admin-navbar-dropdown-toggle-unique ${isJobsActive ? "admin-active-unique" : ""}`}>
               Jobs ▼
@@ -59,7 +59,6 @@ export default function AdminNavbar() {
             </ul>
           </li>
 
-          {/* Blog Dropdown */}
           <li className="admin-navbar-dropdown-unique">
             <span className={`admin-navbar-dropdown-toggle-unique ${isBlogActive ? "admin-active-unique" : ""}`}>
               Blog ▼
@@ -85,7 +84,7 @@ export default function AdminNavbar() {
         </div>
       </nav>
 
-      {/* Admin Footer */}
+     
     </>
   );
 }

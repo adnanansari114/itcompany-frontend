@@ -9,7 +9,7 @@ const API = import.meta.env.VITE_APP_API_URL;
 export default function BlogList() {
   const navigate = useNavigate();
   const [blogs, setBlogs] = useState([]);
-  const [msg, setMsg] = useState(""); // { type: "success" | "error", text: "" }
+  const [msg, setMsg] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ export default function BlogList() {
 
       setBlogs(blogs.filter((blog) => blog._id !== id));
       setMsg("Blog deleted successfully!");
-      setTimeout(() => setMsg(""), 4000); // Auto clear after 4 seconds
+      setTimeout(() => setMsg(""), 4000);
     } catch (err) {
       setMsg("Failed to delete blog. Please try again.");
       console.error(err);
@@ -68,25 +68,20 @@ export default function BlogList() {
           </button>
         </div>
 
-        {/* Message Alert */}
         {msg && (
           <p
-            className={`msg ${
-              msg.includes("success") || msg.includes("deleted") ? "success" : "error"
-            }`}
+            className={`msg ${msg.includes("success") || msg.includes("deleted") ? "success" : "error"
+              }`}
           >
             {msg}
           </p>
         )}
 
-        {/* Loading State */}
         {loading && (
           <p style={{ textAlign: "center", padding: "50px", fontSize: "18px", color: "#666" }}>
             Loading blogs...
           </p>
         )}
-
-        {/* Empty State */}
         {!loading && blogs.length === 0 && (
           <div className="empty-state">
             <p>No blogs found.</p>
@@ -96,7 +91,6 @@ export default function BlogList() {
           </div>
         )}
 
-        {/* Blogs Table */}
         {!loading && blogs.length > 0 && (
           <div className="table-responsive">
             <table className="blog-table">
