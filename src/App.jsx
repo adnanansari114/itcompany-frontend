@@ -23,6 +23,9 @@ import SubBlog from './pages/About/SubBlog.jsx';
 import SubBlogTwo from './pages/About/SubBlogTwo.jsx';
 import SubBlogThree from './pages/About/SubBlogThree.jsx';
 import BlogDetailPage from "./pages/About/BlogDetailPage";
+import Documents from './pages/Documents.jsx';
+import DocumentCategories from './pages/DocumentCategories';
+import CategoryDocuments from './pages/CategoryDocuments';
 
 // Admin Components
 import AdminLogin from './admin/AdminLogin.jsx';
@@ -37,6 +40,10 @@ import AdminComments from './admin/AdminComments.jsx';
 import AddBlog from './admin/AddBlog.jsx';
 import EditBlog from './admin/EditBlog.jsx';
 import BlogList from './admin/BlogList.jsx';
+import AdminUploadDocument from './admin/AdminUploadDocument.jsx'
+import AdminDocumentList from './admin/AdminDocumentList.jsx';
+import AdminEditDocument from './admin/AdminEditDocument.jsx';
+import ManageCategories from './admin/ManageCategories.jsx';
 
 // Protected Route Component
 const ProtectedAdminRoute = ({ children }) => {
@@ -65,6 +72,10 @@ const AdminLayout = () => {
         <Route path="/add-blog" element={<AddBlog />} />
         <Route path="/edit-blog/:id" element={<EditBlog />} />
         <Route path="blogs" element={< BlogList />} />
+        <Route path="document-list" element={<AdminDocumentList />} />
+        <Route path="edit-document/:id" element={<AdminEditDocument />} />
+        <Route path="add-document" element={<AdminUploadDocument />} />
+        <Route path="/manage-categories" element={<ManageCategories />} />
       </Routes>
     </>
   );
@@ -97,6 +108,9 @@ const PublicLayout = () => {
         <Route path="/subblogtwo" element={<SubBlogTwo />} />
         <Route path="/subblogthree" element={<SubBlogThree />} />
         <Route path="/blog/:id" element={<BlogDetailPage />} />
+        <Route path="/assets" element={<Documents />} />
+        <Route path="/document-categories" element={<DocumentCategories />} />
+        <Route path="/resources/category/:id" element={<CategoryDocuments />} />
       </Routes>
       {!location.pathname.startsWith('/admin') && <Footer />}
     </>

@@ -57,13 +57,14 @@ export default function Navbar({ isHome }) {
             <div className="mobile-dropdown-menu">
               <a href="/aboutus" onClick={closeMobileMenu}>About Us</a>
               <a href="/leadershipteam" onClick={closeMobileMenu}>Leadership & Team</a>
-              <a href="/blog" onClick={closeMobileMenu}>Blog</a>
-              <a href="/careers" onClick={closeMobileMenu}>Career</a>
             </div>
           )}
         </div>
 
-        <a href="/contact" onClick={closeMobileMenu}>Contact Us</a>
+            <a href="/blog">Blog</a>
+            <a href="/careers">Opportunities</a>
+            <a href="/document-categories" onClick={closeMobileMenu}>Assets</a>
+            <a href="/contact">Contact Us</a>
         <a href="/contact" className="mobile-get-started" onClick={closeMobileMenu}>
           Get Started
         </a>
@@ -122,6 +123,7 @@ export default function Navbar({ isHome }) {
               </div>
               <a href="/blog">Blog</a>
               <a href="/careers">Opportunities</a>
+              <a href="/document-categories" onClick={closeMobileMenu}>Assets</a>
               <a href="/contact">Contact Us</a>
             </div>
 
@@ -183,6 +185,7 @@ export default function Navbar({ isHome }) {
             </div>
             <a href="/blog">Blog</a>
             <a href="/careers">Opportunities</a>
+            <a href="/document-categories" onClick={closeMobileMenu}>Assets</a>
             <a href="/contact">Contact Us</a>
           </div>
 

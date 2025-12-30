@@ -70,6 +70,17 @@ export default function AdminNavbar() {
             </ul>
           </li>
 
+          <li className="admin-navbar-dropdown-unique">
+            <span className={`admin-navbar-dropdown-toggle-unique ${isBlogActive ? "admin-active-unique" : ""}`}>
+              Assets ▼
+            </span>
+            <ul className="admin-navbar-dropdown-menu-unique">
+              <li><Link to="/admin/add-document" className={isActive("/admin/add-document")}>Add Document</Link></li>
+              <li><Link to="/admin/document-list" className={isActive("/admin/document-list")}>Document List</Link></li>
+              <li><Link to="/admin/manage-categories" className={isActive("/admin/manage-categories")}>Manage Categories</Link></li>
+            </ul>
+          </li>
+
           <li>
             <Link to="/admin/admincontact" className={isActive("/admin/admincontact")}>
               Contacts
